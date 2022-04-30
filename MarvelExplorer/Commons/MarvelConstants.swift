@@ -10,5 +10,6 @@ import Keys
 
 struct MarvelConstants {
   static let apiKey = MarvelExplorerKeys().marvelPublicKey
-  static let baseUrl = URL(string: "https://gateway.marvel.com/v1/")!
+  static let privateKey = MarvelExplorerKeys().marvelPrivateKey
+  static let baseUrl = URL(string: "https://gateway.marvel.com:443/v1/public")!
 }

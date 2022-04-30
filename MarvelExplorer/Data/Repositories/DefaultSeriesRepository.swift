@@ -11,16 +11,21 @@ import Foundation
 import Combine
 final class DefaultSeriesRepository {
   
-  private let session: URLSession
+  private let networkService: NetworkServiceType
   
-  init(session: URLSession) { self.session = session }
+  
+  init(networkService: NetworkServiceType) { self.networkService = networkService }
   
 }
 
 extension DefaultSeriesRepository: MarvelSeriesRepository {
   
-  func fetchSeries() -> AnyPublisher<[Series], Never> {
-    return .empty()
+  func fetchSeries() -> AnyPublisher<[Series], Error> {
+    return networkService
+      .load(Resource<MarvelResponse<SeriesDTO>>.getSeries())
+      .map(\.data)
+      .map { $0.results.map { $0.toDomain() } }
+      .eraseToAnyPublisher()
   }
 
 }

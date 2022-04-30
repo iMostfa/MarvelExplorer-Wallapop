@@ -23,7 +23,7 @@ struct Resource<T: Codable> {
     return URLRequest(url: url)
   }
 
-  init(url: URL, parameters: [String: CustomStringConvertible] = [:]) {
+  init(url: URL, parameters: [String: CustomStringConvertible]) {
     self.url = url
     self.parameters = parameters
   }

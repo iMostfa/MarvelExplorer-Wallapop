@@ -11,9 +11,12 @@ import Foundation
 struct Series: Identifiable {
   let name: String
   let id: Int
-  let description: String
+  let description: String?
   let thumbnail: Thumbnail
   let modified: String
+  let startYear: Int
+  let endYear: Int
+  let type: String
   let comics: Int?
   
 }
