@@ -1,0 +1,20 @@
+//
+//  ApplicationFlowCoordinatorDependencyProvider.swift
+//  MarvelExplorer
+//
+//  Created by Mostfa on 30/04/2022.
+//
+
+import Foundation
+import UIKit
+
+/// The `ApplicationFlowCoordinatorDependencyProvider` protocol defines methods to satisfy external dependencies of the ApplicationFlowCoordinator
+protocol ApplicationFlowCoordinatorDependencyProvider: MarvelExplorerFlowCoordinatorDependencyProvider {}
+
+protocol MarvelExplorerFlowCoordinatorDependencyProvider: AnyObject {
+  /// Creates a controller list all series.
+  func seriesListNavigationController(navigator: SeriesListNavigator) -> UINavigationController
+  
+  // Creates UIViewController to show the details of a series.
+  func seriesDetailsController(_ series: Series) -> UIViewController
+}
