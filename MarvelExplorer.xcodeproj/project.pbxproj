@@ -32,6 +32,10 @@
 		EF1F8CAF281CEE98002DE22C /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CAE281CEE98002DE22C /* Series.swift */; };
 		EF1F8CB3281CF03B002DE22C /* ApplicationComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CB2281CF03B002DE22C /* ApplicationComponentsFactory.swift */; };
 		EF1F8CB8281CF1E7002DE22C /* SeriesListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CB7281CF1E7002DE22C /* SeriesListFlowCoordinator.swift */; };
+		EF1F8CBA281CF6E4002DE22C /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CB9281CF6E4002DE22C /* Thumbnail.swift */; };
+		EF1F8CBF281CF97A002DE22C /* MarvelSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CBE281CF97A002DE22C /* MarvelSeriesRepository.swift */; };
+		EF1F8CC1281D03B3002DE22C /* PosterImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CC0281D03B3002DE22C /* PosterImageRepository.swift */; };
+		EF1F8CC5281D047D002DE22C /* DefaultSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CC4281D047D002DE22C /* DefaultSeriesRepository.swift */; };
 		FFD72C581ACA5D5252D93DD3 /* Pods_MarvelExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2A39FF95B359D5950657FB /* Pods_MarvelExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +92,10 @@
 		EF1F8CAE281CEE98002DE22C /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		EF1F8CB2281CF03B002DE22C /* ApplicationComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponentsFactory.swift; sourceTree = "<group>"; };
 		EF1F8CB7281CF1E7002DE22C /* SeriesListFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListFlowCoordinator.swift; sourceTree = "<group>"; };
+		EF1F8CB9281CF6E4002DE22C /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		EF1F8CBE281CF97A002DE22C /* MarvelSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSeriesRepository.swift; sourceTree = "<group>"; };
+		EF1F8CC0281D03B3002DE22C /* PosterImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageRepository.swift; sourceTree = "<group>"; };
+		EF1F8CC4281D047D002DE22C /* DefaultSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSeriesRepository.swift; sourceTree = "<group>"; };
 		FED4EFA89B6C5DC4DF954497 /* Pods-MarvelExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +165,7 @@
 		EF1F8C58281CE525002DE22C /* MarvelExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EF1F8CC2281D03FB002DE22C /* Data */,
 				EF1F8CAD281CEE90002DE22C /* Domain */,
 				EF1F8CA9281CEE41002DE22C /* Presentation */,
 				EF1F8CA2281CEB45002DE22C /* Application */,
@@ -255,7 +264,8 @@
 		EF1F8CAD281CEE90002DE22C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				EF1F8CAE281CEE98002DE22C /* Series.swift */,
+				EF1F8CBC281CF95F002DE22C /* UseCases */,
+				EF1F8CBB281CF94D002DE22C /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -293,6 +303,48 @@
 				EF1F8CB7281CF1E7002DE22C /* SeriesListFlowCoordinator.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		EF1F8CBB281CF94D002DE22C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8CAE281CEE98002DE22C /* Series.swift */,
+				EF1F8CB9281CF6E4002DE22C /* Thumbnail.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		EF1F8CBC281CF95F002DE22C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8CBD281CF96B002DE22C /* Interfaces */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		EF1F8CBD281CF96B002DE22C /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8CBE281CF97A002DE22C /* MarvelSeriesRepository.swift */,
+				EF1F8CC0281D03B3002DE22C /* PosterImageRepository.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		EF1F8CC2281D03FB002DE22C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8CC3281D03FC002DE22C /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EF1F8CC3281D03FC002DE22C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8CC4281D047D002DE22C /* DefaultSeriesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		FCCA23630C8D2DD5846E1BB7 /* Frameworks */ = {
@@ -551,14 +603,18 @@
 				EF1F8C5E281CE525002DE22C /* ViewController.swift in Sources */,
 				EF1F8C5A281CE525002DE22C /* AppDelegate.swift in Sources */,
 				EF1F8CA8281CED8F002DE22C /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
+				EF1F8CC1281D03B3002DE22C /* PosterImageRepository.swift in Sources */,
 				EF1F8C9C281CE8D1002DE22C /* Resource.swift in Sources */,
 				EF1F8C8C281CE5E6002DE22C /* ImageCache.swift in Sources */,
 				EF1F8C9B281CE8D1002DE22C /* NetworkService.swift in Sources */,
+				EF1F8CC5281D047D002DE22C /* DefaultSeriesRepository.swift in Sources */,
 				EF1F8CAF281CEE98002DE22C /* Series.swift in Sources */,
 				EF1F8C91281CE6A4002DE22C /* AutoMockable.swift in Sources */,
 				EF1F8CA6281CED73002DE22C /* AppFlowCoordinator.swift in Sources */,
 				EF1F8C8D281CE5E6002DE22C /* ImageLoaderService.swift in Sources */,
 				EF1F8CB3281CF03B002DE22C /* ApplicationComponentsFactory.swift in Sources */,
+				EF1F8CBA281CF6E4002DE22C /* Thumbnail.swift in Sources */,
+				EF1F8CBF281CF97A002DE22C /* MarvelSeriesRepository.swift in Sources */,
 				EF1F8C9E281CE965002DE22C /* ServiceProvider.swift in Sources */,
 				EF1F8C95281CE773002DE22C /* Publisher+ConvenienceMethods.swift in Sources */,
 			);
