@@ -59,6 +59,8 @@
 		EF1F8CF9281DB500002DE22C /* SeriesListCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF8281DB500002DE22C /* SeriesListCollectionViewDelegate.swift */; };
 		EF1F8CFB281DB6BF002DE22C /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFA281DB6BF002DE22C /* Haptics.swift */; };
 		EF1F8CFF281E067B002DE22C /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */; };
+		EF1F8D02281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */; };
+		EF1F8D05281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D04281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift */; };
 		FFD72C581ACA5D5252D93DD3 /* Pods_MarvelExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2A39FF95B359D5950657FB /* Pods_MarvelExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,8 @@
 		EF1F8CF8281DB500002DE22C /* SeriesListCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		EF1F8CFA281DB6BF002DE22C /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		EF1F8D04281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinatorMock.swift; sourceTree = "<group>"; };
 		FED4EFA89B6C5DC4DF954497 /* Pods-MarvelExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +233,8 @@
 		EF1F8C6F281CE527002DE22C /* MarvelExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
+				EF1F8D03281E0F3C002DE22C /* Mocks */,
+				EF1F8D00281E0DA1002DE22C /* UnitTests */,
 				EF1F8C70281CE527002DE22C /* MarvelExplorerTests.swift */,
 			);
 			path = MarvelExplorerTests;
@@ -486,6 +492,22 @@
 				EF1F8C94281CE773002DE22C /* Publisher+ConvenienceMethods.swift */,
 			);
 			path = Combine;
+			sourceTree = "<group>";
+		};
+		EF1F8D00281E0DA1002DE22C /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		EF1F8D03281E0F3C002DE22C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8D04281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		FCCA23630C8D2DD5846E1BB7 /* Frameworks */ = {
@@ -788,7 +810,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1F8D05281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift in Sources */,
 				EF1F8C71281CE527002DE22C /* MarvelExplorerTests.swift in Sources */,
+				EF1F8D02281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
