@@ -11,16 +11,16 @@ import Combine
 final class SeriesListViewModel: SeriesListViewModelType {
   
   private weak var navigator: SeriesListNavigator?
-  private let useCase: FetchMarvelSeriesUseCaseType
+  private let fetchSeriesUseCase: FetchMarvelSeriesUseCaseType
   private let coverLoaderUseCase: LoadCoverUseCaseType
   private var cancellableBag = Set<AnyCancellable>()
   private var series: [SeriesListItemViewModel] = []
 
   
-  init(useCase: FetchMarvelSeriesUseCaseType,
+  init(fetchSeriesUseCase: FetchMarvelSeriesUseCaseType,
        coverLoaderUseCase: LoadCoverUseCaseType,
        navigator: SeriesListNavigator) {
-    self.useCase = useCase
+    self.fetchSeriesUseCase = fetchSeriesUseCase
     self.coverLoaderUseCase = coverLoaderUseCase
     self.navigator = navigator
   }
@@ -30,15 +30,14 @@ final class SeriesListViewModel: SeriesListViewModelType {
     
     //MARK: - on View Appear
     let series = input.onAppear
-      .flatMapLatest { self.useCase.fetchSeries() }
-      .map { result -> SeriesListState in
+      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
+      .map { [weak self] result -> SeriesListState in
+        //for safety purposes, no use for unowned
+        guard let self = self else { return .success([]) }
+
         switch result {
         case .success(let items):
-          let seriesViewModels = items.map { SeriesListItemViewModel(series: $0,
-                                                                     imageLoader: { series in
-            return self.coverLoaderUseCase.loadSeriesCover(for: series)
-            
-          })}
+          let seriesViewModels = self.viewModels(from: items)
           self.series = seriesViewModels
           return SeriesListState.success(seriesViewModels)
         case .failure(let error):
@@ -55,17 +54,15 @@ final class SeriesListViewModel: SeriesListViewModelType {
     
     //MARK: - Handle page more Fetching
    let pageSeries = input.onPageRequest
-      .print("FETCHING MORE PAGE!!")
-      .flatMapLatest { self.useCase.fetchSeries() }
-      .map { result -> SeriesListState in
+      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
+      .map { [weak self] result -> SeriesListState in
+        //for safety purposes, no use for unowned
+        guard let self = self else { return .success([]) }
+        
         switch result {
         case .success(let items):
           //newSeriesViewModels  Will contain already fetched Series
-          let newSeriesViewModels = items.map { SeriesListItemViewModel(series: $0,
-                                                                        imageLoader: { series in
-            return self.coverLoaderUseCase.loadSeriesCover(for: series)
-            
-          })}
+          let newSeriesViewModels =  self.viewModels(from: items)
           
           self.series = newSeriesViewModels
           return SeriesListState.success(self.series)
@@ -77,12 +74,12 @@ final class SeriesListViewModel: SeriesListViewModelType {
 
     //MARK: - Loading Handling
     let loadingActions = Publishers.Merge(input.onPageRequest, input.onAppear)
-      .print("Hello page Request")
+      .print("Should ShowLoading")
       .map {_ in return SeriesListState.loading }
       .eraseToAnyPublisher()
     
     return Publishers
-      .Merge4(pageSeries, loadingActions, series, filteredSeries)
+      .Merge4(loadingActions,pageSeries, series, filteredSeries)
       .removeDuplicates()
       .eraseToAnyPublisher()
   }
@@ -93,19 +90,26 @@ final class SeriesListViewModel: SeriesListViewModelType {
   /// - Returns: SeriesListState
   func filterSeries(query: String) -> AnyPublisher<SeriesListState,Never> {
     if query == "" { return .just(SeriesListState.success(series)) }
-    return useCase.filterSeries(query: query)
-      .map { result ->  SeriesListState in
+    return fetchSeriesUseCase.filterSeries(query: query)
+      .map { [weak self] result -> SeriesListState in
+        //for safety purposes, no use for unowned
+        guard let self = self else { return .success([]) }
+
         switch result {
         case .success(let items):
-          return SeriesListState.success(items.map { SeriesListItemViewModel(series: $0,
-                                                                                                     imageLoader: { series in
-          return self.coverLoaderUseCase.loadSeriesCover(for: series)
-          
-        })}
-)
+          return SeriesListState.success(self.viewModels(from: items))
         case .failure(let error): return SeriesListState.failure(error)
         }
       }.eraseToAnyPublisher()
         
   }
+  
+func viewModels(from items: [Series]) -> [SeriesListItemViewModel] {
+    return items.map { SeriesListItemViewModel(series: $0,
+                                               imageLoader: { series in
+      return self.coverLoaderUseCase.loadSeriesCover(for: series)
+      
+    })}
+  }
+  
 }

@@ -1,5 +1,5 @@
 //
-//  SeriesCoverRepository.swift
+//  MarvelSeriesCoverRepository.swift
 //  MarvelExplorer
 //
 //  Created by Mostfa on 30/04/2022.
@@ -11,7 +11,7 @@ import UIKit.UIImage
 
 
 /// Used to provide a cover data for a series
-protocol SeriesCoverRepository {
+protocol MarvelSeriesCoverRepository {
   func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?,Never>
   
 }

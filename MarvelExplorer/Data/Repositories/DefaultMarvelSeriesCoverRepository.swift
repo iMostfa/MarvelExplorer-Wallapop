@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import UIKit.UIImage
 
-final class DefaultSeriesCoverRepository {
+final class DefaultMarvelSeriesCoverRepository {
   
   private let imageLoader: ImageLoaderServiceType
   
@@ -20,7 +20,7 @@ final class DefaultSeriesCoverRepository {
   
 }
 
-extension DefaultSeriesCoverRepository: SeriesCoverRepository {
+extension DefaultMarvelSeriesCoverRepository: MarvelSeriesCoverRepository {
   
   func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?, Never> {
     //TODO: Better handling for the errors.

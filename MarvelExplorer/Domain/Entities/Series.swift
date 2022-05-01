@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a single Marvel Series.
-struct Series: Identifiable {
+struct Series: Identifiable, Equatable {
   let name: String
   let id: Int
   let description: String?

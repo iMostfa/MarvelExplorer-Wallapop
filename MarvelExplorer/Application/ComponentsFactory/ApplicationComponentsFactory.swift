@@ -13,7 +13,7 @@ final class ApplicationComponentsFactory {
   
   private let servicesProvider: ServicesProvider
   
-  fileprivate lazy var useCase: DefaultFetchMarvelSeriesUseCaseType = .init(seriesRepository: servicesProvider.seriesRepository)
+  fileprivate lazy var useCase: DefaultFetchMarvelSeriesUseCase = .init(seriesRepository: servicesProvider.seriesRepository)
   fileprivate lazy var coverLoaderUseCase: LoadCoverUseCaseType = LoadSeriesCoverUseCase.init(coversRepository: servicesProvider.imageLoaderRepository)
 
   
@@ -26,7 +26,7 @@ final class ApplicationComponentsFactory {
 extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProvider {
   func seriesListNavigationController(navigator: SeriesListNavigator) -> UINavigationController {
 
-    let seriesListVC = SeriesListViewController(viewModel: SeriesListViewModel.init(useCase: useCase,
+    let seriesListVC = SeriesListViewController(viewModel: SeriesListViewModel.init(fetchSeriesUseCase: useCase,
                                                                                     coverLoaderUseCase: coverLoaderUseCase,
                                                                                     navigator: navigator))
     

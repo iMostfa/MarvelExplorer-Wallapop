@@ -53,7 +53,7 @@
 		EF1F8CED281D2AEE002DE22C /* SeriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CEC281D2AEE002DE22C /* SeriesListView.swift */; };
 		EF1F8CEF281D2B3E002DE22C /* SeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CEE281D2B3E002DE22C /* SeriesCollectionViewCell.swift */; };
 		EF1F8CF1281D2B7D002DE22C /* SeriesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF0281D2B7D002DE22C /* SeriesCellView.swift */; };
-		EF1F8CF3281D38FD002DE22C /* DefaultSeriesCoverRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF2281D38FD002DE22C /* DefaultSeriesCoverRepository.swift */; };
+		EF1F8CF3281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF2281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift */; };
 		EF1F8CF5281D3C0A002DE22C /* LoadCoverUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF4281D3C0A002DE22C /* LoadCoverUseCase.swift */; };
 		EF1F8CF7281DAE04002DE22C /* URL+HTTPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF6281DAE04002DE22C /* URL+HTTPS.swift */; };
 		EF1F8CF9281DB500002DE22C /* SeriesListCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF8281DB500002DE22C /* SeriesListCollectionViewDelegate.swift */; };
@@ -61,6 +61,22 @@
 		EF1F8CFF281E067B002DE22C /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */; };
 		EF1F8D02281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */; };
 		EF1F8D05281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D04281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift */; };
+		EF1F8D07281E145F002DE22C /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D06281E145F002DE22C /* URLProtocolMock.swift */; };
+		EF1F8D09281E14E7002DE22C /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D08281E14E7002DE22C /* NetworkServiceMock.swift */; };
+		EF1F8D0B281E15AF002DE22C /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8D0A281E15AF002DE22C /* NetworkServiceTests.swift */; };
+		EF2ADB84281E17B600D42C97 /* SeriesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = EF2ADB83281E17B600D42C97 /* SeriesResponse.json */; };
+		EF92610C281E4AD5001BBFF4 /* FilteredSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = EF92610B281E4AD5001BBFF4 /* FilteredSeries.json */; };
+		EF926112281E5AF2001BBFF4 /* SeriesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF926111281E5AF2001BBFF4 /* SeriesListViewModelTests.swift */; };
+		EF926115281E5B4B001BBFF4 /* SeriesListNavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF926114281E5B4B001BBFF4 /* SeriesListNavigatorMock.swift */; };
+		EF926117281E5D14001BBFF4 /* LoadSeriesCoverUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF926116281E5D14001BBFF4 /* LoadSeriesCoverUseCaseMock.swift */; };
+		EFB055B7281E2D4E00608B9D /* MarvelSeriesRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055B6281E2D4E00608B9D /* MarvelSeriesRepositoryMock.swift */; };
+		EFB055BF281E31A200608B9D /* Decodable+loadFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055BE281E31A200608B9D /* Decodable+loadFromFile.swift */; };
+		EFB055C1281E352200608B9D /* ImageLoaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055C0281E352200608B9D /* ImageLoaderMock.swift */; };
+		EFB055C4281E368B00608B9D /* MarvelSeriesCoverRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055C3281E368B00608B9D /* MarvelSeriesCoverRepositoryTests.swift */; };
+		EFB055C7281E36BE00608B9D /* SeriesCoverRepositoryTypeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055C6281E36BE00608B9D /* SeriesCoverRepositoryTypeMock.swift */; };
+		EFB055CB281E3E0300608B9D /* FetchMarvelSeriesUseCaseTypeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055CA281E3E0300608B9D /* FetchMarvelSeriesUseCaseTypeMock.swift */; };
+		EFB055CE281E40CA00608B9D /* FetchMarvelSeriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055CD281E40CA00608B9D /* FetchMarvelSeriesUseCaseTests.swift */; };
+		EFF4E47B281E49C200D5CFE4 /* MarvelSeriesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB055B8281E2F3D00608B9D /* MarvelSeriesRepositoryTests.swift */; };
 		FFD72C581ACA5D5252D93DD3 /* Pods_MarvelExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2A39FF95B359D5950657FB /* Pods_MarvelExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,7 +154,7 @@
 		EF1F8CEC281D2AEE002DE22C /* SeriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListView.swift; sourceTree = "<group>"; };
 		EF1F8CEE281D2B3E002DE22C /* SeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF1F8CF0281D2B7D002DE22C /* SeriesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCellView.swift; sourceTree = "<group>"; };
-		EF1F8CF2281D38FD002DE22C /* DefaultSeriesCoverRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSeriesCoverRepository.swift; sourceTree = "<group>"; };
+		EF1F8CF2281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMarvelSeriesCoverRepository.swift; sourceTree = "<group>"; };
 		EF1F8CF4281D3C0A002DE22C /* LoadCoverUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCoverUseCase.swift; sourceTree = "<group>"; };
 		EF1F8CF6281DAE04002DE22C /* URL+HTTPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+HTTPS.swift"; sourceTree = "<group>"; };
 		EF1F8CF8281DB500002DE22C /* SeriesListCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +162,22 @@
 		EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinatorTests.swift; sourceTree = "<group>"; };
 		EF1F8D04281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinatorMock.swift; sourceTree = "<group>"; };
+		EF1F8D06281E145F002DE22C /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		EF1F8D08281E14E7002DE22C /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		EF1F8D0A281E15AF002DE22C /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		EF2ADB83281E17B600D42C97 /* SeriesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeriesResponse.json; sourceTree = "<group>"; };
+		EF92610B281E4AD5001BBFF4 /* FilteredSeries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredSeries.json; sourceTree = "<group>"; };
+		EF926111281E5AF2001BBFF4 /* SeriesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListViewModelTests.swift; sourceTree = "<group>"; };
+		EF926114281E5B4B001BBFF4 /* SeriesListNavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListNavigatorMock.swift; sourceTree = "<group>"; };
+		EF926116281E5D14001BBFF4 /* LoadSeriesCoverUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSeriesCoverUseCaseMock.swift; sourceTree = "<group>"; };
+		EFB055B6281E2D4E00608B9D /* MarvelSeriesRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSeriesRepositoryMock.swift; sourceTree = "<group>"; };
+		EFB055B8281E2F3D00608B9D /* MarvelSeriesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSeriesRepositoryTests.swift; sourceTree = "<group>"; };
+		EFB055BE281E31A200608B9D /* Decodable+loadFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+loadFromFile.swift"; sourceTree = "<group>"; };
+		EFB055C0281E352200608B9D /* ImageLoaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderMock.swift; sourceTree = "<group>"; };
+		EFB055C3281E368B00608B9D /* MarvelSeriesCoverRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSeriesCoverRepositoryTests.swift; sourceTree = "<group>"; };
+		EFB055C6281E36BE00608B9D /* SeriesCoverRepositoryTypeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCoverRepositoryTypeMock.swift; sourceTree = "<group>"; };
+		EFB055CA281E3E0300608B9D /* FetchMarvelSeriesUseCaseTypeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMarvelSeriesUseCaseTypeMock.swift; sourceTree = "<group>"; };
+		EFB055CD281E40CA00608B9D /* FetchMarvelSeriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMarvelSeriesUseCaseTests.swift; sourceTree = "<group>"; };
 		FED4EFA89B6C5DC4DF954497 /* Pods-MarvelExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +265,8 @@
 		EF1F8C6F281CE527002DE22C /* MarvelExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
+				EFB055BC281E319400608B9D /* Utils */,
+				EF1F8D0C281E1737002DE22C /* Responses */,
 				EF1F8D03281E0F3C002DE22C /* Mocks */,
 				EF1F8D00281E0DA1002DE22C /* UnitTests */,
 				EF1F8C70281CE527002DE22C /* MarvelExplorerTests.swift */,
@@ -400,7 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				EF1F8CC4281D047D002DE22C /* DefaultSeriesRepository.swift */,
-				EF1F8CF2281D38FD002DE22C /* DefaultSeriesCoverRepository.swift */,
+				EF1F8CF2281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -497,7 +531,11 @@
 		EF1F8D00281E0DA1002DE22C /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */,
+				EF926110281E5ADE001BBFF4 /* ViewModelsTests */,
+				EFB055C8281E3DA700608B9D /* UseCaseTests */,
+				EFB055C2281E367F00608B9D /* RepositoriesTests */,
+				EF92610D281E5A79001BBFF4 /* ApplicationTests */,
+				EF92610E281E5A86001BBFF4 /* NetworkTests */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -505,9 +543,115 @@
 		EF1F8D03281E0F3C002DE22C /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				EF926113281E5B32001BBFF4 /* Navigator Mocks */,
+				EFB055C9281E3DE600608B9D /* UseCase Mocks */,
 				EF1F8D04281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift */,
+				EF1F8D06281E145F002DE22C /* URLProtocolMock.swift */,
+				EFB055CC281E40A200608B9D /* Services Mock */,
+				EFB055C5281E36AD00608B9D /* Repositories Mocks */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		EF1F8D0C281E1737002DE22C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				EF2ADB83281E17B600D42C97 /* SeriesResponse.json */,
+				EF92610B281E4AD5001BBFF4 /* FilteredSeries.json */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		EF92610D281E5A79001BBFF4 /* ApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8D01281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift */,
+			);
+			path = ApplicationTests;
+			sourceTree = "<group>";
+		};
+		EF92610E281E5A86001BBFF4 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8D0A281E15AF002DE22C /* NetworkServiceTests.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		EF926110281E5ADE001BBFF4 /* ViewModelsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF926111281E5AF2001BBFF4 /* SeriesListViewModelTests.swift */,
+			);
+			path = ViewModelsTests;
+			sourceTree = "<group>";
+		};
+		EF926113281E5B32001BBFF4 /* Navigator Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EF926114281E5B4B001BBFF4 /* SeriesListNavigatorMock.swift */,
+			);
+			path = "Navigator Mocks";
+			sourceTree = "<group>";
+		};
+		EFB055BC281E319400608B9D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EFB055BD281E319600608B9D /* Extentions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EFB055BD281E319600608B9D /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				EFB055BE281E31A200608B9D /* Decodable+loadFromFile.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		EFB055C2281E367F00608B9D /* RepositoriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFB055B8281E2F3D00608B9D /* MarvelSeriesRepositoryTests.swift */,
+				EFB055C3281E368B00608B9D /* MarvelSeriesCoverRepositoryTests.swift */,
+			);
+			path = RepositoriesTests;
+			sourceTree = "<group>";
+		};
+		EFB055C5281E36AD00608B9D /* Repositories Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB055B6281E2D4E00608B9D /* MarvelSeriesRepositoryMock.swift */,
+				EFB055C6281E36BE00608B9D /* SeriesCoverRepositoryTypeMock.swift */,
+			);
+			path = "Repositories Mocks";
+			sourceTree = "<group>";
+		};
+		EFB055C8281E3DA700608B9D /* UseCaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFB055CD281E40CA00608B9D /* FetchMarvelSeriesUseCaseTests.swift */,
+			);
+			path = UseCaseTests;
+			sourceTree = "<group>";
+		};
+		EFB055C9281E3DE600608B9D /* UseCase Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EF926116281E5D14001BBFF4 /* LoadSeriesCoverUseCaseMock.swift */,
+				EFB055CA281E3E0300608B9D /* FetchMarvelSeriesUseCaseTypeMock.swift */,
+			);
+			path = "UseCase Mocks";
+			sourceTree = "<group>";
+		};
+		EFB055CC281E40A200608B9D /* Services Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EFB055C0281E352200608B9D /* ImageLoaderMock.swift */,
+				EF1F8D08281E14E7002DE22C /* NetworkServiceMock.swift */,
+			);
+			path = "Services Mock";
 			sourceTree = "<group>";
 		};
 		FCCA23630C8D2DD5846E1BB7 /* Frameworks */ = {
@@ -638,6 +782,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2ADB84281E17B600D42C97 /* SeriesResponse.json in Resources */,
+				EF92610C281E4AD5001BBFF4 /* FilteredSeries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,7 +908,7 @@
 				EF1F8CC7281D05B9002DE22C /* Resource+MarvelSeries.swift in Sources */,
 				EF1F8CA1281CE9C3002DE22C /* MarvelConstants.swift in Sources */,
 				EF1F8CF7281DAE04002DE22C /* URL+HTTPS.swift in Sources */,
-				EF1F8CF3281D38FD002DE22C /* DefaultSeriesCoverRepository.swift in Sources */,
+				EF1F8CF3281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift in Sources */,
 				EF1F8C9A281CE8D1002DE22C /* NetworkServiceType.swift in Sources */,
 				EF1F8CA4281CEB54002DE22C /* FlowCoordinator.swift in Sources */,
 				EF1F8CAC281CEE53002DE22C /* ReposListNavigator.swift in Sources */,
@@ -810,9 +956,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF926112281E5AF2001BBFF4 /* SeriesListViewModelTests.swift in Sources */,
+				EFB055CE281E40CA00608B9D /* FetchMarvelSeriesUseCaseTests.swift in Sources */,
+				EFB055C1281E352200608B9D /* ImageLoaderMock.swift in Sources */,
+				EFB055BF281E31A200608B9D /* Decodable+loadFromFile.swift in Sources */,
+				EF926115281E5B4B001BBFF4 /* SeriesListNavigatorMock.swift in Sources */,
+				EF1F8D09281E14E7002DE22C /* NetworkServiceMock.swift in Sources */,
+				EFF4E47B281E49C200D5CFE4 /* MarvelSeriesRepositoryTests.swift in Sources */,
+				EFB055C7281E36BE00608B9D /* SeriesCoverRepositoryTypeMock.swift in Sources */,
+				EF926117281E5D14001BBFF4 /* LoadSeriesCoverUseCaseMock.swift in Sources */,
 				EF1F8D05281E0F4B002DE22C /* ApplicationFlowCoordinatorMock.swift in Sources */,
 				EF1F8C71281CE527002DE22C /* MarvelExplorerTests.swift in Sources */,
+				EFB055C4281E368B00608B9D /* MarvelSeriesCoverRepositoryTests.swift in Sources */,
+				EFB055CB281E3E0300608B9D /* FetchMarvelSeriesUseCaseTypeMock.swift in Sources */,
 				EF1F8D02281E0DB9002DE22C /* ApplicationFlowCoordinatorTests.swift in Sources */,
+				EF1F8D0B281E15AF002DE22C /* NetworkServiceTests.swift in Sources */,
+				EF1F8D07281E145F002DE22C /* URLProtocolMock.swift in Sources */,
+				EFB055B7281E2D4E00608B9D /* MarvelSeriesRepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

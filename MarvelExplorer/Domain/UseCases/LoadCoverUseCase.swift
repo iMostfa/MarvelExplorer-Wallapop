@@ -15,9 +15,9 @@ protocol LoadCoverUseCaseType {
 
 final class LoadSeriesCoverUseCase: LoadCoverUseCaseType {
   
-  private let coversRepository: SeriesCoverRepository
+  private let coversRepository: MarvelSeriesCoverRepository
   
-  init(coversRepository: SeriesCoverRepository) {
+  init(coversRepository: MarvelSeriesCoverRepository) {
     self.coversRepository = coversRepository
   }
   

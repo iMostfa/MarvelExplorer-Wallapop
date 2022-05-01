@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Thumbnail {
+public struct Thumbnail: Equatable {
   public let path:String
   public let `extension`:String
   

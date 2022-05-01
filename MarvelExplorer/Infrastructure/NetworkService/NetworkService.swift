@@ -17,11 +17,10 @@ final class NetworkService: NetworkServiceType {
   }
 
   @discardableResult
-  func load<Loadable>(_ resource: Resource<Loadable>?) -> AnyPublisher<Loadable, Error> {
-    guard let request = resource?.request else {
+  func load<Loadable>(_ resource: Resource<Loadable>) -> AnyPublisher<Loadable, Error> {
+    guard let request = resource.request else {
       return .fail(NetworkError.invalidRequest)
     }
-    // - Authorisation shouldn't placed here
     return session.dataTaskPublisher(for: request)
       .mapError { _ in NetworkError.invalidRequest }
       .flatMap { data, response -> AnyPublisher<Data, Error> in

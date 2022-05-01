@@ -1,5 +1,5 @@
 //
-//  DefaultSeriesRepository.swift
+//  DefaultMarvelSeriesRepository.swift
 //  MarvelExplorer
 //
 //  Created by Mostfa on 30/04/2022.
@@ -9,10 +9,13 @@
 
 import Foundation
 import Combine
-final class DefaultSeriesRepository {
+
+typealias MarvelSeriesDTOResponse = MarvelResponse<SeriesDTO>
+
+final class DefaultMarvelSeriesRepository {
   
-  private let networkService: NetworkServiceType
-  private var seriesPaginator: MarvelPaginator<SeriesDTO>?
+  let networkService: NetworkServiceType
+  private(set) var seriesPaginator: MarvelPaginator<SeriesDTO>?
   private var series: [SeriesDTO] = []
 
   
@@ -23,7 +26,8 @@ final class DefaultSeriesRepository {
   
 }
 
-extension DefaultSeriesRepository: MarvelSeriesRepository {
+extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
+
   func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> {
     
      let filteredSeries = series.filter { seriesDTO in
@@ -38,12 +42,9 @@ extension DefaultSeriesRepository: MarvelSeriesRepository {
     return .just(.success(filteredSeries))
   }
   
-  
-
-  
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return networkService
-      .load(Resource<MarvelResponse<SeriesDTO>>.getSeries(offset: self.seriesPaginator?.nextOffset,
+      .load(Resource<MarvelSeriesDTOResponse>.getSeries(offset: self.seriesPaginator?.nextOffset,
                                                           limit: self.seriesPaginator?.limit))
       .subscribe(on: Scheduler.backgroundWorkScheduler)
       .receive(on: Scheduler.mainScheduler)
