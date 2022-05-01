@@ -15,13 +15,13 @@ struct SeriesDTO: Codable {
   let resultDescription: String?
   let startYear, endYear: Int
   let type: String
-  let modified: Date
+//  let modified: Date
   let thumbnail: ThumbnailDTO
   
   enum CodingKeys: String, CodingKey {
     case id, title
     case resultDescription = "description"
-    case startYear, endYear, type, modified, thumbnail
+    case startYear, endYear, type, thumbnail
   }
   
 }
@@ -33,7 +33,7 @@ extension SeriesDTO {
           id: id,
           description: resultDescription,
           thumbnail: thumbnail.toDomain(),
-          modified: modified.description,
+          modified: "modified.description",
           startYear: startYear,
           endYear: endYear,
           type: type,

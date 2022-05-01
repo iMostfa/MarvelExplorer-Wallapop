@@ -13,6 +13,10 @@ final class ApplicationComponentsFactory {
   
   private let servicesProvider: ServicesProvider
   
+  fileprivate lazy var useCase: DefaultFetchMarvelSeriesUseCaseType = .init(seriesRepository: servicesProvider.seriesRepository)
+  fileprivate lazy var coverLoaderUseCase: LoadCoverUseCaseType = LoadSeriesCoverUseCase.init(coversRepository: servicesProvider.imageLoaderRepository)
+
+  
   init(servicesProvider: ServicesProvider = ServicesProvider.defaultProvider) {
     self.servicesProvider = servicesProvider
   }
@@ -21,15 +25,16 @@ final class ApplicationComponentsFactory {
 
 extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProvider {
   func seriesListNavigationController(navigator: SeriesListNavigator) -> UINavigationController {
-    //Will be replaced later
-    let vc = UIViewController.init()
-    vc.view.backgroundColor = .blue
-    
-    let nv = UINavigationController.init()
-    nv.view.backgroundColor = .green
-    nv.viewControllers = [vc]
-    return nv
 
+    let seriesListVC = SeriesListViewController(viewModel: SeriesListViewModel.init(useCase: useCase,
+                                                                                    coverLoaderUseCase: coverLoaderUseCase,
+                                                                                    navigator: navigator))
+    
+    let navigationController = UINavigationController(rootViewController: seriesListVC)
+    
+    navigationController.navigationBar.tintColor = .label
+    
+    return navigationController
   }
   
   func seriesDetailsController(_ series: Series) -> UIViewController {

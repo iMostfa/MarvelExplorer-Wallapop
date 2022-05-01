@@ -1,18 +1,20 @@
 //
 //  AccessibilityIdentifiers.swift
-//  GithubRepos
+//  MarvelExplorer
 //
-//  Created by Mostfa on 27/04/2022.
+//  Created by Mostfa on 30/04/2022.
 //
 
 import Foundation
 
-/// Used for Accessibility Support, and UI Testing
+/// NameSpace used for Accessibility Support, and UI Testing
 enum AccessibilityIdentifiers {
 
-  public struct RepositoryList {
-
-
+  public struct SeriesList {
+      public static let searchFieldID = "\(SeriesList.self).searchFieldID"
+      public static let mainViewID = "\(SeriesList.self).mainViewID"
+      public static let cellID = "\(SeriesList.self).cellId"
+      public static let collectionViewID = "\(SeriesList.self).collectionViewID"
   }
 
 }

@@ -31,7 +31,7 @@ final class ImageLoaderService: ImageLoaderServiceType {
         guard let image = image else { return }
         self.cache.insertImage(image, for: url)
       })
-//      .print("Image loading \(url):")
+      .print("Image loading \(url):")
       .eraseToAnyPublisher()
   }
 }
