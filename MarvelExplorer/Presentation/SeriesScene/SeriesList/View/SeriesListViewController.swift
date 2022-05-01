@@ -78,9 +78,11 @@ final class SeriesListViewController: UIViewController {
     switch state {
       
     case .loading:
+      Haptics.play(.light)
       SVProgressHUD.show()
     case .success(let series):
       SVProgressHUD.dismiss()
+      Haptics.play(.light)
       self.update(with: series)
     case .failure:
       assertionFailure("To be implemented: Show alert here..")
