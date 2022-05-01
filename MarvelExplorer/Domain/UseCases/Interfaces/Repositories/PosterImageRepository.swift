@@ -10,7 +10,7 @@ import Combine
 import UIKit.UIImage
 
 
-/// Used to provide a cover data for a repo
+/// Used to provide a cover data for a series
 protocol SeriesCoverRepository {
   func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?,Never>
   
