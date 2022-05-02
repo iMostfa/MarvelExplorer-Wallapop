@@ -16,7 +16,6 @@ final class DefaultMarvelSeriesRepository {
   
   let networkService: NetworkServiceType
   private(set) var seriesPaginator: MarvelPaginator<SeriesDTO>?
-  private var series: [SeriesDTO] = []
 
   
   
@@ -28,19 +27,6 @@ final class DefaultMarvelSeriesRepository {
 
 extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
 
-  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> {
-    
-     let filteredSeries = series.filter { seriesDTO in
-       
-       if seriesDTO.title.contains(query) { return  true }
-       if "\(seriesDTO.endYear)".contains(query) { return  true }
-       if "\(seriesDTO.startYear)".contains(query) { return  true }
-       
-      return false
-     }.map { $0.toDomain() }
-    
-    return .just(.success(filteredSeries))
-  }
   
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return networkService
@@ -50,12 +36,9 @@ extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
       .receive(on: Scheduler.mainScheduler)
       .handleEvents(receiveOutput: { paginator in
         self.seriesPaginator = paginator.data
-        //Note: since we are not editing paginator.data, COW(copy on write) will save us, and no duplication should happen :)
-        self.series = self.series + paginator.data.results
       })
-      .map { _ in self.series }
-      .map({ elements -> Result<[Series],Error> in
-        let e = elements.map { $0.toDomain() }
+      .map({ paginator -> Result<[Series],Error> in
+        let e = paginator.data.results.map { $0.toDomain() }
         return .success(e)
       })
       .catch({ error -> AnyPublisher<Result<[Series],Error>,Never> in

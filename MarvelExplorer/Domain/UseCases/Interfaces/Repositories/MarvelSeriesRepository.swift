@@ -11,7 +11,7 @@ import Combine
 protocol MarvelSeriesRepository {
   
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
-  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never>
+//  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never>
 
 
 }

@@ -43,11 +43,6 @@
             value = "1"
             isEnabled = "YES">
          </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "DYLD_INSERT_LIBRARIES"
-            value = "$(TARGET_BUILD_DIR)/../../MarvelExplorer/Frameworks/AppFramework.framework/AppFramework"
-            isEnabled = "YES">
-         </EnvironmentVariable>
       </EnvironmentVariables>
       <Testables>
          <TestableReference
@@ -59,16 +54,11 @@
                BlueprintName = "MarvelExplorerTests"
                ReferencedContainer = "container:MarvelExplorer.xcodeproj">
             </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF1F8C75281CE527002DE22C"
-               BuildableName = "MarvelExplorerUITests.xctest"
-               BlueprintName = "MarvelExplorerUITests"
-               ReferencedContainer = "container:MarvelExplorer.xcodeproj">
-            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "MarvelSeriesListUITests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

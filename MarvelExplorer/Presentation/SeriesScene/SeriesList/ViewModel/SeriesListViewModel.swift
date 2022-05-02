@@ -14,7 +14,7 @@ final class SeriesListViewModel: SeriesListViewModelType {
   private let fetchSeriesUseCase: FetchMarvelSeriesUseCaseType
   private let coverLoaderUseCase: LoadCoverUseCaseType
   private var cancellableBag = Set<AnyCancellable>()
-  private var series: [SeriesListItemViewModel] = []
+  private var seriesViewModels: [SeriesListItemViewModel] = []
 
   
   init(fetchSeriesUseCase: FetchMarvelSeriesUseCaseType,
@@ -38,7 +38,7 @@ final class SeriesListViewModel: SeriesListViewModelType {
         switch result {
         case .success(let items):
           let seriesViewModels = self.viewModels(from: items)
-          self.series = seriesViewModels
+          self.seriesViewModels += seriesViewModels
           return SeriesListState.success(seriesViewModels)
         case .failure(let error):
          return  SeriesListState.failure(error)
@@ -48,7 +48,7 @@ final class SeriesListViewModel: SeriesListViewModelType {
     
     //MARK: - Handle Searching
     let filteredSeries = input.onSearch
-      .flatMapLatest { self.filterSeries(query: $0) }
+      .flatMapLatest { self.filterSeries(in: self.seriesViewModels, query: $0) }
       .eraseToAnyPublisher()
       
     
@@ -64,8 +64,8 @@ final class SeriesListViewModel: SeriesListViewModelType {
           //newSeriesViewModels  Will contain already fetched Series
           let newSeriesViewModels =  self.viewModels(from: items)
           
-          self.series = newSeriesViewModels
-          return SeriesListState.success(self.series)
+          self.seriesViewModels += newSeriesViewModels
+          return SeriesListState.success(self.seriesViewModels)
         case .failure(let error):
           return  SeriesListState.failure(error)
         }
@@ -88,20 +88,17 @@ final class SeriesListViewModel: SeriesListViewModelType {
   /// IMPORTANT: we are filtering data from the repository, since filtering might be a complex thing and its logic isn't view specific.
   /// - Parameter query: query of search
   /// - Returns: SeriesListState
-  func filterSeries(query: String) -> AnyPublisher<SeriesListState,Never> {
-    if query == "" { return .just(SeriesListState.success(series)) }
-    return fetchSeriesUseCase.filterSeries(query: query)
-      .map { [weak self] result -> SeriesListState in
-        //for safety purposes, no use for unowned
-        guard let self = self else { return .success([]) }
-
-        switch result {
-        case .success(let items):
-          return SeriesListState.success(self.viewModels(from: items))
-        case .failure(let error): return SeriesListState.failure(error)
-        }
-      }.eraseToAnyPublisher()
-        
+  func filterSeries(in viewModels: [SeriesListItemViewModel], query: String) -> AnyPublisher<SeriesListState,Never> {
+    if query == "" { return .just(SeriesListState.success(viewModels)) }
+    
+    let filteredViewModels = viewModels.filter { viewModel in
+      if viewModel.title.contains(query) { return  true }
+      if "\(viewModel.endYear)".contains(query) { return  true }
+      if "\(viewModel.startYear)".contains(query) { return  true }
+      return false
+    }
+    
+    return .just(.success(filteredViewModels)).eraseToAnyPublisher()
   }
   
 func viewModels(from items: [Series]) -> [SeriesListItemViewModel] {

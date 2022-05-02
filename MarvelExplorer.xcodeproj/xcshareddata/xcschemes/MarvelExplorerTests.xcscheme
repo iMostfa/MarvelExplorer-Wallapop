@@ -13,15 +13,6 @@
       shouldUseLaunchSchemeArgsEnv = "NO"
       language = "en"
       region = "ES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF1F8C55281CE525002DE22C"
-            BuildableName = "MarvelExplorer.app"
-            BlueprintName = "MarvelExplorer"
-            ReferencedContainer = "container:MarvelExplorer.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">

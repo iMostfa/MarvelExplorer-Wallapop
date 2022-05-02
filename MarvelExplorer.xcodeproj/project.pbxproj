@@ -1213,10 +1213,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostfa.MarvelExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = MarvelExplorer/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 14.5;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1245,10 +1245,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostfa.MarvelExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = MarvelExplorer/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 14.5;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

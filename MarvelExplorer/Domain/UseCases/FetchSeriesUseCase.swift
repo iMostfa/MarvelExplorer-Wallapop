@@ -11,7 +11,7 @@ import Combine
 
 protocol FetchMarvelSeriesUseCaseType {
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
-  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never>
+//  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never>
 }
 
 final class DefaultFetchMarvelSeriesUseCase: FetchMarvelSeriesUseCaseType {
@@ -22,9 +22,9 @@ final class DefaultFetchMarvelSeriesUseCase: FetchMarvelSeriesUseCaseType {
     self.seriesRepository = seriesRepository
   }
   
-  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> {
-    return seriesRepository.filterSeries(query: query)
-  }
+//  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> {
+//    return seriesRepository.filterSeries(query: query)
+//  }
   
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return seriesRepository.fetchSeries()
