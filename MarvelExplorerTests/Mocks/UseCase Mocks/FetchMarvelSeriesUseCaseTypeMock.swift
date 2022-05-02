@@ -17,7 +17,7 @@ class FetchMarvelSeriesUseCaseTypeMock: FetchMarvelSeriesUseCaseType {
   //MARK: - fetchSeries
   var fetchSeriesCallsCount = 0
   
-  var searchMoviesWasCalled: Bool {
+  var searchSeriessWasCalled: Bool {
     return fetchSeriesCallsCount > 0
   }
   

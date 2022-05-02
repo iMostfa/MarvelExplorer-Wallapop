@@ -6,6 +6,7 @@ target 'MarvelExplorer' do
   use_frameworks!
   pod 'SnapKit'
   pod 'SVProgressHUD'
+#  pod 'EarlGreyApp'
 
   # Pods for MarvelExplorer
 
@@ -14,9 +15,6 @@ target 'MarvelExplorer' do
     # Pods for testing
   end
 
-  target 'MarvelExplorerUITests' do
-    # Pods for testing
-  end
 
   plugin 'cocoapods-keys', {
     :project => "MarvelExplorer",

@@ -41,7 +41,7 @@ class SeriesListView: UIView {
   
   func setupView() {
     searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.SeriesList.searchFieldID
-    accessibilityIdentifier = AccessibilityIdentifiers.SeriesList.mainViewID
+    self.accessibilityIdentifier = AccessibilityIdentifiers.SeriesList.mainViewID
     seriesCollectionView.accessibilityIdentifier = AccessibilityIdentifiers.SeriesList.collectionViewID
     addSubview(seriesCollectionView)
   }

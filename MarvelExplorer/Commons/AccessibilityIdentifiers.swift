@@ -12,7 +12,7 @@ enum AccessibilityIdentifiers {
 
   public struct SeriesList {
       public static let searchFieldID = "\(SeriesList.self).searchFieldID"
-      public static let mainViewID = "\(SeriesList.self).mainViewID"
+      public static let mainViewID = "mainViewID"
       public static let cellID = "\(SeriesList.self).cellId"
       public static let collectionViewID = "\(SeriesList.self).collectionViewID"
   }

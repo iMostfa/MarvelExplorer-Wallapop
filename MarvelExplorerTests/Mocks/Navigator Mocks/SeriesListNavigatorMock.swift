@@ -20,12 +20,12 @@ class SeriesListNavigatorMock: SeriesListNavigator {
   }
   
   var showDetailsForClosure: ((Series) -> Void)?
-  var showDetailsForReceivedMovieId: Series?
+  var showDetailsForReceivedSeriesId: Series?
   var showDetailsForReceivedInvocations: [Series] = []
 
   func showDetails(for series: Series) {
     showDetailsForSeriesCallsCount += 1
-    showDetailsForReceivedMovieId = series
+    showDetailsForReceivedSeriesId = series
     showDetailsForReceivedInvocations.append(series)
     showDetailsForClosure?(series)
   }

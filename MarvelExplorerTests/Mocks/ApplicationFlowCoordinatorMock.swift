@@ -23,7 +23,7 @@ class ApplicationFlowCoordinatorDependencyProviderMock: ApplicationFlowCoordinat
     return seriesListNavigationControllerReturnValue!
   }
   
-  func movieDetailsController(_ movieId: Int) -> UIViewController {
+  func seriesDetailsController(_ seriesID: Int) -> UIViewController {
     return seriesDetailsControllerReturnValue!
   }
 }
