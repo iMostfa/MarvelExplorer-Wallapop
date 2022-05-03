@@ -42,7 +42,6 @@ final class SeriesDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     bind(to: viewModel)
-    detailsView.configureUI()
     onAppearPublisher.send()
   }
   
@@ -67,7 +66,6 @@ final class SeriesDetailViewController: UIViewController {
       switch state {
         
       case .success(let viewModel):
-        print("")
         self.configureTableView(with: viewModel)
         self.detailsView.tableHeaderView.bind(to: viewModel.cover)
       }

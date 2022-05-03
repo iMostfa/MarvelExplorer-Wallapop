@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Combine
 
-class SeriesListView: UIView {
+final class SeriesListView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)

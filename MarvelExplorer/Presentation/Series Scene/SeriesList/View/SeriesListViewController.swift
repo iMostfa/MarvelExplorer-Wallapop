@@ -128,9 +128,9 @@ final class SeriesListViewController: UIViewController {
 extension SeriesListViewController {
   
   //MARK: - Collection View Data Source
-  func makeDataSource() -> SeriesDataSource {
+  private func makeDataSource() -> SeriesListCollectionViewDataSource {
     
-    let dataSource = SeriesDataSource.init(collectionView: seriesListView.seriesCollectionView) { collectionView, indexPath, viewModel in
+    let dataSource = SeriesListCollectionViewDataSource.init(collectionView: seriesListView.seriesCollectionView) { collectionView, indexPath, viewModel in
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SeriesCollectionViewCell.reuseIdentifier,
                                                           for: indexPath) as? SeriesCollectionViewCell
       else { assertionFailure("Failed to dequeue")

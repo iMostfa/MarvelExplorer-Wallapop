@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct RoundedCellViewComponents {
+struct SeriesCellViewComponents {
   let title: UILabel = {
     let title = UILabel.init()
     title.adjustsFontForContentSizeCategory = true

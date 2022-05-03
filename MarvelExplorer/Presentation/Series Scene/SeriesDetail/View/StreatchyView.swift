@@ -28,7 +28,10 @@ final class StretchyHeaderView: UIView {
     return imageView
   }()
   
+  //MARK: - View Animator
   private var viewAnimator: UIViewPropertyAnimator?
+  var blurFactor = 0.4
+
 
   //MARK: - View Constraints
 
@@ -37,6 +40,7 @@ final class StretchyHeaderView: UIView {
   private var containerView = UIView()
   private var containerViewHeight = NSLayoutConstraint()
   private var originalImageHeight: CGFloat?
+  var heightBeforeDragging: CGFloat = .infinity
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -75,7 +79,7 @@ final class StretchyHeaderView: UIView {
   }
   
   /// Sets up view constraints
-  func setViewConstraints() {
+  private func setViewConstraints() {
     NSLayoutConstraint.activate([
       widthAnchor.constraint (equalTo: containerView.widthAnchor),
       centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -96,12 +100,8 @@ final class StretchyHeaderView: UIView {
     imageViewHeight=imageView.heightAnchor.constraint(equalTo:containerView.heightAnchor)
     imageViewHeight.isActive = true
     originalImageHeight = -imageViewBottom.constant
-    print(self.frame)
   }
-  
-  var heightBeforeDragging: CGFloat = .infinity
-  var blurFactor = 0.4
-  
+    
   public func scrollViewDidEndDragging(scrollView: UIScrollView) {
     self.heightBeforeDragging = .infinity
   }

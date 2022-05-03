@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ItemDetailCell: UITableViewCell {
+final class ItemDetailCell: UITableViewCell {
   static let cellID = "ItemDetailCell"
   
   let detailsText: UILabel = {
@@ -25,7 +25,7 @@ class ItemDetailCell: UITableViewCell {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  func configure() {
+ private func configure() {
     
     let inset = 10
     

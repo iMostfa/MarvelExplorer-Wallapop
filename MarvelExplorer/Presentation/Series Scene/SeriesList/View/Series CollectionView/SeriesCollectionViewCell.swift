@@ -10,14 +10,14 @@ import UIKit
 import SnapKit
 import Combine
 
-class SeriesCollectionViewCell: UICollectionViewCell {
+final class SeriesCollectionViewCell: UICollectionViewCell {
   static let reuseIdentifier = "RoundedCellReuseIdentifier"
   
   var imageLoader: ImageLoaderServiceType?
   var imageURL: String?
   var currentImageDownloader: AnyCancellable?
   var dateDownloader: AnyCancellable?
-  var seriesCellView: RoundedCellViewComponents = .init()
+  var seriesCellView: SeriesCellViewComponents = .init()
   
   // Inits
   override init(frame: CGRect) {

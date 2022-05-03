@@ -8,18 +8,8 @@
 import UIKit
 import Combine
 
-typealias SeriesSnapshot = NSDiffableDataSourceSnapshot<SeriesDataSourceSection,SeriesListItemViewModel>
 
-  enum SeriesDataSourceSection {
-    case main
-  }
-
-
-/// SeriesDataSource is a subclass of UICollectionViewDiffableDataSource<SeriesDataSourceSection, SeriesListItemViewModel>, incase some Data sources functions needed to be implemented.
-/// and as a type-alias around the generic.
-class SeriesDataSource: UICollectionViewDiffableDataSource<SeriesDataSourceSection, SeriesListItemViewModel> { }
-
-class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate {
+final class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate {
   
   private var onPageRequest: PassthroughSubject<Void, Never>?
   private var onItemSelected: PassthroughSubject<Int, Never>?
@@ -44,8 +34,11 @@ class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     
     if let dataSourceCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: 0) {
-      if indexPath.row == dataSourceCount - 3 {
-        print("Fetching more pages")
+     
+      let fetchPostsThreshold = 3
+     
+      if indexPath.row == dataSourceCount - fetchPostsThreshold {
+        print("should fetch more pages")
         onPageRequest?.send()
       
       }

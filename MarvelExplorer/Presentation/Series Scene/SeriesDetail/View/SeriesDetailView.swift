@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SeriesDetailsView: UIView {
+final class SeriesDetailsView: UIView {
   
   let tableView: UITableView = {
     let tableView = UITableView.init(frame: .zero, style: UITableView.Style.insetGrouped)
@@ -22,6 +22,19 @@ class SeriesDetailsView: UIView {
     return header
   }()
   
+  init() {
+    super.init(frame: .zero)
+    configureUI()
+  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    configureUI()
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   func configureUI() {
     addSubview(tableView)
     tableView.tableHeaderView = tableHeaderView
@@ -31,5 +44,7 @@ class SeriesDetailsView: UIView {
       make.edges.equalToSuperview()
     }
   }
+  
+
   
 }

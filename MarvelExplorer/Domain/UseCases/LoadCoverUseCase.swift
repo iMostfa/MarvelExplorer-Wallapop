@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import UIKit.UIImage
 
-protocol LoadCoverUseCaseType {
+protocol LoadCoverUseCaseType: AnyObject {
   func loadSeriesCover(for series: Series) -> AnyPublisher<UIImage?, Never>
 }
 

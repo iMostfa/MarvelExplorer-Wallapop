@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol SeriesDetailViewModelType {
+protocol SeriesDetailViewModelType: AnyObject {
   func transform(input: SeriesDetailViewModelInput) -> SeriesDetailViewModelOutput
 }
 

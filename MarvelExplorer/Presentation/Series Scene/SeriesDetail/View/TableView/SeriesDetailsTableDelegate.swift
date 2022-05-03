@@ -8,7 +8,7 @@
 import UIKit
 
 
-class SeriesDetailsTableViewDelegate: NSObject, UITableViewDelegate {
+final class SeriesDetailsTableViewDelegate: NSObject, UITableViewDelegate {
   
   deinit {
     print("Table View Delegate was removed.")

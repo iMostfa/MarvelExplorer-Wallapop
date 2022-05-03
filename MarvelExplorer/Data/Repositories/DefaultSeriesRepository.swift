@@ -16,8 +16,6 @@ final class DefaultMarvelSeriesRepository {
   
   let networkService: NetworkServiceType
   private(set) var seriesPaginator: MarvelPaginator<SeriesDTO>?
-
-  
   
   init(networkService: NetworkServiceType) {
     self.networkService = networkService
