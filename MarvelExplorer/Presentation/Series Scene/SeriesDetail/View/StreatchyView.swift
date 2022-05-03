@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 import Combine
 /// Stretchy table view header
-///
 final class StretchyHeaderView: UIView {
   
   //MARK: - View properties

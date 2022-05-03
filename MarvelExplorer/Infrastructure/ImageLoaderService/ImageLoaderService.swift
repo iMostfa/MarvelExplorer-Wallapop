@@ -10,7 +10,7 @@ import UIKit.UIImage
 import Combine
 
 // MARK: - ImageLoaderServiceType
-protocol ImageLoaderServiceType: AnyObject, AutoMockable {
+protocol ImageLoaderServiceType: AnyObject {
   func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never>
 }
 

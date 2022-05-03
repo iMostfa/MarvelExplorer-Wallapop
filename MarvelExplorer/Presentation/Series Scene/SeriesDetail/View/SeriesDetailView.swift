@@ -18,7 +18,7 @@ class SeriesDetailsView: UIView {
   lazy var tableHeaderView: StretchyHeaderView = {
     let header = StretchyHeaderView(frame: CGRect (x: 0, y: 0,
                                                    width: self.frame.size.width,
-                                                   height: 120))
+                                                   height: 250))
     return header
   }()
   
