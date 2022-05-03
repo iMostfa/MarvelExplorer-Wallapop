@@ -38,7 +38,7 @@ struct RoundedCellViewComponents {
     subtitle.translatesAutoresizingMaskIntoConstraints = false
     subtitle.numberOfLines = 0
     subtitle.lineBreakMode = .byWordWrapping
-    subtitle.textAlignment = .left
+    subtitle.textAlignment = .right
     subtitle.font = .systemFont(ofSize: 9, weight: .bold)
     return subtitle
   }()

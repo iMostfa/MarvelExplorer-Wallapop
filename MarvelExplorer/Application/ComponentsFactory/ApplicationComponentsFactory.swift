@@ -38,8 +38,8 @@ extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProv
   }
   
   func seriesDetailsController(_ series: Series) -> UIViewController {
-    let detailsVC = UIViewController.init()
-    detailsVC.view.backgroundColor = .blue
+    let viewModel = SeriesDetailViewModel.init(series: series, coverLoaderUseCase: coverLoaderUseCase)
+    let detailsVC = SeriesDetailViewController.init(viewModel: viewModel)
     return detailsVC
   }
   

@@ -17,6 +17,6 @@ struct Series: Identifiable, Equatable {
   let startYear: Int
   let endYear: Int
   let type: String
-  let comics: Int?
-  
+  let creators: [Creator]
+
 }

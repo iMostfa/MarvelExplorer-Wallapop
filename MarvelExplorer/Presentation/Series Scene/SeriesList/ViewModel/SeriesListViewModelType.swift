@@ -34,6 +34,6 @@ extension SeriesListState: Equatable {
 struct SeriesListViewModelInput {
   let onAppear: AnyPublisher<Void, Never>
   let onSearch: AnyPublisher<String, Never>
-  let onSeriesSelection: AnyPublisher<Series, Never>
+  let onSeriesSelection: AnyPublisher<Int, Never>
   let onPageRequest: AnyPublisher<Void, Never>
 }

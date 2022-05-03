@@ -9,7 +9,7 @@ import UIKit
 
 
 
-/// The `SeriesListFlowCoordinator` takes control over the form Repos List screen.
+/// The `SeriesListFlowCoordinator` takes control over the form Series List screen.
 class SeriesListFlowCoordinator: FlowCoordinator {
 
   fileprivate let window: UIWindow
@@ -31,6 +31,7 @@ class SeriesListFlowCoordinator: FlowCoordinator {
 
 extension SeriesListFlowCoordinator: SeriesListNavigator {
   func showDetails(for series: Series) {
-    
+    let vc = dependencyProvider.seriesDetailsController(series)
+    seriesNavigationController?.pushViewController(vc, animated: true)
   }
 }

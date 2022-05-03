@@ -60,7 +60,7 @@ final class SeriesListViewController: UIViewController {
     
     let input = SeriesListViewModelInput(onAppear: onAppearPublisher.eraseToAnyPublisher(),
                                          onSearch: onSearchPublisher.eraseToAnyPublisher(),
-                                         onSeriesSelection: .empty(),
+                                         onSeriesSelection: onItemSelectedPublisher.eraseToAnyPublisher(),
                                          onPageRequest: onPageRequestPublisher
                                          //When searching, we shouldn't make page requests.
       .filter { [weak self] in !(self?.seriesListView.searchController.isActive ?? true) }

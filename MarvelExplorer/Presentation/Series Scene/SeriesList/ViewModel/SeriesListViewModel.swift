@@ -14,7 +14,8 @@ final class SeriesListViewModel: SeriesListViewModelType {
   private let fetchSeriesUseCase: FetchMarvelSeriesUseCaseType
   private let coverLoaderUseCase: LoadCoverUseCaseType
   private var cancellableBag = Set<AnyCancellable>()
-  private var seriesViewModels: [SeriesListItemViewModel] = []
+  
+  private var series: [Series] = []
 
   
   init(fetchSeriesUseCase: FetchMarvelSeriesUseCaseType,
@@ -37,8 +38,8 @@ final class SeriesListViewModel: SeriesListViewModelType {
 
         switch result {
         case .success(let items):
-          let seriesViewModels = self.viewModels(from: items)
-          self.seriesViewModels += seriesViewModels
+          self.series += items
+          let seriesViewModels = self.viewModels(from: self.series)
           return SeriesListState.success(seriesViewModels)
         case .failure(let error):
          return  SeriesListState.failure(error)
@@ -48,10 +49,18 @@ final class SeriesListViewModel: SeriesListViewModelType {
     
     //MARK: - Handle Searching
     let filteredSeries = input.onSearch
-      .flatMapLatest { self.filterSeries(in: self.seriesViewModels, query: $0) }
+      .flatMapLatest { self.filterSeries(in: self.series, query: $0) }
       .eraseToAnyPublisher()
       
     
+    //MARK: - On Item Selection Handling
+    input.onSeriesSelection.sink { [weak self] index in
+      guard let self = self else { return }
+      guard  index <= self.series.count else { return assertionFailure("Wrong index was tapped, would happen only if viewModels array were cleared.")}
+      
+      let selectedSeries = self.series[index]
+      self.navigator?.showDetails(for: selectedSeries)
+    }.store(in: &cancellableBag)
     //MARK: - Handle page more Fetching
    let pageSeries = input.onPageRequest
       .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
@@ -62,10 +71,10 @@ final class SeriesListViewModel: SeriesListViewModelType {
         switch result {
         case .success(let items):
           //newSeriesViewModels  Will contain already fetched Series
-          let newSeriesViewModels =  self.viewModels(from: items)
+          self.series += items
+          let newSeriesViewModels =  self.viewModels(from: self.series)
           
-          self.seriesViewModels += newSeriesViewModels
-          return SeriesListState.success(self.seriesViewModels)
+          return SeriesListState.success(newSeriesViewModels)
         case .failure(let error):
           return  SeriesListState.failure(error)
         }
@@ -78,6 +87,7 @@ final class SeriesListViewModel: SeriesListViewModelType {
       .map {_ in return SeriesListState.loading }
       .eraseToAnyPublisher()
     
+    
     return Publishers
       .Merge4(loadingActions,pageSeries, series, filteredSeries)
       .removeDuplicates()
@@ -88,15 +98,17 @@ final class SeriesListViewModel: SeriesListViewModelType {
   /// IMPORTANT: we are filtering data from the repository, since filtering might be a complex thing and its logic isn't view specific.
   /// - Parameter query: query of search
   /// - Returns: SeriesListState
-  func filterSeries(in viewModels: [SeriesListItemViewModel], query: String) -> AnyPublisher<SeriesListState,Never> {
-    if query == "" { return .just(SeriesListState.success(viewModels)) }
+  func filterSeries(in models: [Series], query: String) -> AnyPublisher<SeriesListState,Never> {
+    if query == "" { return .just(SeriesListState.success(viewModels(from: models))) }
     
-    let filteredViewModels = viewModels.filter { viewModel in
-      if viewModel.title.contains(query) { return  true }
-      if "\(viewModel.endYear)".contains(query) { return  true }
-      if "\(viewModel.startYear)".contains(query) { return  true }
+    let filteredModels = models.filter { model in
+      if model.name.contains(query) { return  true }
+      if "\(model.endYear)".contains(query) { return  true }
+      if "\(model.startYear)".contains(query) { return  true }
       return false
     }
+    
+    let filteredViewModels = viewModels(from: filteredModels)
     
     return .just(.success(filteredViewModels)).eraseToAnyPublisher()
   }
