@@ -38,3 +38,6 @@ fastlane/sign&cert
 *.save
 ._*
 *.bak
+
+# EarlGrey Removal
+EarlGrey
