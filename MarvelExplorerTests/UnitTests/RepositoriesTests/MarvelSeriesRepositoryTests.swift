@@ -24,6 +24,7 @@ class MarvelSeriesRepositoryTests: XCTestCase {
   override func tearDownWithError() throws {
   }
   
+  /// tests that a failure is sent to clients of repository in case of invalid response
   func test_fetchSeriesFails_onNetworkError() {
     // Given
     var result: Result<[Series], Error>!
@@ -39,11 +40,12 @@ class MarvelSeriesRepositoryTests: XCTestCase {
     // Then
     self.waitForExpectations(timeout: 1.0, handler: nil)
     guard case .failure = result! else {
-      XCTFail("Result Should Be success")
+      XCTFail("Result Should Be failure")
       return
     }
   }
   
+  /// tests that a success is sent to clients of repository in case of valid response.
   func test_fetchSeriesSucceeds() {
     // Given
     var result: Result<[Series], Error>!
@@ -65,6 +67,7 @@ class MarvelSeriesRepositoryTests: XCTestCase {
     }
   }
   
+  /// Tests that a paginator is set in repository after making first call, which is lated used to load more pages note: pagination responsibility is removed from ViewModel to reduce it’s responsibility.
   func test_fetchSeriesPaginatorNotNil() {
     // Given
     let expectation = self.expectation(description: "Series Pagination")
@@ -82,7 +85,7 @@ class MarvelSeriesRepositoryTests: XCTestCase {
   }
   
   
-  /// When Fetching we need pagination data for next pages
+  /// Tests that next offset is aligned with expected values.
   func test_fetchSeriesPagination_isCorrect() {
     // Given
     let expectation = self.expectation(description: "Series Pagination")

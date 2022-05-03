@@ -42,6 +42,7 @@ class NetworkServiceTests: XCTestCase {
   }
   
   
+  /// Tests that a successful response is sent to the client of service
   func test_loadFinishedSuccessfully() {
     // Given
     var result: Result<[Series],Error>?
@@ -73,6 +74,7 @@ class NetworkServiceTests: XCTestCase {
     
   }
   
+  /// Tests that a failed response is sent to the clients of service. and that error is DecodingError.
   func test_loadFailedWithJsonParseError() {
     // Given
     var result: Result<[SeriesDTO], Error>?
@@ -104,6 +106,7 @@ class NetworkServiceTests: XCTestCase {
       }
   }
   
+  /// Tests a failed response because of internal error.
   func test_loadFailedWithInternalError() {
     // Given
     var result: Result<[SeriesDTO], Error>?
@@ -132,7 +135,7 @@ class NetworkServiceTests: XCTestCase {
               guard case .failure(let error) = result,
             let networkError = error as? NetworkError,
             case NetworkError.dataLoadingError(500, _) = networkError else {
-        XCTFail()
+        XCTFail("Network error should be sent along with failure.")
         return
       }
   }

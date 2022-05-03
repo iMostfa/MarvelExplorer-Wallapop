@@ -29,6 +29,7 @@ class SeriesListViewModelTests: XCTestCase {
     viewModel = nil
   }
   
+  /// Tests that series is fetched on Appear.
   func test_FetchSeries_onAppear() {
     //Given
     let onAppear = PassthroughSubject<(()),Never>()
@@ -62,6 +63,7 @@ class SeriesListViewModelTests: XCTestCase {
     
   }
   
+  /// Tests that loading is being sent to view when requesting one more page.
   func test_StateIsLoading_onPageRequest() {
     //Given
     let onPageRequest: PassthroughSubject<(),Never> = .init()
@@ -96,6 +98,7 @@ class SeriesListViewModelTests: XCTestCase {
   
   }
   
+  /// Tests that loading is sent on appear.
   func test_StateIsLoading_onAppear() {
     //Given
     let onAppear: PassthroughSubject<(),Never> = .init()
@@ -130,6 +133,7 @@ class SeriesListViewModelTests: XCTestCase {
     
   }
   
+  /// Tests that all Series is returned when search is empty.
   func test_returnAllSeries_IfQueryIsEmpty() {
     //Given
     let onSearch = PassthroughSubject<(String),Never>()
@@ -161,18 +165,17 @@ class SeriesListViewModelTests: XCTestCase {
   }
   
   
-  /// makes sure that when a user enters a string in Series title it will be filtered
+  /// tests that when a user enters a string which appears Series title it will be returned.
   func testSearchSeries_when_QueryIsInTitle() {
     //Given
     let seriesDTO = MarvelSeriesDTOResponse.loadFromFile("FilteredSeries.json")
     let series = seriesDTO.data.results.map { $0.toDomain() }
-    let viewModels = viewModel.viewModels(from: series)
 
     //When
     var state: SeriesListState!
     let expectation = self.expectation(description: "Series Filtering when a year is entered")
 
-    viewModel.filterSeries(in: viewModels, query: "Superior").sink { modifiedState in
+    viewModel.filterSeries(in: series, query: "Superior").sink { modifiedState in
       state = modifiedState
       expectation.fulfill()
     }.store(in: &cancellableBag)
@@ -190,14 +193,13 @@ class SeriesListViewModelTests: XCTestCase {
     //Given
     let seriesDTO = MarvelSeriesDTOResponse.loadFromFile("FilteredSeries.json")
     let series = seriesDTO.data.results.map { $0.toDomain() }
-    let viewModels = viewModel.viewModels(from: series)
     
     //When
     var state: SeriesListState!
     let expectation = self.expectation(description: "Series Filtering when a year is entered")
 
     
-    viewModel.filterSeries(in: viewModels, query: "2019").sink { modifiedState in
+    viewModel.filterSeries(in: series, query: "2019").sink { modifiedState in
       state = modifiedState
       expectation.fulfill()
     }.store(in: &cancellableBag)
@@ -210,6 +212,7 @@ class SeriesListViewModelTests: XCTestCase {
     XCTAssertEqual(filteredViewModels.count, 1)
   }
   
+  /// tests that new results from pagination is sent correctly to the view along with the old page.
     func test_fetchSeriesPagination_afterTwoCalls() {
       
       //Given
@@ -248,6 +251,7 @@ class SeriesListViewModelTests: XCTestCase {
     }
 
   
+  /// Tests that old page is still before the new page.
   func test_fetchSeriesPagination_concatenation() {
     
     //Given

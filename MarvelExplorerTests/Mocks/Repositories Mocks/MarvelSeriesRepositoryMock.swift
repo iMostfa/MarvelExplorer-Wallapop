@@ -28,22 +28,4 @@ class MarvelSeriesRepositoryMock: MarvelSeriesRepository {
   }
   
   
-  //MARK: - Filter Series
-  var filterSeriesWithCallsCount = 0
-  var filterSeriesWithReceivedQuery: String?
-  var filterSeriesWithReceivedInvocations: [String] = []
-  var filterSeriesWithReturnValue: AnyPublisher<Result<[Series], Error>, Never>!
-  var filterSeriesWithClosure: ((String) -> AnyPublisher<Result<[Series], Error>, Never>)?
-
-  
-  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> {
-
-    filterSeriesWithCallsCount += 1
-    filterSeriesWithReceivedQuery = query
-    filterSeriesWithReceivedInvocations.append(query)
-   
-    return filterSeriesWithClosure.map({ $0(query) }) ?? filterSeriesWithReturnValue
-  }
-  
-  
 }

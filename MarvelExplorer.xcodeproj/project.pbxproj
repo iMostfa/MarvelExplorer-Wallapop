@@ -66,6 +66,7 @@
 		EF60F6DE28210855008AC909 /* SeriesDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F6DD28210855008AC909 /* SeriesDetailsDataSource.swift */; };
 		EF60F6E02821088A008AC909 /* SeriesDetailsTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F6DF2821088A008AC909 /* SeriesDetailsTableDelegate.swift */; };
 		EF60F6EA28213422008AC909 /* SeriesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F6E928213422008AC909 /* SeriesListDataSource.swift */; };
+		EF60F6F0282159D5008AC909 /* MarvelExplorerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF887A55281FB0E100938B67 /* MarvelExplorerTestCase.swift */; };
 		EF8873A0281F62A300938B67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF88739F281F62A200938B67 /* main.swift */; };
 		EF8879CC281F7F3200938B67 /* FilteredSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = EF92610B281E4AD5001BBFF4 /* FilteredSeries.json */; };
 		EF8879CD281F7F3200938B67 /* SeriesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF926111281E5AF2001BBFF4 /* SeriesListViewModelTests.swift */; };
@@ -91,7 +92,6 @@
 		EF887A44281F912800938B67 /* SeriesListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF88796B281F7CBC00938B67 /* SeriesListUITests.swift */; };
 		EF887A45281F912900938B67 /* SeriesListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF88796A281F7CBC00938B67 /* SeriesListPage.swift */; };
 		EF887A46281F912900938B67 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF88796C281F7CBC00938B67 /* Page.swift */; };
-		EF887A47281F912C00938B67 /* MarvelExplorerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF887979281F7D0900938B67 /* MarvelExplorerTestCase.swift */; };
 		EF887A48281F914600938B67 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */; };
 		EFD89F85281FC417009D3771 /* AppFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EFD89F82281FC406009D3771 /* AppFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EFD89F86281FC420009D3771 /* libTestLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD89F84281FC406009D3771 /* libTestLib.a */; };
@@ -238,7 +238,6 @@
 		EF88796A281F7CBC00938B67 /* SeriesListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesListPage.swift; sourceTree = "<group>"; };
 		EF88796B281F7CBC00938B67 /* SeriesListUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesListUITests.swift; sourceTree = "<group>"; };
 		EF88796C281F7CBC00938B67 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		EF887979281F7D0900938B67 /* MarvelExplorerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelExplorerTestCase.swift; sourceTree = "<group>"; };
 		EF887A17281F8CF200938B67 /* uiTest-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uiTest-BridgingHeader.h"; sourceTree = "<group>"; };
 		EF887A53281FB0E100938B67 /* EarlGrey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		EF887A54281FB0E100938B67 /* FakeAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAppDelegate.swift; sourceTree = "<group>"; };
@@ -344,7 +343,6 @@
 		EF1F8C6F281CE527002DE22C /* MarvelExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF887A64281FB2C300938B67 /* Frameworks */,
 				EFB055BC281E319400608B9D /* Utils */,
 				EF1F8D0C281E1737002DE22C /* Responses */,
 				EF1F8D03281E0F3C002DE22C /* Mocks */,
@@ -357,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				EF887A52281FB0E100938B67 /* MarvelExplorerUITests */,
-				EF887979281F7D0900938B67 /* MarvelExplorerTestCase.swift */,
 				EF887968281F7CBC00938B67 /* Pages */,
 				EF8873A1281F62DC00938B67 /* FakeAppDelegate.swift */,
 				EF88739B281F5C7500938B67 /* EarlGrey.swift */,
@@ -433,6 +430,7 @@
 		EF1F8CAD281CEE90002DE22C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EF1F8CBD281CF96B002DE22C /* Interfaces */,
 				EF1F8CBC281CF95F002DE22C /* UseCases */,
 				EF1F8CBB281CF94D002DE22C /* Entities */,
 			);
@@ -489,7 +487,6 @@
 		EF1F8CBC281CF95F002DE22C /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				EF1F8CBD281CF96B002DE22C /* Interfaces */,
 				EF1F8CD9281D190A002DE22C /* FetchSeriesUseCase.swift */,
 				EF1F8CF4281D3C0A002DE22C /* LoadCoverUseCase.swift */,
 			);
@@ -722,13 +719,6 @@
 				EF887A55281FB0E100938B67 /* MarvelExplorerTestCase.swift */,
 			);
 			name = MarvelExplorerUITests;
-			sourceTree = "<group>";
-		};
-		EF887A64281FB2C300938B67 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		EF92610D281E5A79001BBFF4 /* ApplicationTests */ = {
@@ -1113,7 +1103,6 @@
 				EF887A44281F912800938B67 /* SeriesListUITests.swift in Sources */,
 				EF8879E0281F7F3200938B67 /* MarvelSeriesRepositoryMock.swift in Sources */,
 				EF8879CF281F7F3200938B67 /* ApplicationFlowCoordinatorMock.swift in Sources */,
-				EF887A47281F912C00938B67 /* MarvelExplorerTestCase.swift in Sources */,
 				EF8879D8281F7F3200938B67 /* NetworkServiceTests.swift in Sources */,
 				EF887A3C281F90E400938B67 /* FetchMarvelSeriesUseCaseTypeMock.swift in Sources */,
 				EF8879DD281F7F3200938B67 /* MarvelSeriesRepositoryTests.swift in Sources */,
@@ -1122,6 +1111,7 @@
 				EF887A43281F912400938B67 /* FakeAppDelegate.swift in Sources */,
 				EF8879DE281F7F3200938B67 /* URLProtocolMock.swift in Sources */,
 				EF8879DC281F7F3200938B67 /* NetworkServiceMock.swift in Sources */,
+				EF60F6F0282159D5008AC909 /* MarvelExplorerTestCase.swift in Sources */,
 				EF887A48281F914600938B67 /* AccessibilityIdentifiers.swift in Sources */,
 				EF8879D7281F7F3200938B67 /* ApplicationFlowCoordinatorTests.swift in Sources */,
 				EF8879D4281F7F3200938B67 /* MarvelSeriesCoverRepositoryTests.swift in Sources */,
@@ -1351,6 +1341,11 @@
 					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Keys/Keys.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1406,6 +1401,11 @@
 					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Keys/Keys.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

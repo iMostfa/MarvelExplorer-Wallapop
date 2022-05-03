@@ -24,34 +24,9 @@ class FetchMarvelSeriesUseCaseTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
   
-  
-  func test_filterSeries() {
-    // Given
-    var result: Result<[Series], Error>!
-    let expectation = self.expectation(description: "Series Fetching")
-    let series = MarvelSeriesDTOResponse.loadFromFile("FilteredSeries.json")
-    repository.filterSeriesWithReturnValue = .just(Result<[Series],Error>.success([series.data.results.first!.toDomain()] ))
     
-
-    // When
-    repository.filterSeries(query: "Fantastic").sink { value in
-      result = value
-      expectation.fulfill()
-    }.store(in: &cancellableBag)
-    
-    // Then
-    self.waitForExpectations(timeout: 1.0, handler: nil)
-    
-    guard case .success(let items) = result! else {
-      XCTFail("Result Should Be success")
-      return
-    }
   
-    XCTAssertEqual(items.count, 1)
-
-  }
-  
-  
+  /// Tests that data is retuned from repository succeeds.
   func test_fetchSeriesDomainsSucceeds() {
     // Given
     var result: Result<[Series], Error>!

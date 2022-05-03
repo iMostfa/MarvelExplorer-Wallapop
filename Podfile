@@ -11,7 +11,7 @@ target 'MarvelExplorer' do
   # Pods for MarvelExplorer
 
   target 'MarvelExplorerTests' do
-    inherit! :search_paths
+  #  inherit! :search_paths
     # Pods for testing
   end
 
