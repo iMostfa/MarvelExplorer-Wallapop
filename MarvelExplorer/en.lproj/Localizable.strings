@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  MarvelExplorer
+
+  Created by Mostfa on 04/05/2022.
+  
+*/
+
+
+//MARK: - Series Nav Title
+"SERIESLIST_NAV_TITLE" = "Marvel Series";
+//MARK: - Series Search label
+"SERIESLIST_SEARCH_TITLE" = "Search Anything";
+
+
+
+//MARK: - Series Description
+"SERIESDETAIL_DESCRIPTION" = "Series Description";
+"SERIESDETAIL_DURATION" = "Series Duration";
+"SERIESDETAIL_WRITERS" = "Series Wrieters";
+
