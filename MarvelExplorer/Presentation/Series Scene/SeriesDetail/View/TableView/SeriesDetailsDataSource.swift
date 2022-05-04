@@ -13,7 +13,7 @@ class SeriesDetailsDataSource: UITableViewDiffableDataSource<SeriesDetailSection
   let sections = [.description,SeriesDetailSection.years, .writers]
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return sections[section].title
+    return sections[section].title.localized()
   }
   
 }
@@ -23,9 +23,9 @@ enum SeriesDetailSection: Hashable {
   
   var title: String {
     switch self {
-    case .description: return "Series Description"
-    case .writers: return "Series Writers"
-    case .years: return "Series Duration"
+    case .description: return "SERIESDETAIL_DESCRIPTION"
+    case .writers: return "SERIESDETAIL_WRITERS"
+    case .years: return "SERIESDETAIL_DURATION"
     }
   }
 }

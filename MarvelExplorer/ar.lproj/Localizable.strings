@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  MarvelExplorer
+
+  Created by Mostfa on 04/05/2022.
+  
+*/
+
+
+//MARK: - Series Nav Title
+"SERIESLIST_NAV_TITLE" = "مجلات مارڤل";
+//MARK: - Series Search label
+"SERIESLIST_SEARCH_TITLE" = "أبحث عن اي شيء";
+
+//MARK: - Series Duration Strings
+"SEREIS_SINCE" = "منذ %@";
+"SEREIS_UNTIL" = "الى %@";
+"SEREIS_PRESENT" = "حتى الان";
+
+
+//MARK: - Series Description
+"SERIESDETAIL_DESCRIPTION" = "وصف المجلة";
+"SERIESDETAIL_DURATION" = "مدة اصدار المجلة";
+"SERIESDETAIL_WRITERS" = "كاتبي المجلة";
