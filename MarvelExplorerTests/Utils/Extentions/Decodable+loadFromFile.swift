@@ -7,11 +7,12 @@
 
 import Foundation
 @testable import MarvelExplorer
+import XCTest
 
 extension Decodable {
   static func loadFromFile(_ filename: String) -> Self {
     do {
-      let path = Bundle(for: MarvelExplorerTestCase.self).path(forResource: filename, ofType: nil)!
+      let path = Bundle(for: SeriesListNavigatorMock.self).path(forResource: filename, ofType: nil)!
       let data = try Data(contentsOf: URL(fileURLWithPath: path))
       return try JSONDecoder().decode(Self.self, from: data)
     } catch {

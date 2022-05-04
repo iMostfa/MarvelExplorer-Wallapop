@@ -8,6 +8,7 @@
 import Foundation
 import XCTest
 
+/*
 
 class Page {
   required init () { verify() }
@@ -94,3 +95,5 @@ extension Page {
   }
   
 }
+
+*/

@@ -18,7 +18,9 @@ DerivedData/
 Carthage/
 
 # CocoaPods
-Pods/
+**/Pods/*
+!**/Pods/CocoaPodsKeys
+
 
 # fastlane
 fastlane/report.xml

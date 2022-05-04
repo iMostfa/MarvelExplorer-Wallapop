@@ -9,7 +9,7 @@ import Foundation
 @testable import MarvelExplorer
 
 import XCTest
-
+/*
 class MarvelExplorerTestCase: XCTestCase {
   
   //  MARK: - Services
@@ -67,3 +67,5 @@ extension MarvelExplorerTestCase {
     
   }
 }
+
+*/

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+/*
 @testable import MarvelExplorer
 
 class MarvelSeriesListUITests: MarvelExplorerTestCase {
@@ -61,3 +61,6 @@ class MarvelSeriesListUITests: MarvelExplorerTestCase {
   
   
 }
+
+
+*/

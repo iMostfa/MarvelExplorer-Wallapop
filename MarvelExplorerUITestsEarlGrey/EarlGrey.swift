@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-
+/*
 import Foundation
 public func GREYAssert(
   _ expression: @autoclosure () -> Bool,
@@ -243,3 +243,4 @@ extension GREYInteraction {
     return self.__usingSearch(action, onElementWith: matcher)
   }
 }
+*/

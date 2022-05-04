@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 class SeriesListPage: Page {
 
   override func verify() {
@@ -60,3 +60,5 @@ extension SeriesListPage {
   }
   
 }
+
+*/

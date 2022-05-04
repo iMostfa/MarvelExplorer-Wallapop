@@ -1,0 +1,28 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: InstallCocoaKeys
+      run: gem install cocoapods-keys
+    - name: MarvelPublicKey
+      run: pod keys set "marvelPublicKey" "8a8dcc9159c1b3c1ba42a7cc3a047572" MarvelExplorer.xcodeproj
+    - name: MarvelPrivateKey
+      run: pod keys set "marvelPrivateKey" "9afe7a8a513912bdd65b63452e7df5e700d62fcf" MarvelExplorer.xcodeproj
+    - name: CocoaPod Install
+      run: pod install
+    - name: Bundle Install
+      run: bundle install
+    - name: Unit tests
+      run: bundle exec fastlane tests
