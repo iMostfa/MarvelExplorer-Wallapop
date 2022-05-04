@@ -94,7 +94,7 @@ class SeriesListViewModelTests: XCTestCase {
 
     //Then
     waitForExpectations(timeout: 1.0)
-    XCTAssert(state.contains(.loading))
+    XCTAssertTrue(state.contains(.loading), "A loading message should be sent to from viewmodel")
   
   }
   
@@ -129,7 +129,7 @@ class SeriesListViewModelTests: XCTestCase {
     
     //Then
     waitForExpectations(timeout: 1.0)
-    XCTAssert(state.contains(.loading))
+    XCTAssertTrue(state.contains(.loading), "a loading state should be sent.")
     
   }
   

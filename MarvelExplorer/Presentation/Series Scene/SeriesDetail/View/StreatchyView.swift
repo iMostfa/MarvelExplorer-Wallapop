@@ -46,10 +46,17 @@ final class StretchyHeaderView: UIView {
     super.init(frame: frame)
     setupViews()
     setViewConstraints()
+    setupAccessibility()
   }
   
   required init?(coder: NSCoder) {
     fatalError("No storyboard support")
+  }
+  
+  private func setupAccessibility() {
+    accessibilityIdentifier = AccessibilityIdentifiers.SeriesDetail.headerID
+    blurEffectView.accessibilityIdentifier = AccessibilityIdentifiers.SeriesDetail.headerBlur
+
   }
   
   private func setupViews() {
@@ -72,7 +79,9 @@ final class StretchyHeaderView: UIView {
   }
   
   func bind(to imagePublisher: AnyPublisher<UIImage?,Never>) {
-    imagePublisher.sink { [weak self] image in
+    imagePublisher
+      .receive(on: RunLoop.main)
+      .sink { [weak self] image in
       guard let self = self else { return }
       self.imageView.image = image
     }.store(in: &cancellableBag)

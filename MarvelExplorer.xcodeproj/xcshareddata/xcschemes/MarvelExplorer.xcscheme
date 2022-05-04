@@ -60,6 +60,16 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF60F730282176AD008AC909"
+               BuildableName = "MarvelUITests.xctest"
+               BlueprintName = "MarvelUITests"
+               ReferencedContainer = "container:MarvelExplorer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
