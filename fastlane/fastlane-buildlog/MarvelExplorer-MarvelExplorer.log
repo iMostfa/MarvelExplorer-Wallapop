@@ -1,0 +1,567 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace ./MarvelExplorer.xcworkspace -scheme MarvelExplorer -derivedDataPath "~/Library/Developer/Xcode/DerivedData" -destination "platform=iOS Simulator,id=87BDDBBC-EF68-4601-9527-DEE04FFE4158" -resultBundlePath ./fastlane/test_output/MarvelExplorer.xcresult build test
+
+User defaults from command line:
+    IDEBuildOperationResultBundlePath = /Users/mostfaessam/Desktop/MarvelExplorer/fastlane/test_output/MarvelExplorer.xcresult
+    IDEDerivedDataPathOverride = /Users/mostfaessam/Library/Developer/Xcode/DerivedData
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Writing result bundle at path:
+	/Users/mostfaessam/Desktop/MarvelExplorer/fastlane/test_output/MarvelExplorer.xcresult
+
+note: Using new build system
+note: Planning
+Analyze workspace
+
+Create build description
+Build description signature: 2298262639d2270899c5e5b3a7f2620f
+Build description path: /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/XCBuildData/2298262639d2270899c5e5b3a7f2620f-desc.xcbuild
+
+note: Build preparation complete
+note: Building targets in dependency order
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCTAutomationSupport.framework'
+
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCTest.framework'
+
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCTestCore.framework'
+
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCUIAutomation.framework'
+
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCUnit.framework'
+
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/libXCTestBundleInject.dylib'
+
+note: Removed stale file '/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/libXCTestSwiftSupport.dylib'
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-all-non-framework-target-headers.hmap (in target 'SnapKit' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/SVProgressHUD-all-non-framework-target-headers.hmap (in target 'SVProgressHUD' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/SVProgressHUD-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/Keys-all-non-framework-target-headers.hmap (in target 'Keys' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/Keys-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/all-product-headers.yaml (in target 'SVProgressHUD' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/all-product-headers.yaml (in target 'SnapKit' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/all-product-headers.yaml (in target 'Keys' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/all-product-headers.yaml
+
+CompileSwiftSources normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'SnapKit' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -incremental -module-name SnapKit -Onone -enable-batch-mode -enforce-exclusivity\=checked @/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit.SwiftFileList -DDEBUG -D COCOAPODS -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk -target x86_64-apple-ios10.0-simulator -g -module-cache-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Index/DataStore -swift-version 5 -I /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -F /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -c -j16 -output-file-map /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit-OutputFileMap.json -parseable-output -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit.swiftmodule -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-generated-files.hmap -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-own-target-headers.hmap -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-project-headers.hmap -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit/include -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/DerivedSources-normal/x86_64 -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/DerivedSources/x86_64 -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/DerivedSources -Xcc -DPOD_CONFIGURATION_DEBUG\=1 -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit-Swift.h -import-underlying-module -Xcc -ivfsoverlay -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/unextended-module-overlay.yaml -working-directory /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/Pods_MarvelExplorer-all-non-framework-target-headers.hmap (in target 'Pods-MarvelExplorer' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/Pods_MarvelExplorer-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/all-product-headers.yaml (in target 'Pods-MarvelExplorer' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/all-product-headers.yaml
+
+ProcessProductPackaging "" /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app.xcent (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app.xcent
+
+ProcessProductPackaging "" /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app-Simulated.xcent (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "VY964QG6LS.com.mostfa.MarvelExplorer";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app-Simulated.xcent
+
+Ld /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer normal (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.5-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk -L/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk/usr/lib/swift -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Keys -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SVProgressHUD -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -filelist /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer.swiftmodule -framework Foundation -framework Keys -framework QuartzCore -framework SVProgressHUD -framework SnapKit -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app-Simulated.xcent -framework Pods_MarvelExplorer -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer_dependency_info.dat -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer
+
+CopySwiftLibs /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/SystemExtensions --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Pods_MarvelExplorer.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app.xcent --timestamp\=none --generate-entitlement-der /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app
+
+/Users/mostfaessam/Desktop/MarvelExplorer/Pods/Pods.xcodeproj: warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 15.4.99. (in target 'SVProgressHUD' from project 'Pods')
+/Users/mostfaessam/Desktop/MarvelExplorer/Pods/Pods.xcodeproj: warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 15.4.99. (in target 'Keys' from project 'Pods')
+
+Result bundle written to path:
+	/Users/mostfaessam/Desktop/MarvelExplorer/fastlane/test_output/MarvelExplorer.xcresult
+
+** BUILD SUCCEEDED ** [2.038 sec]
+
+note: Using new build system
+note: Planning
+Analyze workspace
+
+Create build description
+Build description signature: d65e4ec34b067f6959eeb1b0fb6c2f22
+Build description path: /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/XCBuildData/d65e4ec34b067f6959eeb1b0fb6c2f22-desc.xcbuild
+
+note: Build preparation complete
+note: Building targets in dependency order
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-all-non-framework-target-headers.hmap (in target 'SnapKit' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/SVProgressHUD-all-non-framework-target-headers.hmap (in target 'SVProgressHUD' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/SVProgressHUD-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/Keys-all-non-framework-target-headers.hmap (in target 'Keys' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/Keys-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/all-product-headers.yaml (in target 'SnapKit' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/all-product-headers.yaml (in target 'SVProgressHUD' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SVProgressHUD.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/all-product-headers.yaml (in target 'Keys' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Keys.build/all-product-headers.yaml
+
+CompileSwiftSources normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'SnapKit' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -incremental -module-name SnapKit -Onone -enable-batch-mode -enforce-exclusivity\=checked @/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit.SwiftFileList -DDEBUG -D COCOAPODS -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk -target x86_64-apple-ios10.0-simulator -g -module-cache-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Index/DataStore -swift-version 5 -I /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -F /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -c -j16 -output-file-map /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit-OutputFileMap.json -parseable-output -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit.swiftmodule -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-generated-files.hmap -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-own-target-headers.hmap -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/SnapKit-project-headers.hmap -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit/include -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/DerivedSources-normal/x86_64 -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/DerivedSources/x86_64 -Xcc -I/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/DerivedSources -Xcc -DPOD_CONFIGURATION_DEBUG\=1 -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/x86_64/SnapKit-Swift.h -import-underlying-module -Xcc -ivfsoverlay -Xcc /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/unextended-module-overlay.yaml -working-directory /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/Pods_MarvelExplorer-all-non-framework-target-headers.hmap (in target 'Pods-MarvelExplorer' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/Pods_MarvelExplorer-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/all-product-headers.yaml (in target 'Pods-MarvelExplorer' from project 'Pods')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer/Pods
+    write-file /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-MarvelExplorer.build/all-product-headers.yaml
+
+ProcessProductPackaging "" /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app.xcent (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app.xcent
+
+ProcessProductPackaging "" /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app-Simulated.xcent (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "VY964QG6LS.com.mostfa.MarvelExplorer";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app-Simulated.xcent
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCTestCore.framework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCTest.framework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCTAutomationSupport.framework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCUIAutomation.framework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUIAutomation.framework (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUIAutomation.framework /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/libXCTestSwiftSupport.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/libXCTestBundleInject.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Copy /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks/XCUnit.framework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks
+
+Ld /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer normal (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.5-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk -L/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk/usr/lib/swift -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Keys -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SVProgressHUD -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -filelist /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer.swiftmodule -framework Foundation -framework Keys -framework QuartzCore -framework SVProgressHUD -framework SnapKit -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app-Simulated.xcent -framework Pods_MarvelExplorer -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/Objects-normal/x86_64/MarvelExplorer_dependency_info.dat -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer
+
+CopySwiftLibs /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/SystemExtensions --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Pods_MarvelExplorer.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+Ld /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/MarvelExplorerTests normal (in target 'MarvelExplorerTests' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.5-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk -L/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk/usr/lib/swift -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Keys -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SVProgressHUD -F/Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/SnapKit -F/Users/mostfaessam/Desktop/MarvelExplorer -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk/Developer/Library/Frameworks -filelist /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorerTests.build/Objects-normal/x86_64/MarvelExplorerTests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -bundle_loader /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/MarvelExplorer -Xlinker -object_path_lto -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorerTests.build/Objects-normal/x86_64/MarvelExplorerTests_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorerTests.build/Objects-normal/x86_64/MarvelExplorerTests.swiftmodule -framework Foundation -framework Keys -framework QuartzCore -framework SVProgressHUD -framework SnapKit -framework Foundation -framework Keys -framework QuartzCore -framework SVProgressHUD -framework SnapKit -ObjC -framework XCTest /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/libTestLib.a -framework Pods_MarvelExplorer_MarvelExplorerTests -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorerTests.build/Objects-normal/x86_64/MarvelExplorerTests_dependency_info.dat -o /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/MarvelExplorerTests
+
+CopySwiftLibs /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest (in target 'MarvelExplorerTests' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator15.4.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/MarvelExplorerTests --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/Frameworks --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/PlugIns --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/SystemExtensions --scan-folder /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Pods_MarvelExplorer_MarvelExplorerTests.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorerTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest (in target 'MarvelExplorerTests' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app/PlugIns/MarvelExplorerTests.xctest
+
+CodeSign /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app (in target 'MarvelExplorer' from project 'MarvelExplorer')
+    cd /Users/mostfaessam/Desktop/MarvelExplorer
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/MarvelExplorer.build/Debug-iphonesimulator/MarvelExplorer.build/MarvelExplorer.app.xcent --timestamp\=none --generate-entitlement-der /Users/mostfaessam/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/MarvelExplorer.app
+
+/Users/mostfaessam/Desktop/MarvelExplorer/Pods/Pods.xcodeproj: warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 15.4.99. (in target 'SVProgressHUD' from project 'Pods')
+/Users/mostfaessam/Desktop/MarvelExplorer/Pods/Pods.xcodeproj: warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 15.4.99. (in target 'Keys' from project 'Pods')
+Testing started
+Test Suite 'Selected tests' started at 2022-05-04 04:19:28.715
+Test Suite 'MarvelExplorerTests.xctest' started at 2022-05-04 04:19:28.718
+Test Suite 'ApplicationFlowCoordinatorTests' started at 2022-05-04 04:19:28.719
+Test Case '-[MarvelExplorerTests.ApplicationFlowCoordinatorTests test_startsApplicationsFlow]' started.
+Test Case '-[MarvelExplorerTests.ApplicationFlowCoordinatorTests test_startsApplicationsFlow]' passed (0.009 seconds).
+Test Suite 'ApplicationFlowCoordinatorTests' passed at 2022-05-04 04:19:28.729.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
+Test Suite 'FetchMarvelSeriesUseCaseTests' started at 2022-05-04 04:19:28.730
+Test Case '-[MarvelExplorerTests.FetchMarvelSeriesUseCaseTests test_fetchSeriesDomainsSucceeds]' started.
+Test Case '-[MarvelExplorerTests.FetchMarvelSeriesUseCaseTests test_fetchSeriesDomainsSucceeds]' passed (0.011 seconds).
+Test Suite 'FetchMarvelSeriesUseCaseTests' passed at 2022-05-04 04:19:28.742.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.011 (0.012) seconds
+Test Suite 'MarvelPaginatorTests' started at 2022-05-04 04:19:28.742
+Test Case '-[MarvelExplorerTests.MarvelPaginatorTests test_paginator_hasPages]' started.
+Test Case '-[MarvelExplorerTests.MarvelPaginatorTests test_paginator_hasPages]' passed (0.001 seconds).
+Test Case '-[MarvelExplorerTests.MarvelPaginatorTests test_paginator_nextOffset_whenHasPages]' started.
+Test Case '-[MarvelExplorerTests.MarvelPaginatorTests test_paginator_nextOffset_whenHasPages]' passed (0.002 seconds).
+Test Case '-[MarvelExplorerTests.MarvelPaginatorTests test_paginator_nextOffset_whenLimitIsReached]' started.
+Test Case '-[MarvelExplorerTests.MarvelPaginatorTests test_paginator_nextOffset_whenLimitIsReached]' passed (0.001 seconds).
+Test Suite 'MarvelPaginatorTests' passed at 2022-05-04 04:19:28.748.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.004 (0.006) seconds
+Test Suite 'MarvelSeriesCoverRepositoryMockTests' started at 2022-05-04 04:19:28.748
+Test Case '-[MarvelExplorerTests.MarvelSeriesCoverRepositoryMockTests test_loadsImageFromNetwork]' started.
+Test Case '-[MarvelExplorerTests.MarvelSeriesCoverRepositoryMockTests test_loadsImageFromNetwork]' passed (0.008 seconds).
+Test Suite 'MarvelSeriesCoverRepositoryMockTests' passed at 2022-05-04 04:19:28.757.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'MarvelSeriesRepositoryTests' started at 2022-05-04 04:19:28.757
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesFails_onNetworkError]' started.
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesFails_onNetworkError]' passed (0.007 seconds).
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesPagination_isCorrect]' started.
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesPagination_isCorrect]' passed (0.017 seconds).
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesPaginatorNotNil]' started.
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesPaginatorNotNil]' passed (0.015 seconds).
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesSucceeds]' started.
+Test Case '-[MarvelExplorerTests.MarvelSeriesRepositoryTests test_fetchSeriesSucceeds]' passed (0.009 seconds).
+Test Suite 'MarvelSeriesRepositoryTests' passed at 2022-05-04 04:19:28.808.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.048 (0.050) seconds
+Test Suite 'NetworkServiceTests' started at 2022-05-04 04:19:28.808
+Test Case '-[MarvelExplorerTests.NetworkServiceTests test_loadFailedWithInternalError]' started.
+Test Case '-[MarvelExplorerTests.NetworkServiceTests test_loadFailedWithInternalError]' passed (0.023 seconds).
+Test Case '-[MarvelExplorerTests.NetworkServiceTests test_loadFailedWithJsonParseError]' started.
+Test Case '-[MarvelExplorerTests.NetworkServiceTests test_loadFailedWithJsonParseError]' passed (0.007 seconds).
+Test Case '-[MarvelExplorerTests.NetworkServiceTests test_loadFinishedSuccessfully]' started.
+Test Case '-[MarvelExplorerTests.NetworkServiceTests test_loadFinishedSuccessfully]' passed (0.012 seconds).
+Test Suite 'NetworkServiceTests' passed at 2022-05-04 04:19:28.853.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.042 (0.045) seconds
+Test Suite 'SeriesListViewModelTests' started at 2022-05-04 04:19:28.853
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_FetchSeries_onAppear]' started.
+Should ShowLoading: receive subscription: (Merge)
+Should ShowLoading: request unlimited
+Should ShowLoading: receive value: (())
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_FetchSeries_onAppear]' passed (0.015 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_fetchSeriesPagination_afterTwoCalls]' started.
+Should ShowLoading: receive subscription: (Merge)
+Should ShowLoading: request unlimited
+Should ShowLoading: receive value: (())
+Should ShowLoading: request max: (1) (synchronous)
+Should ShowLoading: receive value: (())
+Should ShowLoading: request max: (1) (synchronous)
+Should ShowLoading: receive finished
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_fetchSeriesPagination_afterTwoCalls]' passed (0.007 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_fetchSeriesPagination_concatenation]' started.
+Should ShowLoading: receive subscription: (Merge)
+Should ShowLoading: request unlimited
+Should ShowLoading: receive value: (())
+Should ShowLoading: request max: (1) (synchronous)
+Should ShowLoading: receive value: (())
+Should ShowLoading: request max: (1) (synchronous)
+Should ShowLoading: receive finished
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_fetchSeriesPagination_concatenation]' passed (0.007 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_returnAllSeries_IfQueryIsEmpty]' started.
+Should ShowLoading: receive subscription: (Merge)
+Should ShowLoading: request unlimited
+Should ShowLoading: receive finished
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_returnAllSeries_IfQueryIsEmpty]' passed (0.005 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_StateIsLoading_onAppear]' started.
+Should ShowLoading: receive subscription: (Merge)
+Should ShowLoading: request unlimited
+Should ShowLoading: receive value: (())
+loading
+success([])
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_StateIsLoading_onAppear]' passed (0.002 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_StateIsLoading_onPageRequest]' started.
+Should ShowLoading: receive subscription: (Merge)
+Should ShowLoading: request unlimited
+Should ShowLoading: receive value: (())
+loading
+success([])
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests test_StateIsLoading_onPageRequest]' passed (0.004 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests testSearchSeries_when_QueryIsInTitle]' started.
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests testSearchSeries_when_QueryIsInTitle]' passed (0.003 seconds).
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests testSearchSeries_when_QueryIsInYear]' started.
+Test Case '-[MarvelExplorerTests.SeriesListViewModelTests testSearchSeries_when_QueryIsInYear]' passed (0.006 seconds).
+Test Suite 'SeriesListViewModelTests' passed at 2022-05-04 04:19:28.909.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.050 (0.055) seconds
+Test Suite 'MarvelExplorerTests.xctest' passed at 2022-05-04 04:19:28.910.
+	 Executed 21 tests, with 0 failures (0 unexpected) in 0.171 (0.192) seconds
+Test Suite 'Selected tests' passed at 2022-05-04 04:19:28.911.
+	 Executed 21 tests, with 0 failures (0 unexpected) in 0.171 (0.196) seconds
+2022-05-04 04:19:31.934781+0200 MarvelUITests-Runner[94925:4424615] Running tests...
+Test Suite 'All tests' started at 2022-05-04 04:19:32.977
+Test Suite 'MarvelUITests.xctest' started at 2022-05-04 04:19:32.979
+Test Suite 'MarvelUITests' started at 2022-05-04 04:19:32.980
+Test Case '-[MarvelUITests.MarvelUITests test_application_isEmbeddedInNavigation]' started.
+    t =     0.00s Start Test at 2022-05-04 04:19:32.981
+    t =     0.18s Set Up
+    t =     0.19s     Open com.mostfa.MarvelExplorer
+    t =     0.23s         Launch com.mostfa.MarvelExplorer
+    t =     0.44s             Setting up automation session
+    t =     0.84s             Wait for com.mostfa.MarvelExplorer to idle
+    t =     2.14s Waiting 1.0s for "Marvel Series" NavigationBar to exist
+    t =     3.14s     Checking `Expect predicate `exists == 1` for object "Marvel Series" NavigationBar`
+    t =     3.14s         Checking existence of `"Marvel Series" NavigationBar`
+    t =     3.19s Tear Down
+Test Case '-[MarvelUITests.MarvelUITests test_application_isEmbeddedInNavigation]' passed (3.392 seconds).
+Test Case '-[MarvelUITests.MarvelUITests test_application_isLoadingOnLaunch]' started.
+    t =     0.00s Start Test at 2022-05-04 04:19:36.373
+    t =     0.05s Set Up
+    t =     0.05s     Open com.mostfa.MarvelExplorer
+    t =     0.10s         Launch com.mostfa.MarvelExplorer
+    t =     0.10s             Terminate com.mostfa.MarvelExplorer:94930
+    t =     1.41s             Setting up automation session
+    t =     1.82s             Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.10s Checking existence of `"SVProgressHUD" Other`
+    t =     3.13s Tear Down
+Test Case '-[MarvelUITests.MarvelUITests test_application_isLoadingOnLaunch]' passed (3.338 seconds).
+Test Case '-[MarvelUITests.MarvelUITests test_SeriesDetail_isPushed]' started.
+    t =     0.00s Start Test at 2022-05-04 04:19:39.712
+    t =     0.04s Set Up
+    t =     0.04s     Open com.mostfa.MarvelExplorer
+    t =     0.07s         Launch com.mostfa.MarvelExplorer
+    t =     0.07s             Terminate com.mostfa.MarvelExplorer:94931
+    t =     1.33s             Setting up automation session
+    t =     1.87s             Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.10s Tap Other
+    t =     3.10s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.14s     Find the Other
+    t =     4.19s         Find the Other (retry 1)
+    t =     4.24s     Check for interrupting elements affecting Other
+    t =     4.28s     Synthesize event
+    t =     4.52s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     4.56s Checking existence of `"Series Description" StaticText`
+    t =     4.66s Tear Down
+Test Case '-[MarvelUITests.MarvelUITests test_SeriesDetail_isPushed]' passed (4.860 seconds).
+Test Case '-[MarvelUITests.MarvelUITests test_SeriesDetailOrder]' started.
+    t =     0.00s Start Test at 2022-05-04 04:19:44.573
+    t =     0.08s Set Up
+    t =     0.08s     Open com.mostfa.MarvelExplorer
+    t =     0.15s         Launch com.mostfa.MarvelExplorer
+    t =     0.15s             Terminate com.mostfa.MarvelExplorer:94932
+    t =     1.53s             Setting up automation session
+    t =     2.14s             Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.28s Tap Other
+    t =     3.28s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.32s     Find the Other
+    t =     4.37s         Find the Other (retry 1)
+    t =     4.42s     Check for interrupting elements affecting Other
+    t =     4.46s     Synthesize event
+    t =     4.58s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     4.63s Find the "Series Description" StaticText
+    t =     4.73s Find the "Series Duration" StaticText
+    t =     4.82s Find the "Series Description" StaticText
+    t =     4.90s Find the "Series Writers" StaticText
+    t =     4.98s Tear Down
+Test Case '-[MarvelUITests.MarvelUITests test_SeriesDetailOrder]' passed (5.182 seconds).
+Test Case '-[MarvelUITests.MarvelUITests test_SeriesHeaderIsAboveDetails]' started.
+    t =     0.00s Start Test at 2022-05-04 04:19:49.755
+    t =     0.04s Set Up
+    t =     0.04s     Open com.mostfa.MarvelExplorer
+    t =     0.07s         Launch com.mostfa.MarvelExplorer
+    t =     0.07s             Terminate com.mostfa.MarvelExplorer:94936
+    t =     1.38s             Setting up automation session
+    t =     1.80s             Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.08s Tap Other
+    t =     3.08s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.12s     Find the Other
+    t =     4.16s         Find the Other (retry 1)
+    t =     4.22s     Check for interrupting elements affecting Other
+    t =     4.25s     Synthesize event
+    t =     4.37s     Wait for com.mostfa.MarvelExplorer to idle
+    t =    64.57s         App animations complete notification not received, will attempt to continue.
+    t =    64.57s Find the Other
+    t =    64.61s Find the "Series Description" StaticText
+    t =    64.63s Tear Down
+Test Case '-[MarvelUITests.MarvelUITests test_SeriesHeaderIsAboveDetails]' passed (64.834 seconds).
+Test Case '-[MarvelUITests.MarvelUITests testLaunchPerformance]' started.
+    t =     0.00s Start Test at 2022-05-04 04:20:54.590
+    t =     0.05s Set Up
+    t =     0.05s     Open com.mostfa.MarvelExplorer
+    t =     0.09s         Launch com.mostfa.MarvelExplorer
+    t =     0.09s             Terminate com.mostfa.MarvelExplorer:94937
+    t =     0.18s                 Unable to monitor animations
+    t =     1.49s             Setting up automation session
+    t =     1.85s             Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.10s Open com.mostfa.MarvelExplorer
+    t =     3.14s     Launch com.mostfa.MarvelExplorer
+    t =     3.14s         Terminate com.mostfa.MarvelExplorer:94973
+    t =     4.38s         Setting up automation session
+    t =     4.70s         Wait for com.mostfa.MarvelExplorer to idle
+    t =    16.12s Open com.mostfa.MarvelExplorer
+    t =    16.18s     Launch com.mostfa.MarvelExplorer
+    t =    16.18s         Terminate com.mostfa.MarvelExplorer:94974
+    t =    17.52s         Setting up automation session
+    t =    17.88s         Wait for com.mostfa.MarvelExplorer to idle
+    t =    29.17s Open com.mostfa.MarvelExplorer
+    t =    29.25s     Launch com.mostfa.MarvelExplorer
+    t =    29.25s         Terminate com.mostfa.MarvelExplorer:94982
+    t =    30.56s         Setting up automation session
+    t =    30.86s         Wait for com.mostfa.MarvelExplorer to idle
+    t =    42.12s Open com.mostfa.MarvelExplorer
+    t =    42.17s     Launch com.mostfa.MarvelExplorer
+    t =    42.17s         Terminate com.mostfa.MarvelExplorer:94989
+    t =    43.53s         Setting up automation session
+    t =    43.82s         Wait for com.mostfa.MarvelExplorer to idle
+    t =    55.07s Open com.mostfa.MarvelExplorer
+    t =    55.11s     Launch com.mostfa.MarvelExplorer
+    t =    55.11s         Terminate com.mostfa.MarvelExplorer:94993
+    t =    56.38s         Setting up automation session
+    t =    56.72s         Wait for com.mostfa.MarvelExplorer to idle
+    t =    68.00s Open com.mostfa.MarvelExplorer
+    t =    68.05s     Launch com.mostfa.MarvelExplorer
+    t =    68.05s         Terminate com.mostfa.MarvelExplorer:94997
+    t =    69.33s         Setting up automation session
+    t =    69.72s         Wait for com.mostfa.MarvelExplorer to idle
+/Users/mostfaessam/Desktop/MarvelExplorer/MarvelUITests/MarvelUITests.swift:100: Test Case '-[MarvelUITests.MarvelUITests testLaunchPerformance]' measured [Duration (AppLaunch), s] average: 0.719, relative standard deviation: 7.327%, values: [0.760350, 0.663113, 0.652406, 0.736395, 0.784756], performanceMetricID:com.apple.dt.XCTMetric_ApplicationLaunch-AppLaunch.duration, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+    t =    81.06s Tear Down
+Test Case '-[MarvelUITests.MarvelUITests testLaunchPerformance]' passed (81.262 seconds).
+Test Suite 'MarvelUITests' passed at 2022-05-04 04:22:15.852.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 162.869 (162.872) seconds
+Test Suite 'MarvelUITestsLaunchTests' started at 2022-05-04 04:22:15.853
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' started.
+    t =     0.00s Setting device orientation to Portrait
+    t =     0.06s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     0.11s Setting appearance mode to Light
+    t =     0.21s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     0.72s Start Test at 2022-05-04 04:22:16.578
+    t =     0.81s Set Up
+    t =     0.81s Open com.mostfa.MarvelExplorer
+    t =     0.85s     Launch com.mostfa.MarvelExplorer
+    t =     0.85s         Terminate com.mostfa.MarvelExplorer:95004
+    t =     2.15s         Setting up automation session
+    t =     2.54s         Wait for com.mostfa.MarvelExplorer to idle
+    t =     3.79s Find the Target Application 'com.mostfa.MarvelExplorer'
+    t =     3.95s Added attachment named 'Launch Screen'
+    t =     3.95s Tear Down
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' passed (4.150 seconds).
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' started.
+    t =     0.00s Setting device orientation to Landscape Right
+    t =     0.08s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     0.53s Setting appearance mode to Light
+    t =     2.61s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     2.65s Start Test at 2022-05-04 04:22:22.658
+    t =     2.70s Set Up
+    t =     2.70s Open com.mostfa.MarvelExplorer
+    t =     2.74s     Launch com.mostfa.MarvelExplorer
+    t =     2.74s         Terminate com.mostfa.MarvelExplorer:95011
+    t =     4.01s         Setting up automation session
+    t =     4.33s         Wait for com.mostfa.MarvelExplorer to idle
+    t =     5.54s Find the Target Application 'com.mostfa.MarvelExplorer'
+    t =     5.69s Added attachment named 'Launch Screen'
+    t =     5.69s Tear Down
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' passed (5.894 seconds).
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' started.
+    t =     0.00s Setting device orientation to Portrait
+    t =     0.07s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     0.65s Setting appearance mode to Dark
+    t =     0.73s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     1.25s Start Test at 2022-05-04 04:22:27.152
+    t =     1.31s Set Up
+    t =     1.32s Open com.mostfa.MarvelExplorer
+    t =     1.36s     Launch com.mostfa.MarvelExplorer
+    t =     1.36s         Terminate com.mostfa.MarvelExplorer:95015
+    t =     2.65s         Setting up automation session
+    t =     2.98s         Wait for com.mostfa.MarvelExplorer to idle
+    t =     4.21s Find the Target Application 'com.mostfa.MarvelExplorer'
+    t =     4.38s Added attachment named 'Launch Screen'
+    t =     4.38s Tear Down
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' passed (4.584 seconds).
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' started.
+    t =     0.00s Setting device orientation to Landscape Right
+    t =     0.07s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     0.49s Setting appearance mode to Dark
+    t =     2.55s     Wait for com.mostfa.MarvelExplorer to idle
+    t =     2.60s Start Test at 2022-05-04 04:22:33.082
+    t =     2.65s Set Up
+    t =     2.65s Open com.mostfa.MarvelExplorer
+    t =     2.69s     Launch com.mostfa.MarvelExplorer
+    t =     2.69s         Terminate com.mostfa.MarvelExplorer:95016
+    t =     3.98s         Setting up automation session
+    t =     4.33s         Wait for com.mostfa.MarvelExplorer to idle
+    t =     5.60s Find the Target Application 'com.mostfa.MarvelExplorer'
+    t =     5.75s Added attachment named 'Launch Screen'
+    t =     5.75s Tear Down
+Test Case '-[MarvelUITests.MarvelUITestsLaunchTests testLaunch]' passed (5.955 seconds).
+Test Suite 'MarvelUITestsLaunchTests' passed at 2022-05-04 04:22:36.439.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 20.584 (20.586) seconds
+Test Suite 'MarvelUITests.xctest' passed at 2022-05-04 04:22:36.440.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 183.453 (183.461) seconds
+Test Suite 'All tests' passed at 2022-05-04 04:22:36.440.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 183.453 (183.463) seconds
+
+Test session results, code coverage, and logs:
+	/Users/mostfaessam/Desktop/MarvelExplorer/fastlane/test_output/MarvelExplorer.xcresult
+
+** TEST SUCCEEDED ** [201.592 sec]
+

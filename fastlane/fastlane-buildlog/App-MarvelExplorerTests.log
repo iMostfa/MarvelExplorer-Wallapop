@@ -1,0 +1,7 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace ./MarvelExplorer.xcworkspace -scheme MarvelExplorerTests -derivedDataPath "~/Library/Developer/Xcode/DerivedData" -destination "platform=iOS Simulator,id=87BDDBBC-EF68-4601-9527-DEE04FFE4158" build test
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/mostfaessam/Library/Developer/Xcode/DerivedData
+    IDEPackageSupportUseBuiltinSCM = YES
+
