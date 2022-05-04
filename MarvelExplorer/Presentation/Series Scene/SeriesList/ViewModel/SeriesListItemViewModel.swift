@@ -34,7 +34,7 @@ extension SeriesListItemViewModel {
     self.title = series.name
     self.description = series.description
     self.startYear =  "SEREIS_SINCE".localized(params: "\(series.startYear)")
-    self.endYear = series.endYear != 2099 ? "SEREIS_UNTIL".localized(params: NSNumber.init(integerLiteral: series.endYear)):
+    self.endYear = series.endYear != 2099 ? "SEREIS_UNTIL".localized(params: "\(series.endYear)"):
     "SERIES_PRESENT".localized()
     self.cover = imageLoader(series)
   }

@@ -13,6 +13,11 @@
 "SERIESLIST_SEARCH_TITLE" = "Search Anything";
 
 
+//MARK: - Series Duration Strings
+"SEREIS_SINCE" = "Since %@";
+"SEREIS_UNTIL" = "Until %@";
+"SEREIS_PRESENT" = "Until Now";
+
 
 //MARK: - Series Description
 "SERIESDETAIL_DESCRIPTION" = "Series Description";
