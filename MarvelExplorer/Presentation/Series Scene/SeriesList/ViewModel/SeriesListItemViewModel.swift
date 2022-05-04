@@ -33,8 +33,9 @@ extension SeriesListItemViewModel {
     self.id = series.id
     self.title = series.name
     self.description = series.description
-    self.startYear = "Since:\(series.startYear)"
-    self.endYear = series.endYear != 2099 ? "Until:\(series.endYear)": "Present"
+    self.startYear =  "SEREIS_SINCE".localized(params: "\(series.startYear)")
+    self.endYear = series.endYear != 2099 ? "SEREIS_UNTIL".localized(params: "\(series.startYear)"):
+    "SERIES_PRESENT".localized()
     self.cover = imageLoader(series)
   }
 }

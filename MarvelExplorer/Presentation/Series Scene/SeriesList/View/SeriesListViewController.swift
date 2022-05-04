@@ -112,7 +112,7 @@ final class SeriesListViewController: UIViewController {
   
   private func configureUI() {
     definesPresentationContext = true
-    title = NSLocalizedString("Marvel Series", comment: "Top Series")
+    title = "SERIESLIST_NAV_TITLE".localized()
     navigationItem.searchController = self.seriesListView.searchController
     seriesListView.searchController.isActive = false
     seriesCollectionViewDelegate?.onScroll = { [weak self] in
