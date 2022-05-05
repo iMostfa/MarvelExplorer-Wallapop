@@ -9,6 +9,8 @@ import Foundation
 import XCTest
 import Combine
 @testable import MarvelExplorer
+@testable import MarvelExplorerData
+@testable import MarvelExplorerDomain
 
 class MarvelSeriesCoverRepositoryMockTests: XCTestCase {
 

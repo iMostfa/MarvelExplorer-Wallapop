@@ -2,10 +2,14 @@
 # platform :ios, '9.0'
 
 target 'MarvelExplorer' do
+
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for MarvelExplorer
+    pod 'SVProgressHUD'
+    pod 'SnapKit'
+
 
   target 'MarvelExplorerTests' do
   #  inherit! :search_paths
