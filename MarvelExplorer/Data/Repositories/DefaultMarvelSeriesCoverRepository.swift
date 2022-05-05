@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 import UIKit.UIImage
+import MarvelExplorerDomain
+import MarvelExplorerShared
 
 final class DefaultMarvelSeriesCoverRepository {
 

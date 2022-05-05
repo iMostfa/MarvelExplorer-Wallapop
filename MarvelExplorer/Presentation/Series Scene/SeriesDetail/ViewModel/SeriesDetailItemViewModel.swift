@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 import UIKit
+import MarvelExplorerDomain
+
 struct SeriesDetailItemViewModel: Equatable, Hashable, Identifiable {
   let id: Int
   let title: String

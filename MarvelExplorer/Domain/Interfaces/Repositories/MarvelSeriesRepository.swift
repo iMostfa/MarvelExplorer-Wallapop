@@ -7,8 +7,9 @@
 
 import Foundation
 import Combine
+
 /// Represents any data provider which will supply Series of marvel
-protocol MarvelSeriesRepository: AnyObject {
+public protocol MarvelSeriesRepository: AnyObject {
 
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
 

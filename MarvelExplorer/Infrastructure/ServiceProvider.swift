@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import MarvelExplorerDomain
 
-class ServicesProvider {
-  let network: NetworkServiceType
-  let imageLoader: ImageLoaderServiceType
-  let seriesRepository: MarvelSeriesRepository
-  let imageLoaderRepository: MarvelSeriesCoverRepository
+public class ServicesProvider {
+  public let network: NetworkServiceType
+  public let imageLoader: ImageLoaderServiceType
+  public  let seriesRepository: MarvelSeriesRepository
+  public  let imageLoaderRepository: MarvelSeriesCoverRepository
 
-  static var defaultProvider: ServicesProvider {
+  static public var defaultProvider: ServicesProvider {
     let network = NetworkService()
     let imageLoader = ImageLoaderService()
     let seriesRepository = DefaultMarvelSeriesRepository(networkService: network)

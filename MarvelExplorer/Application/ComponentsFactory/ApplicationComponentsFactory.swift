@@ -7,9 +7,11 @@
 
 import Foundation
 import UIKit
+import MarvelExplorerDomain
+import MarvelExplorerData
 
 /// The ApplicationComponentsFactory .
-final class ApplicationComponentsFactory {
+final public class ApplicationComponentsFactory {
 
   private let servicesProvider: ServicesProvider
 

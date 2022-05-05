@@ -16,4 +16,8 @@ public struct Thumbnail: Equatable {
     return URL(string: path+"."+`extension`)!
   }
 
+  public init(path: String, `extension`: String) {
+    self.path = path
+    self.`extension` = `extension`
+  }
 }

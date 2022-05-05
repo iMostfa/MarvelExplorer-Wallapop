@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MarvelExplorerDomain
 
 protocol SeriesListNavigator: AnyObject {
   /// Presented a Series details view..

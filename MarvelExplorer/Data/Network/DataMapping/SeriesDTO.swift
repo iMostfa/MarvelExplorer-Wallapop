@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MarvelExplorerDomain
 
 /// Represents a DTO object fetched from MarvelAPI
 struct SeriesDTO: Codable {

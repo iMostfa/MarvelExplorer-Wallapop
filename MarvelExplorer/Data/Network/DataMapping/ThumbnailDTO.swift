@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MarvelExplorerDomain
 
 /// Represent a thumbnail DTO from Marvel API
 struct ThumbnailDTO: Codable {

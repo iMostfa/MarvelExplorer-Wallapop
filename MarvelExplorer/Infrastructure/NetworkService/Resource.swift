@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Resource<T: Codable> {
+public struct Resource<T: Codable> {
   let url: URL
   let parameters: [String: CustomStringConvertible]
   var request: URLRequest? {

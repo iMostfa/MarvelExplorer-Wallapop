@@ -7,21 +7,22 @@
 
 import Foundation
 import Combine
+import MarvelExplorerShared
 import UIKit.UIImage
 
-protocol LoadCoverUseCaseType: AnyObject {
+public protocol LoadCoverUseCaseType: AnyObject {
   func loadSeriesCover(for series: Series) -> AnyPublisher<UIImage?, Never>
 }
 
-final class LoadSeriesCoverUseCase: LoadCoverUseCaseType {
+final public class LoadSeriesCoverUseCase: LoadCoverUseCaseType {
 
   private let coversRepository: MarvelSeriesCoverRepository
 
-  init(coversRepository: MarvelSeriesCoverRepository) {
+  public init(coversRepository: MarvelSeriesCoverRepository) {
     self.coversRepository = coversRepository
   }
 
-  func loadSeriesCover(for series: Series) -> AnyPublisher <UIImage?, Never> {
+  public func loadSeriesCover(for series: Series) -> AnyPublisher <UIImage?, Never> {
     return coversRepository.loadSeriesCover(with: series.thumbnail.url.asSecureURL.absoluteString)
   }
 

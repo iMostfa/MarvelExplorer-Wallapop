@@ -10,16 +10,16 @@ import UIKit.UIImage
 import Combine
 
 // MARK: - ImageLoaderServiceType
-protocol ImageLoaderServiceType: AnyObject {
+public protocol ImageLoaderServiceType: AnyObject {
   func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never>
 }
 
 // MARK: - Implementation for ImageLoaderServiceType
-final class ImageLoaderService: ImageLoaderServiceType {
+final public class ImageLoaderService: ImageLoaderServiceType {
 
   private let cache: ImageCacheType = ImageCache()
 
-  func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never> {
+  public func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never> {
     if let image = cache.image(for: url) {
       print("Fetched from cache")
       return .just(image)

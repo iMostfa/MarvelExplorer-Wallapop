@@ -14,7 +14,15 @@ target 'MarvelExplorer' do
     # Pods for testing
   end
 
-
+  target 'MarvelExplorerData' do
+    plugin 'cocoapods-keys', {
+      :project => "MarvelExplorer",
+      :keys => [
+      "marvelPublicKey",
+      "marvelPrivateKey",
+      ]}
+  end
+  
   plugin 'cocoapods-keys', {
     :project => "MarvelExplorer",
     :keys => [

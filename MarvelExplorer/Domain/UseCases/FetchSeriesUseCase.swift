@@ -8,22 +8,22 @@
 import Foundation
 import Combine
 
-protocol FetchMarvelSeriesUseCaseType: AnyObject {
+public protocol FetchMarvelSeriesUseCaseType: AnyObject {
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
 
   // If we filtering using Repository(API) we would have this:
   //  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> /* Le
 }
 
-final class DefaultFetchMarvelSeriesUseCase: FetchMarvelSeriesUseCaseType {
+final public class DefaultFetchMarvelSeriesUseCase: FetchMarvelSeriesUseCaseType {
 
   private let seriesRepository: MarvelSeriesRepository
 
-  init(seriesRepository: MarvelSeriesRepository) {
+  public init(seriesRepository: MarvelSeriesRepository) {
     self.seriesRepository = seriesRepository
   }
 
-  func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
+  public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return seriesRepository.fetchSeries()
   }
 
