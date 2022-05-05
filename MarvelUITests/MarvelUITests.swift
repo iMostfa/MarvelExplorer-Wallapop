@@ -34,7 +34,7 @@ class MarvelUITests: XCTestCase {
 
   func test_application_isLoadingOnLaunch()  throws {
     let loadingElement = app.otherElements["SVProgressHUD"]
-    XCTAssertTrue(loadingElement.exists)
+    XCTAssertTrue(loadingElement.waitForExistence(timeout: 2.0))
   }
 
   func test_SeriesDetail_isPushed() throws {
