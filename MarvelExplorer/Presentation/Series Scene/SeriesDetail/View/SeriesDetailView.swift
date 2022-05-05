@@ -12,6 +12,7 @@ final class SeriesDetailsView: UIView {
 
   let tableView: UITableView = {
     let tableView = UITableView.init(frame: .zero, style: UITableView.Style.insetGrouped)
+    tableView.accessibilityIdentifier = AccessibilityIdentifiers.SeriesDetail.tableViewID
     return tableView
   }()
 

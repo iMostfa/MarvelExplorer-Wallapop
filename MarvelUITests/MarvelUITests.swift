@@ -10,15 +10,14 @@ import XCTest
 class MarvelUITests: XCTestCase {
 
   var app: XCUIApplication!
+  let AIDs = AccessibilityIdentifiers.self
 
   override func setUpWithError() throws {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-
-    // In UI tests it is usually best to stop immediately when a failure occurs.
     continueAfterFailure = false
     app = XCUIApplication.init()
+//    app.launchArguments = ["UITests"]
+
     app.launch()
-    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
   }
 
   override func tearDownWithError() throws {
@@ -26,36 +25,65 @@ class MarvelUITests: XCTestCase {
   }
 
   func test_application_isEmbeddedInNavigation()  throws {
-    // Tests that the home screen is embedded in navigation.
     let marvelSeriesStaticText = XCUIApplication().navigationBars["Marvel Series"].waitForExistence(timeout: 1)
     XCTAssertTrue(marvelSeriesStaticText)
 
   }
 
+  func test_seriesCell_contains_Thumbnail() throws {
+   let containsThumbnail = XCUIApplication()
+      .collectionViews[AIDs.SeriesList.collectionViewID]
+      .cells["SeriesList.cellId-0"]
+      .images[AIDs.SeriesListCell.seriesThumbnailImage]
+      .waitForExistence(timeout: 1.0)
+
+    XCTAssertTrue(containsThumbnail)
+  }
+
+  func test_seriesCell_contains_endYear() throws {
+    let containsEndYears = XCUIApplication()
+      .collectionViews[AIDs.SeriesList.collectionViewID]
+      .cells["SeriesList.cellId-0"]
+      .staticTexts[AIDs.SeriesListCell.seriesStartYearLabel]
+      .waitForExistence(timeout: 1.0)
+
+    XCTAssertTrue(containsEndYears)
+  }
+
+  func test_seriesCell_contains_startYear() throws {
+    let containsStartYear = XCUIApplication()
+      .collectionViews[AIDs.SeriesList.collectionViewID]
+      .cells["SeriesList.cellId-0"]
+      .staticTexts[AIDs.SeriesListCell.seriesStartYearLabel]
+      .waitForExistence(timeout: 1.0)
+
+    XCTAssertTrue(containsStartYear)
+  }
+
   func test_application_isLoadingOnLaunch()  throws {
-    let loadingElement = app.otherElements["SVProgressHUD"]
-    XCTAssertTrue(loadingElement.waitForExistence(timeout: 2.0))
+    let loadingElement = app.otherElements["SVProgressHUD"].exists
+
+    XCTAssertTrue(loadingElement)
   }
 
   func test_SeriesDetail_isPushed() throws {
-    // given
-    app
-      .collectionViews[AccessibilityIdentifiers.SeriesList.collectionViewID]
-      .cells["SeriesList.cellId-1"]
-      .children(matching: .other)
-      .element.tap()
-    // when
-    let isSeriesDetailShown = app.tables.staticTexts["Series Description"].exists
 
-    // then
-    XCTAssertTrue(isSeriesDetailShown)
+    let app = XCUIApplication()
+    app.collectionViews[AIDs.SeriesList.collectionViewID]
+      .cells["SeriesList.cellId-0"]
+      .images["SeriesListCell.thumbnailImage"]
+      .tap()
+
+    let seriesdetailTableviewidTable = app.tables["SeriesDetail.tableViewID"]
+
+    XCTAssertTrue(seriesdetailTableviewidTable.exists)
   }
 
   func test_SeriesHeaderIsAboveDetails() {
 
     app
-      .collectionViews[AccessibilityIdentifiers.SeriesList.collectionViewID]
-      .cells["SeriesList.cellId-1"]
+      .collectionViews[AIDs.SeriesList.collectionViewID]
+      .cells["SeriesList.cellId-0"]
       .children(matching: .other)
       .element
       .tap()
@@ -72,8 +100,8 @@ class MarvelUITests: XCTestCase {
 
   func test_SeriesDetailOrder() {
 
-    app.collectionViews[AccessibilityIdentifiers.SeriesList.collectionViewID]
-      .cells["SeriesList.cellId-1"]
+    app.collectionViews[AIDs.SeriesList.collectionViewID]
+      .cells["SeriesList.cellId-0"]
       .children(matching: .other)
       .element
       .tap()
@@ -95,6 +123,7 @@ class MarvelUITests: XCTestCase {
   func testLaunchPerformance() throws {
     if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
       // This measures how long it takes to launch your application.
+      // Baseline is 2.0
       measure(metrics: [XCTApplicationLaunchMetric()]) {
         XCUIApplication().launch()
       }
