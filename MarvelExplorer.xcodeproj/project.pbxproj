@@ -108,10 +108,10 @@
 		EFD06BF428241B9800C27284 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */; };
 		EFD06BF528241BAB00C27284 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFA281DB6BF002DE22C /* Haptics.swift */; };
 		EFD06BF728241C4600C27284 /* SeriesListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CB7281CF1E7002DE22C /* SeriesListFlowCoordinator.swift */; };
-		EFD06C0D2824362900C27284 /* MarvelExplorerData.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C0C2824362900C27284 /* MarvelExplorerData.h */; };
-		EFD06C0F2824364000C27284 /* MarvelExplorerDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C0E2824364000C27284 /* MarvelExplorerDomain.h */; };
-		EFD06C112824366000C27284 /* MarvelExplorerShared.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C102824366000C27284 /* MarvelExplorerShared.h */; };
-		EFD06C132824366E00C27284 /* MarvelExplorerUI.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C122824366E00C27284 /* MarvelExplorerUI.h */; };
+		EFD06C152824383A00C27284 /* MarvelExplorerData.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C142824383900C27284 /* MarvelExplorerData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFD06C172824385100C27284 /* MarvelExplorerDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C162824385100C27284 /* MarvelExplorerDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFD06C192824386400C27284 /* MarvelExplorerUI.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C182824386400C27284 /* MarvelExplorerUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFD06C1B2824387800C27284 /* MarvelExplorerShared.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFF1106F28222D250075121B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1106E28222D250075121B /* main.swift */; };
 		EFF11097282252450075121B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFF11099282252450075121B /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -346,10 +346,10 @@
 		EFD06B4F28240F5400C27284 /* MarvelExplorerDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelExplorerDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD06B862824116500C27284 /* MarvelExplorerData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelExplorerData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD06BCB28241A3C00C27284 /* MarvelExplorerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelExplorerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFD06C0C2824362900C27284 /* MarvelExplorerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerData.h; path = Frameworks/MarvelExplorerData/MarvelExplorerData.h; sourceTree = SOURCE_ROOT; };
-		EFD06C0E2824364000C27284 /* MarvelExplorerDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerDomain.h; path = Frameworks/MarvelExplorerDomain/MarvelExplorerDomain.h; sourceTree = SOURCE_ROOT; };
-		EFD06C102824366000C27284 /* MarvelExplorerShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerShared.h; path = Frameworks/MarvelExplorerShared/MarvelExplorerShared.h; sourceTree = SOURCE_ROOT; };
-		EFD06C122824366E00C27284 /* MarvelExplorerUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerUI.h; path = Frameworks/MarvelExplorerUI/MarvelExplorerUI.h; sourceTree = SOURCE_ROOT; };
+		EFD06C142824383900C27284 /* MarvelExplorerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerData.h; path = FrameworksHeaders/MarvelExplorerData/MarvelExplorerData.h; sourceTree = SOURCE_ROOT; };
+		EFD06C162824385100C27284 /* MarvelExplorerDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerDomain.h; path = FrameworksHeaders/MarvelExplorerDomain/MarvelExplorerDomain.h; sourceTree = SOURCE_ROOT; };
+		EFD06C182824386400C27284 /* MarvelExplorerUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerUI.h; path = FrameworksHeaders/MarvelExplorerUI/MarvelExplorerUI.h; sourceTree = SOURCE_ROOT; };
+		EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerShared.h; path = FrameworksHeaders/MarvelExplorerShared/MarvelExplorerShared.h; sourceTree = SOURCE_ROOT; };
 		EFF1106E28222D250075121B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EFF11098282252450075121B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EFF1109A282252560075121B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -533,8 +533,8 @@
 				EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */,
 				EF1F8CDB281D1B2D002DE22C /* Scheduler.swift */,
 				EF1F8CA0281CE9C3002DE22C /* MarvelConstants.swift */,
+				EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */,
 				EF1F8CCE281D0E7C002DE22C /* Extentions */,
-				EFD06C102824366000C27284 /* MarvelExplorerShared.h */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -561,8 +561,8 @@
 		EF1F8CA9281CEE41002DE22C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EFD06C182824386400C27284 /* MarvelExplorerUI.h */,
 				EF1F8CB5281CF1AD002DE22C /* Series Scene */,
-				EFD06C122824366E00C27284 /* MarvelExplorerUI.h */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -581,7 +581,7 @@
 				EF1F8CBD281CF96B002DE22C /* Interfaces */,
 				EF1F8CBC281CF95F002DE22C /* UseCases */,
 				EF1F8CBB281CF94D002DE22C /* Entities */,
-				EFD06C0E2824364000C27284 /* MarvelExplorerDomain.h */,
+				EFD06C162824385100C27284 /* MarvelExplorerDomain.h */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -655,7 +655,7 @@
 			children = (
 				EF1F8CC3281D03FC002DE22C /* Repositories */,
 				EF1F8CC8281D05BB002DE22C /* Network */,
-				EFD06C0C2824362900C27284 /* MarvelExplorerData.h */,
+				EFD06C142824383900C27284 /* MarvelExplorerData.h */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1001,7 +1001,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD06C112824366000C27284 /* MarvelExplorerShared.h in Headers */,
+				EFD06C1B2824387800C27284 /* MarvelExplorerShared.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,7 +1009,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD06C0F2824364000C27284 /* MarvelExplorerDomain.h in Headers */,
+				EFD06C172824385100C27284 /* MarvelExplorerDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,7 +1017,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD06C0D2824362900C27284 /* MarvelExplorerData.h in Headers */,
+				EFD06C152824383A00C27284 /* MarvelExplorerData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,7 +1025,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD06C132824366E00C27284 /* MarvelExplorerUI.h in Headers */,
+				EFD06C192824386400C27284 /* MarvelExplorerUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
