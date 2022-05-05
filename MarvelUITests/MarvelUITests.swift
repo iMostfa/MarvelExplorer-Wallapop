@@ -15,7 +15,7 @@ class MarvelUITests: XCTestCase {
   override func setUpWithError() throws {
     continueAfterFailure = false
     app = XCUIApplication.init()
-//    app.launchArguments = ["UITests"]
+    app.launchArguments = ["UITests"]
 
     app.launch()
   }
