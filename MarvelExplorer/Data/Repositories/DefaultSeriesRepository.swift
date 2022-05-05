@@ -13,19 +13,18 @@ import Combine
 typealias MarvelSeriesDTOResponse = MarvelResponse<SeriesDTO>
 
 final class DefaultMarvelSeriesRepository {
-  
+
   let networkService: NetworkServiceType
   private(set) var seriesPaginator: MarvelPaginator<SeriesDTO>?
-  
+
   init(networkService: NetworkServiceType) {
     self.networkService = networkService
   }
-  
+
 }
 
 extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
 
-  
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return networkService
       .load(Resource<MarvelSeriesDTOResponse>.getSeries(offset: self.seriesPaginator?.nextOffset,
@@ -35,11 +34,11 @@ extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
       .handleEvents(receiveOutput: { paginator in
         self.seriesPaginator = paginator.data
       })
-      .map({ paginator -> Result<[Series],Error> in
+      .map({ paginator -> Result<[Series], Error> in
         let e = paginator.data.results.map { $0.toDomain() }
         return .success(e)
       })
-      .catch({ error -> AnyPublisher<Result<[Series],Error>,Never> in
+      .catch({ error -> AnyPublisher<Result<[Series], Error>, Never> in
         return .just(.failure(error))
       })
       .eraseToAnyPublisher()

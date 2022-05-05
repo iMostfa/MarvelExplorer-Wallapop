@@ -1,4 +1,3 @@
-
 import UIKit
 
 private let fakeAppDelegateClass: AnyClass? = NSClassFromString("MarvelExplorerTests.FakeAppDelegate")

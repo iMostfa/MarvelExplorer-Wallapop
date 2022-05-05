@@ -7,20 +7,19 @@
 
 import UIKit
 
+class SeriesDetailsDataSource: UITableViewDiffableDataSource<SeriesDetailSection, DetailItem> {
 
-class SeriesDetailsDataSource: UITableViewDiffableDataSource<SeriesDetailSection,DetailItem> {
-  
-  let sections = [.description,SeriesDetailSection.years, .writers]
-  
+  let sections = [.description, SeriesDetailSection.years, .writers]
+
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return sections[section].title.localized()
   }
-  
+
 }
 
 enum SeriesDetailSection: Hashable {
   case writers, years, description
-  
+
   var title: String {
     switch self {
     case .description: return "SERIESDETAIL_DESCRIPTION"

@@ -16,7 +16,7 @@ enum AccessibilityIdentifiers {
       public static let cellID = "\(SeriesList.self).cellId"
       public static let collectionViewID = "\(SeriesList.self).collectionViewID"
   }
-  
+
   public struct SeriesDetail {
     public static let headerID = "\(SeriesDetail.self).HeaderView"
     public static let headerBlur = "\(SeriesDetail.self).HeaderBlur"

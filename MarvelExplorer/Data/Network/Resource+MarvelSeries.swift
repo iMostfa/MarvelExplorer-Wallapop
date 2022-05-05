@@ -10,12 +10,11 @@ import Combine
 import CryptoKit
 
 extension Resource {
-  
-  static func getSeries(offset: Int?, limit: Int?) -> Resource  {
+
+  static func getSeries(offset: Int?, limit: Int?) -> Resource {
     let url = MarvelConstants.baseUrl.appendingPathComponent("/series")
     let marvelParameters = MarvelParameters.init(offset: offset, limit: limit)
     return Resource(url: url, parameters: marvelParameters)
   }
-  
-}
 
+}

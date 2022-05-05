@@ -8,12 +8,12 @@
 import Foundation
 
 public struct Thumbnail: Equatable {
-  public let path:String
+  public let path: String
   public let `extension`:String
-  
-  ///URL of Thumbnail
-  public var url:URL{
+
+  /// URL of Thumbnail
+  public var url: URL {
     return URL(string: path+"."+`extension`)!
   }
-  
+
 }

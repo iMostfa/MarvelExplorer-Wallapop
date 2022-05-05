@@ -9,7 +9,7 @@ import Foundation
 
 /// Represents a DTO object fetched from MarvelAPI
 struct SeriesDTO: Codable {
-  
+
   let id: Int
   let title: String
   let resultDescription: String?
@@ -21,16 +21,15 @@ struct SeriesDTO: Codable {
   enum CodingKeys: String, CodingKey {
     case id, title
     case resultDescription = "description"
-    case startYear, endYear, type, thumbnail,creators
+    case startYear, endYear, type, thumbnail, creators
   }
-  
-}
 
+}
 
 extension SeriesDTO {
   func toDomain() -> Series {
     let creators = self.creators.items.map { Creator.init(name: $0.name, role: $0.role) }
-   
+
    return Series.init(name: title,
           id: id,
           description: resultDescription,

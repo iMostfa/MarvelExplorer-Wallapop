@@ -14,16 +14,15 @@ protocol LoadCoverUseCaseType: AnyObject {
 }
 
 final class LoadSeriesCoverUseCase: LoadCoverUseCaseType {
-  
+
   private let coversRepository: MarvelSeriesCoverRepository
-  
+
   init(coversRepository: MarvelSeriesCoverRepository) {
     self.coversRepository = coversRepository
   }
-  
 
   func loadSeriesCover(for series: Series) -> AnyPublisher <UIImage?, Never> {
     return coversRepository.loadSeriesCover(with: series.thumbnail.url.asSecureURL.absoluteString)
   }
-  
+
 }

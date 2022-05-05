@@ -10,30 +10,29 @@ import UIKit
 import Combine
 /// Stretchy table view header
 final class StretchyHeaderView: UIView {
-  
-  //MARK: - View properties
+
+  // MARK: - View properties
   private let blurEffectView: UIVisualEffectView = {
     let visualEffect = UIBlurEffect.init(style: .light)
     let effectView = UIVisualEffectView.init(effect: visualEffect)
     return effectView
   }()
-  
+
   private var cancellableBag: Set<AnyCancellable> = .init()
-  
+
   public let imageView: UIImageView = {
     let imageView = UIImageView.init()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
-    
+
     return imageView
   }()
-  
-  //MARK: - View Animator
+
+  // MARK: - View Animator
   private var viewAnimator: UIViewPropertyAnimator?
   var blurFactor = 0.4
 
-
-  //MARK: - View Constraints
+  // MARK: - View Constraints
 
   private var imageViewHeight = NSLayoutConstraint()
   private var imageViewBottom = NSLayoutConstraint()
@@ -41,44 +40,44 @@ final class StretchyHeaderView: UIView {
   private var containerViewHeight = NSLayoutConstraint()
   private var originalImageHeight: CGFloat?
   var heightBeforeDragging: CGFloat = .infinity
-  
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
     setViewConstraints()
     setupAccessibility()
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("No storyboard support")
   }
-  
+
   private func setupAccessibility() {
     accessibilityIdentifier = AccessibilityIdentifiers.SeriesDetail.headerID
     blurEffectView.accessibilityIdentifier = AccessibilityIdentifiers.SeriesDetail.headerBlur
 
   }
-  
+
   private func setupViews() {
     addSubview(containerView)
     containerView.addSubview(imageView)
-    
+
     self.imageView.addSubview(self.blurEffectView)
-    
+
     self.blurEffectView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
-    
+
     blurEffectView.alpha = 0
-    
+
     viewAnimator = UIViewPropertyAnimator.init(duration: 0.5, curve: .easeInOut)
-    
-    viewAnimator?.addAnimations { [ weak self] in 
+
+    viewAnimator?.addAnimations { [ weak self] in
       self?.blurEffectView.alpha = 1
     }
   }
-  
-  func bind(to imagePublisher: AnyPublisher<UIImage?,Never>) {
+
+  func bind(to imagePublisher: AnyPublisher<UIImage?, Never>) {
     imagePublisher
       .receive(on: RunLoop.main)
       .sink { [weak self] image in
@@ -86,37 +85,37 @@ final class StretchyHeaderView: UIView {
       self.imageView.image = image
     }.store(in: &cancellableBag)
   }
-  
+
   /// Sets up view constraints
   private func setViewConstraints() {
     NSLayoutConstraint.activate([
-      widthAnchor.constraint (equalTo: containerView.widthAnchor),
+      widthAnchor.constraint(equalTo: containerView.widthAnchor),
       centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
       heightAnchor.constraint(equalTo: containerView.heightAnchor)
     ])
-    
+
     containerView.translatesAutoresizingMaskIntoConstraints=false
-    
-    containerView.widthAnchor.constraint(equalTo:imageView.widthAnchor).isActive = true
-    
+
+    containerView.widthAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+
     containerViewHeight = containerView.heightAnchor.constraint(equalTo: self.heightAnchor)
-    
+
     containerViewHeight.isActive = true
-    
+
     imageView.translatesAutoresizingMaskIntoConstraints=false
-    imageViewBottom = imageView.bottomAnchor.constraint(equalTo:containerView.bottomAnchor)
+    imageViewBottom = imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
     imageViewBottom.isActive = true
-    imageViewHeight=imageView.heightAnchor.constraint(equalTo:containerView.heightAnchor)
+    imageViewHeight=imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
     imageViewHeight.isActive = true
     originalImageHeight = -imageViewBottom.constant
   }
-    
+
   public func scrollViewDidEndDragging(scrollView: UIScrollView) {
     self.heightBeforeDragging = .infinity
   }
   public func viewWillDisAppear() {
     self.viewAnimator?.stopAnimation(true)
-    
+
   }
   public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
     let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
@@ -135,5 +134,5 @@ final class StretchyHeaderView: UIView {
 
     }
   }
-  
+
 }
