@@ -11,18 +11,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   var appCoordinator: ApplicationFlowCoordinator!
-
+  var composites = AppDelegateCompositeFactory.defaultComposites
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+
+    // MARK: - Composites
+    composites.forEach { $0.applicationDidFinishLaunching?(application) }
+
+    // MARK: - App coordinator
     let window = UIWindow(frame: UIScreen.main.bounds)
     appCoordinator = ApplicationFlowCoordinator(window: window,
                                                 dependencyProvider: ApplicationComponentsFactory.init())
     appCoordinator.start()
-
-    if ProcessInfo.processInfo.arguments.contains("UITests") {
-      UIApplication.shared.keyWindow?.layer.speed = 100
-    }
-
     self.window = window
     self.window?.makeKeyAndVisible()
     return true

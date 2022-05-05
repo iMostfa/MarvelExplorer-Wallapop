@@ -112,6 +112,9 @@
 		EFD06C192824386400C27284 /* MarvelExplorerUI.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C182824386400C27284 /* MarvelExplorerUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFD06C1B2824387800C27284 /* MarvelExplorerShared.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFD06C1F282487A200C27284 /* UIAlertController+show.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD06C1D2824879D00C27284 /* UIAlertController+show.swift */; };
+		EFD06C222824967300C27284 /* AppDelegateComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD06C212824967300C27284 /* AppDelegateComposite.swift */; };
+		EFD06C252824975600C27284 /* TestsComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD06C242824975600C27284 /* TestsComposite.swift */; };
+		EFD06C272824989000C27284 /* DefaultComposites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD06C262824989000C27284 /* DefaultComposites.swift */; };
 		EFF1106F28222D250075121B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1106E28222D250075121B /* main.swift */; };
 		EFF11097282252450075121B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFF11099282252450075121B /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -356,6 +359,9 @@
 		EFD06C182824386400C27284 /* MarvelExplorerUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerUI.h; path = FrameworksHeaders/MarvelExplorerUI/MarvelExplorerUI.h; sourceTree = SOURCE_ROOT; };
 		EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerShared.h; path = FrameworksHeaders/MarvelExplorerShared/MarvelExplorerShared.h; sourceTree = SOURCE_ROOT; };
 		EFD06C1D2824879D00C27284 /* UIAlertController+show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+show.swift"; sourceTree = "<group>"; };
+		EFD06C212824967300C27284 /* AppDelegateComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateComposite.swift; sourceTree = "<group>"; };
+		EFD06C242824975600C27284 /* TestsComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsComposite.swift; sourceTree = "<group>"; };
+		EFD06C262824989000C27284 /* DefaultComposites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposites.swift; sourceTree = "<group>"; };
 		EFF1106E28222D250075121B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EFF11098282252450075121B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EFF1109A282252560075121B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -997,6 +1003,7 @@
 		EFD06AF72823EAE800C27284 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EFD06C202824966300C27284 /* App Delegte Composite */,
 				EFF11099282252450075121B /* Localizable.strings */,
 				EF1F8C59281CE525002DE22C /* AppDelegate.swift */,
 				EF1F8C62281CE527002DE22C /* Assets.xcassets */,
@@ -1012,6 +1019,24 @@
 				EFD06C1D2824879D00C27284 /* UIAlertController+show.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		EFD06C202824966300C27284 /* App Delegte Composite */ = {
+			isa = PBXGroup;
+			children = (
+				EFD06C212824967300C27284 /* AppDelegateComposite.swift */,
+				EFD06C262824989000C27284 /* DefaultComposites.swift */,
+				EFD06C232824971E00C27284 /* SubComposite */,
+			);
+			path = "App Delegte Composite";
+			sourceTree = "<group>";
+		};
+		EFD06C232824971E00C27284 /* SubComposite */ = {
+			isa = PBXGroup;
+			children = (
+				EFD06C242824975600C27284 /* TestsComposite.swift */,
+			);
+			path = SubComposite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1507,11 +1532,14 @@
 				EF1F8CA4281CEB54002DE22C /* FlowCoordinator.swift in Sources */,
 				EF1F8C5A281CE525002DE22C /* AppDelegate.swift in Sources */,
 				EF1F8CA8281CED8F002DE22C /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
+				EFD06C222824967300C27284 /* AppDelegateComposite.swift in Sources */,
 				EF1F8CA6281CED73002DE22C /* AppFlowCoordinator.swift in Sources */,
 				EFD06BA12824134600C27284 /* Publisher+ConvenienceMethods.swift in Sources */,
+				EFD06C272824989000C27284 /* DefaultComposites.swift in Sources */,
 				EFD06BF728241C4600C27284 /* SeriesListFlowCoordinator.swift in Sources */,
 				EF1F8CB3281CF03B002DE22C /* ApplicationComponentsFactory.swift in Sources */,
 				EFF1106F28222D250075121B /* main.swift in Sources */,
+				EFD06C252824975600C27284 /* TestsComposite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
