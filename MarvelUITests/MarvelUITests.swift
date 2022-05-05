@@ -16,22 +16,22 @@ class MarvelUITests: XCTestCase {
     continueAfterFailure = false
     app = XCUIApplication.init()
     app.launchArguments = ["UITests"]
-
     app.launch()
   }
 
   override func tearDownWithError() throws {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    app.terminate()
+    
   }
 
   func test_application_isEmbeddedInNavigation()  throws {
-    let marvelSeriesStaticText = XCUIApplication().navigationBars["Marvel Series"].waitForExistence(timeout: 1)
+    let marvelSeriesStaticText = app.navigationBars["Marvel Series"].waitForExistence(timeout: 1)
     XCTAssertTrue(marvelSeriesStaticText)
 
   }
 
   func test_seriesCell_contains_Thumbnail() throws {
-   let containsThumbnail = XCUIApplication()
+   let containsThumbnail = app
       .collectionViews[AIDs.SeriesList.collectionViewID]
       .cells["SeriesList.cellId-0"]
       .images[AIDs.SeriesListCell.seriesThumbnailImage]
@@ -41,7 +41,7 @@ class MarvelUITests: XCTestCase {
   }
 
   func test_seriesCell_contains_endYear() throws {
-    let containsEndYears = XCUIApplication()
+    let containsEndYears = app
       .collectionViews[AIDs.SeriesList.collectionViewID]
       .cells["SeriesList.cellId-0"]
       .staticTexts[AIDs.SeriesListCell.seriesStartYearLabel]
@@ -51,7 +51,7 @@ class MarvelUITests: XCTestCase {
   }
 
   func test_seriesCell_contains_startYear() throws {
-    let containsStartYear = XCUIApplication()
+    let containsStartYear = app
       .collectionViews[AIDs.SeriesList.collectionViewID]
       .cells["SeriesList.cellId-0"]
       .staticTexts[AIDs.SeriesListCell.seriesStartYearLabel]
@@ -61,14 +61,13 @@ class MarvelUITests: XCTestCase {
   }
 
   func test_application_isLoadingOnLaunch()  throws {
-    let loadingElement = app.otherElements["SVProgressHUD"].exists
+    let loadingElement = XCUIApplication.init().otherElements["SVProgressHUD"].exists
 
     XCTAssertTrue(loadingElement)
   }
 
   func test_SeriesDetail_isPushed() throws {
 
-    let app = XCUIApplication()
     app.collectionViews[AIDs.SeriesList.collectionViewID]
       .cells["SeriesList.cellId-0"]
       .images["SeriesListCell.thumbnailImage"]
