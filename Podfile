@@ -6,7 +6,6 @@ target 'MarvelExplorer' do
   use_frameworks!
   pod 'SnapKit'
   pod 'SVProgressHUD'
-#  pod 'EarlGreyApp'
 
   # Pods for MarvelExplorer
 
