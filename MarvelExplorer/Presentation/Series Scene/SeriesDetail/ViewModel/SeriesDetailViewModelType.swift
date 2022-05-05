@@ -18,7 +18,6 @@ enum SeriesDetailState {
   case success(SeriesDetailItemViewModel)
 }
 
-
 struct SeriesDetailViewModelInput {
   let onAppear: AnyPublisher<Void, Never>
 }

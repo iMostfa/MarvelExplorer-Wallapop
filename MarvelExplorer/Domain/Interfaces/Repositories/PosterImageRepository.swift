@@ -9,9 +9,8 @@ import Foundation
 import Combine
 import UIKit.UIImage
 
-
 /// Used to provide a cover data for a series
 protocol MarvelSeriesCoverRepository: AnyObject {
-  func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?,Never>
-  
+  func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?, Never>
+
 }

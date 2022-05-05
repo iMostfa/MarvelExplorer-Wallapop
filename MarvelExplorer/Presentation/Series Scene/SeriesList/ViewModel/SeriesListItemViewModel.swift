@@ -13,7 +13,7 @@ struct SeriesListItemViewModel: Equatable, Hashable, Identifiable {
   let id: Int
   let title: String
   let description: String?
-  let endYear,startYear: String
+  let endYear, startYear: String
   let cover: AnyPublisher<UIImage?, Never>
 
 }
@@ -22,7 +22,7 @@ extension SeriesListItemViewModel {
   static func == (lhs: SeriesListItemViewModel, rhs: SeriesListItemViewModel) -> Bool {
     lhs.id == rhs.id
   }
-  //TODO: should implement a safer one to avoid collision, maybe using id from response
+  // TODO: should implement a safer one to avoid collision, maybe using id from response
   func hash(into hasher: inout Hasher) {
     hasher.combine(title)
   }

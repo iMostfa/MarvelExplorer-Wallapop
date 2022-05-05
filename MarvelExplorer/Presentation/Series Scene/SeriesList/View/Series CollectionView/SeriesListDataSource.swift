@@ -9,12 +9,11 @@ import Foundation
 import UIKit
 import Combine
 
-typealias SeriesSnapshot = NSDiffableDataSourceSnapshot<SeriesDataSourceSection,SeriesListItemViewModel>
+typealias SeriesSnapshot = NSDiffableDataSourceSnapshot<SeriesDataSourceSection, SeriesListItemViewModel>
 
 enum SeriesDataSourceSection {
   case main
 }
-
 
 /// SeriesDataSource is a subclass of UICollectionViewDiffableDataSource<SeriesDataSourceSection, SeriesListItemViewModel>, incase some Data sources functions needed to be implemented.
 /// and as a type-alias around the generic.

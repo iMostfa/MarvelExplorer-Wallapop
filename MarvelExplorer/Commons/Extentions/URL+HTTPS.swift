@@ -8,14 +8,14 @@
 import Foundation
 
 public extension URL {
-  
-  var isHTTP:Bool{
+
+  var isHTTP: Bool {
     return scheme?.contains("https") ?? false
   }
-  
-  var asSecureURL:URL {
+
+  var asSecureURL: URL {
     guard !isHTTP else { return self }
-    
+
     let secureURL = absoluteString.replacingOccurrences(of: scheme ?? "", with: "https")
     return URL(string: secureURL)!
   }

@@ -13,7 +13,6 @@ class ServicesProvider {
   let seriesRepository: MarvelSeriesRepository
   let imageLoaderRepository: MarvelSeriesCoverRepository
 
-
   static var defaultProvider: ServicesProvider {
     let network = NetworkService()
     let imageLoader = ImageLoaderService()

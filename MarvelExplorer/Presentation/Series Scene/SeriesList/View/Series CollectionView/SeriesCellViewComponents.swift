@@ -17,10 +17,10 @@ struct SeriesCellViewComponents {
     title.lineBreakMode = .byWordWrapping
     title.textAlignment = .left
     title.font = .systemFont(ofSize: 13, weight: .semibold)
-    
+
     return title
   }()
-  
+
   let startYear: UILabel = {
     let subtitle = UILabel()
     subtitle.adjustsFontForContentSizeCategory = true
@@ -31,7 +31,7 @@ struct SeriesCellViewComponents {
     subtitle.font = .systemFont(ofSize: 9, weight: .bold)
     return subtitle
   }()
-  
+
   let endYear: UILabel = {
     let subtitle = UILabel()
     subtitle.adjustsFontForContentSizeCategory = true
@@ -42,8 +42,7 @@ struct SeriesCellViewComponents {
     subtitle.font = .systemFont(ofSize: 9, weight: .bold)
     return subtitle
   }()
-  
-  
+
   var thumbnailView: UIImageView = {
     let imageView = UIImageView.init()
     imageView.translatesAutoresizingMaskIntoConstraints = false

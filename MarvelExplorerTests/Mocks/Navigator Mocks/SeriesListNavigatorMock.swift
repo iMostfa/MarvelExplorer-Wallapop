@@ -11,14 +11,14 @@ import Combine
 @testable import MarvelExplorer
 
 class SeriesListNavigatorMock: SeriesListNavigator {
-  
-  //MARK: - showDetails
-  
+
+  // MARK: - showDetails
+
   var showDetailsForSeriesCallsCount = 0
   var showDetailsForSeriesCalled: Bool {
     return showDetailsForSeriesCallsCount > 0
   }
-  
+
   var showDetailsForClosure: ((Series) -> Void)?
   var showDetailsForReceivedSeriesId: Series?
   var showDetailsForReceivedInvocations: [Series] = []
@@ -29,7 +29,5 @@ class SeriesListNavigatorMock: SeriesListNavigator {
     showDetailsForReceivedInvocations.append(series)
     showDetailsForClosure?(series)
   }
-  
-  
-  
+
 }

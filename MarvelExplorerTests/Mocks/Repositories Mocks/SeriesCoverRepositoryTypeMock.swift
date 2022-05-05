@@ -11,7 +11,7 @@ import Combine
 @testable import MarvelExplorer
 
 class MarvelSeriesCoverRepositoryMock: MarvelSeriesCoverRepository {
- 
+
   var loadSeriesCoverCallsCount = 0
   var loadSeriesCoverWasCalled: Bool {
     return loadSeriesCoverCallsCount > 0
@@ -27,5 +27,5 @@ class MarvelSeriesCoverRepositoryMock: MarvelSeriesCoverRepository {
     loadSeriesCoverInvocations.append((path))
     return loadSeriesCoverClosure.map({ $0(path) }) ?? loadSeriesCoverReturnValue
   }
-  
+
 }

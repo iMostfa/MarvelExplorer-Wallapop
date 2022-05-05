@@ -12,33 +12,33 @@ import Combine
 
 final class SeriesCollectionViewCell: UICollectionViewCell {
   static let reuseIdentifier = "RoundedCellReuseIdentifier"
-  
+
   var imageLoader: ImageLoaderServiceType?
   var imageURL: String?
   var currentImageDownloader: AnyCancellable?
   var dateDownloader: AnyCancellable?
   var seriesCellView: SeriesCellViewComponents = .init()
-  
+
   // Inits
   override init(frame: CGRect) {
     super.init(frame: frame)
     configure()
 //    round(radius: 8)
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("Storyboards not supported.")
   }
-  
+
   func configure() {
     contentView.backgroundColor = .systemGray6
     setupDetailsStack()
   }
-  
+
   override func prepareForReuse() {
     cancelImageLoading()
   }
-  
+
   func bind(to viewModel: SeriesListItemViewModel) {
     cancelImageLoading()
     seriesCellView.title.text = viewModel.title
@@ -46,8 +46,7 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
     seriesCellView.endYear.text = viewModel.endYear
     currentImageDownloader = viewModel.cover.sink {image in self.showImage(image: image) }
   }
-  
-  
+
   private func showImage(image: UIImage?) {
     DispatchQueue.main.async {
       self.cancelImageLoading()
@@ -58,18 +57,18 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
         self.seriesCellView.thumbnailView.image = image
       })
     }
-    
+
   }
-  
+
   func cancelImageLoading() {
     seriesCellView.thumbnailView.image = nil
     currentImageDownloader = nil
   }
-  
+
 }
 
 extension SeriesCollectionViewCell {
-  
+
   // MARK: - Cell Details Stacks
   private func setupDetailsStack() {
     // hStack
@@ -77,7 +76,7 @@ extension SeriesCollectionViewCell {
                                                 seriesCellView.endYear])
     hStack.distribution = .equalSpacing
     hStack.axis = .horizontal
-    
+
     // vStack
     let vStack = UIStackView(arrangedSubviews: [seriesCellView.title,
                                                 hStack])
@@ -94,26 +93,24 @@ extension SeriesCollectionViewCell {
     let stackBackground = UIVisualEffectView.init(effect: UIBlurEffect.init(style: .prominent))
     stackBackground.translatesAutoresizingMaskIntoConstraints = false
     vStack.insertSubview(stackBackground, at: 0)
-    
-    
-    //MARK: - Constraints Setup
+
+    // MARK: - Constraints Setup
     seriesCellView.thumbnailView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
-    
 
     vStack.snp.makeConstraints { make in
       make
         .horizontalEdges
         .equalToSuperview()
-      
+
       make
         .bottom.equalToSuperview()
     }
-    
+
     stackBackground.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
-    
+
   }
 }

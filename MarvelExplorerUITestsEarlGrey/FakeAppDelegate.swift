@@ -18,4 +18,3 @@ class FakeAppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
-

@@ -10,11 +10,10 @@ import XCTest
 import Combine
 @testable import MarvelExplorer
 
-
 class ImageLoaderServiceTypeMock: ImageLoaderServiceType {
-  
-  //MARK: - Load Image Mock
-  
+
+  // MARK: - Load Image Mock
+
   var loadImageUsingClosure: ((URL) -> AnyPublisher<UIImage?, Never>)?
   var loadImageCallsCount = 0
   var loadImageNumberOfCalls: Bool {
@@ -30,7 +29,5 @@ class ImageLoaderServiceTypeMock: ImageLoaderServiceType {
     loadImageInvocations.append(url)
     return loadImageUsingClosure.map({ $0(url) }) ?? loadImageReturnValue
   }
-  
-  
-  
+
 }
