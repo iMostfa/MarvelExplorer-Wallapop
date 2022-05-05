@@ -81,8 +81,10 @@ final public class SeriesListViewController: UIViewController {
       SVProgressHUD.dismiss()
       Haptics.play(.light)
       self.update(with: series)
-    case .failure:
-      assertionFailure("To be implemented: Show alert here..")
+    case .failure(let error):
+      UIAlertController.show(message: error.localizedDescription,
+                             title: "DEFAULT_ALERT_ERROR_TITLE".localized(),
+                             on: self)
       return
     }
   }

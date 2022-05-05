@@ -111,6 +111,7 @@
 		EFD06C172824385100C27284 /* MarvelExplorerDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C162824385100C27284 /* MarvelExplorerDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFD06C192824386400C27284 /* MarvelExplorerUI.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C182824386400C27284 /* MarvelExplorerUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFD06C1B2824387800C27284 /* MarvelExplorerShared.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFD06C1F282487A200C27284 /* UIAlertController+show.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD06C1D2824879D00C27284 /* UIAlertController+show.swift */; };
 		EFF1106F28222D250075121B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1106E28222D250075121B /* main.swift */; };
 		EFF11097282252450075121B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFF11099282252450075121B /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -348,6 +349,7 @@
 		EFD06C162824385100C27284 /* MarvelExplorerDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerDomain.h; path = FrameworksHeaders/MarvelExplorerDomain/MarvelExplorerDomain.h; sourceTree = SOURCE_ROOT; };
 		EFD06C182824386400C27284 /* MarvelExplorerUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerUI.h; path = FrameworksHeaders/MarvelExplorerUI/MarvelExplorerUI.h; sourceTree = SOURCE_ROOT; };
 		EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarvelExplorerShared.h; path = FrameworksHeaders/MarvelExplorerShared/MarvelExplorerShared.h; sourceTree = SOURCE_ROOT; };
+		EFD06C1D2824879D00C27284 /* UIAlertController+show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+show.swift"; sourceTree = "<group>"; };
 		EFF1106E28222D250075121B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EFF11098282252450075121B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EFF1109A282252560075121B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 		EF1F8CA9281CEE41002DE22C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EFD06C1C2824877B00C27284 /* Extentions */,
 				EFD06C182824386400C27284 /* MarvelExplorerUI.h */,
 				EF1F8CB5281CF1AD002DE22C /* Series Scene */,
 			);
@@ -989,6 +992,14 @@
 				EF1F8C67281CE527002DE22C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EFD06C1C2824877B00C27284 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				EFD06C1D2824879D00C27284 /* UIAlertController+show.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1602,6 +1613,7 @@
 				EFD06BED28241A8D00C27284 /* SeriesDetailViewController.swift in Sources */,
 				EFD06BE328241A8D00C27284 /* SeriesListView.swift in Sources */,
 				EFD06BE528241A8D00C27284 /* SeriesDetailItemViewModel.swift in Sources */,
+				EFD06C1F282487A200C27284 /* UIAlertController+show.swift in Sources */,
 				EFD06BDE28241A8D00C27284 /* SeriesListViewModelType.swift in Sources */,
 				EFD06BE428241A8D00C27284 /* SeriesDetailViewModelType.swift in Sources */,
 				EFD06BE228241A8D00C27284 /* SeriesDetailCell.swift in Sources */,

@@ -24,3 +24,6 @@
 "SERIESDETAIL_DURATION" = "Series Duration";
 "SERIESDETAIL_WRITERS" = "Series Writers";
 
+//MARK: - Alert Message.
+"DEFAULT_ALERT_OK" = "Ok";
+"DEFAULT_ALERT_ERROR_TITLE" = "Error Happened 😭";

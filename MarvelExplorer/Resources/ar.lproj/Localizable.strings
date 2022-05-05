@@ -22,3 +22,6 @@
 "SERIESDETAIL_DESCRIPTION" = "وصف المجلة";
 "SERIESDETAIL_DURATION" = "مدة اصدار المجلة";
 "SERIESDETAIL_WRITERS" = "كاتبي المجلة";
+
+"DEFAULT_ALERT_OK" = "حاضر";
+"DEFAULT_ALERT_ERROR_TITLE" = "حدث خطأ 😭";
