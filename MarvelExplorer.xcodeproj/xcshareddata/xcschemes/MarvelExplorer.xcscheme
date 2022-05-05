@@ -70,16 +70,6 @@
                ReferencedContainer = "container:MarvelExplorer.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EFD06B852824116500C27284"
-               BuildableName = "MarvelExplorerData.framework"
-               BlueprintName = "MarvelExplorerData"
-               ReferencedContainer = "container:MarvelExplorer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
