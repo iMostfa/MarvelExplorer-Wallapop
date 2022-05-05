@@ -10,8 +10,8 @@ import Combine
 import UIKit
 import MarvelExplorerDomain
 
-struct SeriesDetailItemViewModel: Equatable, Hashable, Identifiable {
-  let id: Int
+public struct SeriesDetailItemViewModel: Equatable, Hashable, Identifiable {
+  public let id: Int
   let title: String
   let seriesDetails: [SeriesDetail]
   let cover: AnyPublisher<UIImage?, Never>
@@ -26,10 +26,10 @@ struct SeriesDetailItemViewModel: Equatable, Hashable, Identifiable {
 }
 
 extension SeriesDetailItemViewModel {
-  static func == (lhs: SeriesDetailItemViewModel, rhs: SeriesDetailItemViewModel) -> Bool {
+  public static func == (lhs: SeriesDetailItemViewModel, rhs: SeriesDetailItemViewModel) -> Bool {
     lhs.id == rhs.id
   }
-  func hash(into hasher: inout Hasher) {
+  public func hash(into hasher: inout Hasher) {
     hasher.combine(id)
   }
 }

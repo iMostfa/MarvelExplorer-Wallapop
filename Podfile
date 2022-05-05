@@ -4,8 +4,6 @@
 target 'MarvelExplorer' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'SnapKit'
-  pod 'SVProgressHUD'
 
   # Pods for MarvelExplorer
 
@@ -14,6 +12,18 @@ target 'MarvelExplorer' do
     # Pods for testing
   end
 
+  target 'MarvelExplorerUI' do
+    pod 'SnapKit'
+    pod 'SVProgressHUD'
+
+    plugin 'cocoapods-keys', {
+      :project => "MarvelExplorer",
+      :keys => [
+      "marvelPublicKey",
+      "marvelPrivateKey",
+      ]}
+  end
+  
   target 'MarvelExplorerData' do
     plugin 'cocoapods-keys', {
       :project => "MarvelExplorer",

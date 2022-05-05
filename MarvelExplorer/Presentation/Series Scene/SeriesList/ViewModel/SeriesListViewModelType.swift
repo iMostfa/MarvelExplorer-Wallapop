@@ -8,20 +8,20 @@
 import Foundation
 import Combine
 
-protocol SeriesListViewModelType: AnyObject {
+public protocol SeriesListViewModelType: AnyObject {
   func transform(input: SeriesListViewModelInput) -> SeriesListViewModelOutput
 }
 
-typealias SeriesListViewModelOutput = AnyPublisher<SeriesListState, Never>
+public typealias SeriesListViewModelOutput = AnyPublisher<SeriesListState, Never>
 
-enum SeriesListState {
+public enum SeriesListState {
   case loading
   case success([SeriesListItemViewModel])
   case failure(Error)
 }
 
 extension SeriesListState: Equatable {
-  static func == (lhs: SeriesListState, rhs: SeriesListState) -> Bool {
+  static public func == (lhs: SeriesListState, rhs: SeriesListState) -> Bool {
     switch (lhs, rhs) {
     case (.loading, .loading): return true
     case (.success(let lhsSeries), .success(let rhsSeries)): return lhsSeries == rhsSeries
@@ -31,7 +31,7 @@ extension SeriesListState: Equatable {
   }
 }
 
-struct SeriesListViewModelInput {
+public struct SeriesListViewModelInput {
   let onAppear: AnyPublisher<Void, Never>
   let onSearch: AnyPublisher<String, Never>
   let onSeriesSelection: AnyPublisher<Int, Never>

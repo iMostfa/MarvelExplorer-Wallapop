@@ -7,6 +7,7 @@
 
 import UIKit
 import MarvelExplorerDomain
+import MarvelExplorerUI
 
 /// The `SeriesListFlowCoordinator` takes control over the form Series List screen.
 class SeriesListFlowCoordinator: FlowCoordinator {

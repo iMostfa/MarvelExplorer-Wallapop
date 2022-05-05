@@ -9,18 +9,18 @@ import Foundation
 import Combine
 import MarvelExplorerDomain
 
-final class SeriesDetailViewModel: SeriesDetailViewModelType {
+final public class SeriesDetailViewModel: SeriesDetailViewModelType {
 
   private let coverLoaderUseCase: LoadCoverUseCaseType
   private var cancellableBag = Set<AnyCancellable>()
   let series: Series
 
-  init(series: Series, coverLoaderUseCase: LoadCoverUseCaseType) {
+  public init(series: Series, coverLoaderUseCase: LoadCoverUseCaseType) {
     self.series = series
     self.coverLoaderUseCase = coverLoaderUseCase
   }
 
-  func transform(input: SeriesDetailViewModelInput) -> SeriesDetailViewModelOutput {
+  public func transform(input: SeriesDetailViewModelInput) -> SeriesDetailViewModelOutput {
 
     let model =  input.onAppear
       .flatMapLatest { () -> AnyPublisher<SeriesDetailState, Never> in

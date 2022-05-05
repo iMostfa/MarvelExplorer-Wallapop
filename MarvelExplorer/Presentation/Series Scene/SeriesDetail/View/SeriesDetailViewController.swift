@@ -12,7 +12,7 @@ import SVProgressHUD
 import SnapKit
 
 /// Series List View controller is used to show a list of series.
-final class SeriesDetailViewController: UIViewController {
+final public class SeriesDetailViewController: UIViewController {
 
   private let viewModel: SeriesDetailViewModelType
   private var cancellableBag = Set<AnyCancellable>()
@@ -22,7 +22,7 @@ final class SeriesDetailViewController: UIViewController {
   lazy var tableDataSource: SeriesDetailsDataSource = makeDataSource()
   var tableViewDelegate = SeriesDetailsTableViewDelegate()
 
-  init(viewModel: SeriesDetailViewModelType) {
+  public init(viewModel: SeriesDetailViewModelType) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
@@ -31,19 +31,19 @@ final class SeriesDetailViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func loadView() {
+  public override func loadView() {
     view = detailsView
   }
 
 // MARK: - View Cycle
 
-  override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     bind(to: viewModel)
     onAppearPublisher.send()
   }
 
-  override func viewWillDisappear(_ animated: Bool) {
+  public override func viewWillDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     self.detailsView.tableHeaderView.viewWillDisAppear()
   }
@@ -106,7 +106,6 @@ final class SeriesDetailViewController: UIViewController {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemDetailCell.self.cellID, for: indexPath) as? ItemDetailCell else {
         return .init()
       }
-      print(data)
       cell.detailsText.text = data.value
       return cell
     }

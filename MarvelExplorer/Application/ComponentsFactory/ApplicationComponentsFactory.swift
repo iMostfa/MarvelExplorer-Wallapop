@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import MarvelExplorerDomain
 import MarvelExplorerData
+import MarvelExplorerUI
 
 /// The ApplicationComponentsFactory .
 final public class ApplicationComponentsFactory {

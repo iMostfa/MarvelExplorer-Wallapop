@@ -11,7 +11,7 @@ import UIKit
 import SVProgressHUD
 
 /// Series List View controller is used to show a list of series.
-final class SeriesListViewController: UIViewController {
+final public class SeriesListViewController: UIViewController {
 
   private let viewModel: SeriesListViewModelType
   private var cancellableBag = Set<AnyCancellable>()
@@ -26,11 +26,11 @@ final class SeriesListViewController: UIViewController {
                                                                                            onItemSelected: onItemSelectedPublisher)
   private let seriesListView = SeriesListView()
 
-  override func loadView() {
+  public override func loadView() {
     view = seriesListView
   }
 
-  init(viewModel: SeriesListViewModelType) {
+  public init(viewModel: SeriesListViewModelType) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
@@ -40,7 +40,7 @@ final class SeriesListViewController: UIViewController {
   }
 
   // MARK: - View Cycle
-  override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
     setupDataSourcesAndDelegates()
@@ -144,7 +144,7 @@ extension SeriesListViewController {
 // MARK: - Search Delegate
 
 extension SeriesListViewController: UISearchBarDelegate, UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
+  public func updateSearchResults(for searchController: UISearchController) {
     self.onSearchPublisher.send(searchController.searchBar.text ?? "")
   }
 

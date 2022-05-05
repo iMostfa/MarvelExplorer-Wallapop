@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import MarvelExplorerDomain
 
-final class SeriesListViewModel: SeriesListViewModelType {
+final public class SeriesListViewModel: SeriesListViewModelType {
 
   private weak var navigator: SeriesListNavigator?
   private let fetchSeriesUseCase: FetchMarvelSeriesUseCaseType
@@ -18,7 +18,7 @@ final class SeriesListViewModel: SeriesListViewModelType {
 
   private var series: [Series] = []
 
-  init(fetchSeriesUseCase: FetchMarvelSeriesUseCaseType,
+  public init(fetchSeriesUseCase: FetchMarvelSeriesUseCaseType,
        coverLoaderUseCase: LoadCoverUseCaseType,
        navigator: SeriesListNavigator) {
     self.fetchSeriesUseCase = fetchSeriesUseCase
@@ -26,7 +26,7 @@ final class SeriesListViewModel: SeriesListViewModelType {
     self.navigator = navigator
   }
 
-  func transform(input: SeriesListViewModelInput) -> SeriesListViewModelOutput {
+  public func transform(input: SeriesListViewModelInput) -> SeriesListViewModelOutput {
     cancellableBag.removeAll()
 
     // MARK: - on View Appear

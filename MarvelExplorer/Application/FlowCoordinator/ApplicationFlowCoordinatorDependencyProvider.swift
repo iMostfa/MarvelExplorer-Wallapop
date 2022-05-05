@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import MarvelExplorerDomain
+import MarvelExplorerUI
 
 /// The `ApplicationFlowCoordinatorDependencyProvider` protocol defines methods to satisfy external dependencies of the ApplicationFlowCoordinator
 protocol ApplicationFlowCoordinatorDependencyProvider: MarvelExplorerFlowCoordinatorDependencyProvider {}

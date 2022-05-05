@@ -8,16 +8,16 @@
 import Foundation
 import Combine
 
-protocol SeriesDetailViewModelType: AnyObject {
+public protocol SeriesDetailViewModelType: AnyObject {
   func transform(input: SeriesDetailViewModelInput) -> SeriesDetailViewModelOutput
 }
 
-typealias SeriesDetailViewModelOutput = AnyPublisher<SeriesDetailState, Never>
+public typealias SeriesDetailViewModelOutput = AnyPublisher<SeriesDetailState, Never>
 
-enum SeriesDetailState {
+public enum SeriesDetailState {
   case success(SeriesDetailItemViewModel)
 }
 
-struct SeriesDetailViewModelInput {
+public struct SeriesDetailViewModelInput {
   let onAppear: AnyPublisher<Void, Never>
 }
