@@ -8,6 +8,8 @@
 import Foundation
 import XCTest
 @testable import MarvelExplorer
+@testable import MarvelExplorerDomain
+@testable import MarvelExplorerUI
 
 class ApplicationFlowCoordinatorDependencyProviderMock: ApplicationFlowCoordinatorDependencyProvider {
 

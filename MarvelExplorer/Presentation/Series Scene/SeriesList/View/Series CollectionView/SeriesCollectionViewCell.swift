@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import Combine
+import MarvelExplorerData
 
 final class SeriesCollectionViewCell: UICollectionViewCell {
   static let reuseIdentifier = "RoundedCellReuseIdentifier"

@@ -9,10 +9,12 @@
 
 import Foundation
 import Combine
+import MarvelExplorerDomain
+import MarvelExplorerShared
 
 typealias MarvelSeriesDTOResponse = MarvelResponse<SeriesDTO>
 
-final class DefaultMarvelSeriesRepository {
+final public class DefaultMarvelSeriesRepository {
 
   let networkService: NetworkServiceType
   private(set) var seriesPaginator: MarvelPaginator<SeriesDTO>?
@@ -25,7 +27,7 @@ final class DefaultMarvelSeriesRepository {
 
 extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
 
-  func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
+  public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return networkService
       .load(Resource<MarvelSeriesDTOResponse>.getSeries(offset: self.seriesPaginator?.nextOffset,
                                                           limit: self.seriesPaginator?.limit))

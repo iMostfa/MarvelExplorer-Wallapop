@@ -8,6 +8,9 @@
 import XCTest
 import Combine
 @testable import MarvelExplorer
+@testable import MarvelExplorerData
+@testable import MarvelExplorerDomain
+@testable import MarvelExplorerUI
 
 class SeriesListViewModelTests: XCTestCase {
 

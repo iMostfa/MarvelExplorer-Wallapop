@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
   func localized(on bundle: Bundle = .main, params: CVarArg ... ) -> String {
     let format = NSLocalizedString(self, comment: "")
     return String.localizedStringWithFormat(format,

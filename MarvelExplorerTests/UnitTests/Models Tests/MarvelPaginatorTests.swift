@@ -8,6 +8,7 @@
 import XCTest
 import Combine
 @testable import MarvelExplorer
+@testable import MarvelExplorerData
 
 class MarvelPaginatorTests: XCTestCase {
 

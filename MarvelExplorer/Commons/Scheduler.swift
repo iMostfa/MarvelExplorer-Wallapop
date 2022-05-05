@@ -8,15 +8,15 @@
 import Foundation
 
 /// Used as a namespace
-enum Scheduler {
+public enum Scheduler {
 
-  static var backgroundWorkScheduler: OperationQueue = {
+  static public var backgroundWorkScheduler: OperationQueue = {
     let operationQueue = OperationQueue()
     operationQueue.maxConcurrentOperationCount = 20
     operationQueue.qualityOfService = QualityOfService.userInitiated
     return operationQueue
   }()
 
-  static let mainScheduler = RunLoop.main
+  static public let mainScheduler = RunLoop.main
 
 }

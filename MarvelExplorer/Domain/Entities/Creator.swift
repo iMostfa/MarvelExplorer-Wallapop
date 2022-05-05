@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct Creator: Equatable, Hashable {
-  let name, role: String
+public struct Creator: Equatable, Hashable {
+  public let name, role: String
+
+  public init(name: String,
+              role: String) {
+    self.name = name
+    self.role = role
+  }
 }

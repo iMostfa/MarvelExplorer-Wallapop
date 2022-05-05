@@ -7,7 +7,7 @@
 
 import Combine
 
-extension Publisher {
+public extension Publisher {
 
   static func empty() -> AnyPublisher<Output, Failure> {
     return Empty().eraseToAnyPublisher()

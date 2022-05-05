@@ -8,9 +8,10 @@
 import Foundation
 import Combine
 import UIKit
+import MarvelExplorerDomain
 
-struct SeriesListItemViewModel: Equatable, Hashable, Identifiable {
-  let id: Int
+public struct SeriesListItemViewModel: Equatable, Hashable, Identifiable {
+  public let id: Int
   let title: String
   let description: String?
   let endYear, startYear: String
@@ -19,11 +20,11 @@ struct SeriesListItemViewModel: Equatable, Hashable, Identifiable {
 }
 
 extension SeriesListItemViewModel {
-  static func == (lhs: SeriesListItemViewModel, rhs: SeriesListItemViewModel) -> Bool {
+  public static func == (lhs: SeriesListItemViewModel, rhs: SeriesListItemViewModel) -> Bool {
     lhs.id == rhs.id
   }
   // TODO: should implement a safer one to avoid collision, maybe using id from response
-  func hash(into hasher: inout Hasher) {
+  public func hash(into hasher: inout Hasher) {
     hasher.combine(title)
   }
 }

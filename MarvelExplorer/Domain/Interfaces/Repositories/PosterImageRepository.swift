@@ -10,7 +10,7 @@ import Combine
 import UIKit.UIImage
 
 /// Used to provide a cover data for a series
-protocol MarvelSeriesCoverRepository: AnyObject {
+public protocol MarvelSeriesCoverRepository: AnyObject {
   func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?, Never>
 
 }

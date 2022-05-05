@@ -9,7 +9,7 @@ import UIKit
 
 class SeriesDetailsDataSource: UITableViewDiffableDataSource<SeriesDetailSection, DetailItem> {
 
-  let sections = [.description, SeriesDetailSection.years, .writers]
+  let sections: [SeriesDetailSection] = [.description, .years, .writers]
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return sections[section].title.localized()

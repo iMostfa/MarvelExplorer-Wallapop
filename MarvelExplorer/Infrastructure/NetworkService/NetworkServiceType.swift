@@ -8,14 +8,14 @@
 import Foundation
 import Combine
 
-protocol NetworkServiceType: AnyObject {
+public protocol NetworkServiceType: AnyObject {
 
   @discardableResult
   func load<Loadable>(_ resource: Resource<Loadable>) -> AnyPublisher<Loadable, Error>
 }
 
 /// Network service errors.
-enum NetworkError: Error {
+public enum NetworkError: Error {
   case invalidRequest
   case invalidResponse
   case dataLoadingError(statusCode: Int, data: Data)

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import MarvelExplorerDomain
 
-protocol SeriesListNavigator: AnyObject {
+public protocol SeriesListNavigator: AnyObject {
   /// Presented a Series details view..
   func showDetails(for series: Series)
 }
