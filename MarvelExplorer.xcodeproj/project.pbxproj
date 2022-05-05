@@ -222,7 +222,6 @@
 		EF88796A281F7CBC00938B67 /* SeriesListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesListPage.swift; sourceTree = "<group>"; };
 		EF88796B281F7CBC00938B67 /* SeriesListUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesListUITests.swift; sourceTree = "<group>"; };
 		EF88796C281F7CBC00938B67 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		EF887A17281F8CF200938B67 /* uiTest-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uiTest-BridgingHeader.h"; sourceTree = "<group>"; };
 		EF887A53281FB0E100938B67 /* EarlGrey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		EF887A54281FB0E100938B67 /* FakeAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAppDelegate.swift; sourceTree = "<group>"; };
 		EF887A55281FB0E100938B67 /* MarvelExplorerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelExplorerTestCase.swift; sourceTree = "<group>"; };
@@ -318,19 +317,14 @@
 		EF1F8C58281CE525002DE22C /* MarvelExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EFF1106E28222D250075121B /* main.swift */,
 				EF1F8CA2281CEB45002DE22C /* Application */,
 				EF1F8CAD281CEE90002DE22C /* Domain */,
 				EF1F8CC2281D03FB002DE22C /* Data */,
 				EF1F8CA9281CEE41002DE22C /* Presentation */,
 				EF1F8C8F281CE679002DE22C /* Commons */,
 				EF1F8C89281CE5B9002DE22C /* Infrastructure */,
-				EFF1106E28222D250075121B /* main.swift */,
-				EF1F8C59281CE525002DE22C /* AppDelegate.swift */,
-				EF1F8C62281CE527002DE22C /* Assets.xcassets */,
-				EF1F8C64281CE527002DE22C /* LaunchScreen.storyboard */,
-				EF887A17281F8CF200938B67 /* uiTest-BridgingHeader.h */,
-				EF1F8C67281CE527002DE22C /* Info.plist */,
-				EFF11099282252450075121B /* Localizable.strings */,
+				EFD06AF72823EAE800C27284 /* Resources */,
 			);
 			path = MarvelExplorer;
 			sourceTree = "<group>";
@@ -825,6 +819,18 @@
 				EF1F8D08281E14E7002DE22C /* NetworkServiceMock.swift */,
 			);
 			path = "Services Mock";
+			sourceTree = "<group>";
+		};
+		EFD06AF72823EAE800C27284 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EFF11099282252450075121B /* Localizable.strings */,
+				EF1F8C59281CE525002DE22C /* AppDelegate.swift */,
+				EF1F8C62281CE527002DE22C /* Assets.xcassets */,
+				EF1F8C64281CE527002DE22C /* LaunchScreen.storyboard */,
+				EF1F8C67281CE527002DE22C /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1374,7 +1380,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VY964QG6LS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarvelExplorer/Info.plist;
+				INFOPLIST_FILE = MarvelExplorer/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1406,7 +1412,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VY964QG6LS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarvelExplorer/Info.plist;
+				INFOPLIST_FILE = MarvelExplorer/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1472,7 +1478,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostfa.MarvelExplorerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "MarvelExplorer/uiTest-BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelExplorer.app/MarvelExplorer";
@@ -1532,7 +1537,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostfa.MarvelExplorerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "MarvelExplorer/uiTest-BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelExplorer.app/MarvelExplorer";
