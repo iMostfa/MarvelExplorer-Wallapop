@@ -20,7 +20,6 @@
 		EF1F8CB3281CF03B002DE22C /* ApplicationComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CB2281CF03B002DE22C /* ApplicationComponentsFactory.swift */; };
 		EF60F6F0282159D5008AC909 /* MarvelExplorerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF887A55281FB0E100938B67 /* MarvelExplorerTestCase.swift */; };
 		EF60F734282176AD008AC909 /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F733282176AD008AC909 /* MarvelUITests.swift */; };
-		EF60F736282176AD008AC909 /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F735282176AD008AC909 /* MarvelUITestsLaunchTests.swift */; };
 		EF60F73C28217BC7008AC909 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */; };
 		EF60F73F282202B7008AC909 /* MarvelPaginatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F73E282202B7008AC909 /* MarvelPaginatorTests.swift */; };
 		EF8879CC281F7F3200938B67 /* FilteredSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = EF92610B281E4AD5001BBFF4 /* FilteredSeries.json */; };
@@ -319,7 +318,6 @@
 		EF60F6E928213422008AC909 /* SeriesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListDataSource.swift; sourceTree = "<group>"; };
 		EF60F731282176AD008AC909 /* MarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF60F733282176AD008AC909 /* MarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITests.swift; sourceTree = "<group>"; };
-		EF60F735282176AD008AC909 /* MarvelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF60F73E282202B7008AC909 /* MarvelPaginatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelPaginatorTests.swift; sourceTree = "<group>"; };
 		EF88739B281F5C7500938B67 /* EarlGrey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		EF8873A1281F62DC00938B67 /* FakeAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAppDelegate.swift; sourceTree = "<group>"; };
@@ -849,7 +847,6 @@
 			isa = PBXGroup;
 			children = (
 				EF60F733282176AD008AC909 /* MarvelUITests.swift */,
-				EF60F735282176AD008AC909 /* MarvelUITestsLaunchTests.swift */,
 			);
 			path = MarvelUITests;
 			sourceTree = "<group>";
@@ -1532,7 +1529,6 @@
 			files = (
 				EF60F73C28217BC7008AC909 /* AccessibilityIdentifiers.swift in Sources */,
 				EF60F734282176AD008AC909 /* MarvelUITests.swift in Sources */,
-				EF60F736282176AD008AC909 /* MarvelUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
