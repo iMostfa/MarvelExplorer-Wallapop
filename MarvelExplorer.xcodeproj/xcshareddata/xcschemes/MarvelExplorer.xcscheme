@@ -69,6 +69,11 @@
                BlueprintName = "MarvelUITests"
                ReferencedContainer = "container:MarvelExplorer.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "MarvelUITests/test_application_isLoadingOnLaunch()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     appCoordinator = ApplicationFlowCoordinator(window: window,
                                                 dependencyProvider: ApplicationComponentsFactory.init())
     appCoordinator.start()
+
+    if ProcessInfo.processInfo.arguments.contains("UITests") {
+      UIApplication.shared.keyWindow?.layer.speed = 100
+    }
+
     self.window = window
     self.window?.makeKeyAndVisible()
     return true

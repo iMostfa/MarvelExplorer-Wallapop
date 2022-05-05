@@ -29,6 +29,7 @@ struct SeriesCellViewComponents {
     subtitle.lineBreakMode = .byWordWrapping
     subtitle.textAlignment = .left
     subtitle.font = .systemFont(ofSize: 9, weight: .bold)
+    subtitle.accessibilityIdentifier = AccessibilityIdentifiers.SeriesListCell.seriesStartYearLabel
     return subtitle
   }()
 
@@ -40,12 +41,15 @@ struct SeriesCellViewComponents {
     subtitle.lineBreakMode = .byWordWrapping
     subtitle.textAlignment = .right
     subtitle.font = .systemFont(ofSize: 9, weight: .bold)
+    subtitle.accessibilityIdentifier = AccessibilityIdentifiers.SeriesListCell.seriesEndYearLabel
     return subtitle
   }()
 
   var thumbnailView: UIImageView = {
     let imageView = UIImageView.init()
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.accessibilityIdentifier = AccessibilityIdentifiers.SeriesListCell.seriesThumbnailImage
+
     return imageView
   }()
 }
