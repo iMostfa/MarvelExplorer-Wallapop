@@ -23,14 +23,14 @@ class MarvelUITests: XCTestCase {
     app.terminate()
 
   }
-  
+
   /// Tests if the main app is embedded inside a navigation controller.
   func test_application_isEmbeddedInNavigation()  throws {
     let marvelSeriesStaticText = app.navigationBars["Marvel Series"].waitForExistence(timeout: 1)
     XCTAssertTrue(marvelSeriesStaticText)
 
   }
-  
+
   /// Tests that a series Cell contain the thumbnail
   func test_seriesCell_contains_Thumbnail() throws {
    let containsThumbnail = app
@@ -41,7 +41,7 @@ class MarvelUITests: XCTestCase {
 
     XCTAssertTrue(containsThumbnail)
   }
-  
+
   /// Tests that a series Cell contains end Year label
   func test_seriesCell_contains_endYear() throws {
     let containsEndYears = app
@@ -52,7 +52,7 @@ class MarvelUITests: XCTestCase {
 
     XCTAssertTrue(containsEndYears)
   }
-  
+
   /// Tests that a series Cell contains start Year label
   func test_seriesCell_contains_startYear() throws {
     let containsStartYear = app
@@ -71,7 +71,7 @@ class MarvelUITests: XCTestCase {
 
     XCTAssertTrue(loadingElement)
   }
-  
+
   /// Tests that SeriesDetail is pushed when Series Cell is tapped.
   func test_SeriesDetail_isPushed() throws {
 
@@ -84,7 +84,7 @@ class MarvelUITests: XCTestCase {
 
     XCTAssertTrue(seriesdetailTableviewidTable.exists)
   }
-  
+
   /// Tests that a series header is 
   func test_SeriesHeaderIsAboveDetails() {
 
@@ -104,7 +104,7 @@ class MarvelUITests: XCTestCase {
                       seriesDetail.frame.minY)
 
   }
-  
+
   /// Tests that series details are placed in order, Series Description, then duration, then writers
   func test_SeriesDetailOrder() {
 

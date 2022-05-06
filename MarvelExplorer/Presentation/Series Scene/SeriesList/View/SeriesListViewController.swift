@@ -114,6 +114,7 @@ final public class SeriesListViewController: UIViewController {
     navigationItem.searchController = self.seriesListView.searchController
     seriesListView.searchController.isActive = false
     seriesCollectionViewDelegate?.onScroll = { [weak self] in
+      guard self?.seriesListView.searchController.searchBar.text == "" else { return }
       self?.seriesListView.searchController.isActive = false
       self?.seriesListView.searchController.searchBar.resignFirstResponder()
 
