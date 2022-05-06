@@ -548,11 +548,11 @@
 		EF1F8C8F281CE679002DE22C /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				EF1F8CCE281D0E7C002DE22C /* Extentions */,
 				EF1F8CFE281E067A002DE22C /* AccessibilityIdentifiers.swift */,
 				EF1F8CDB281D1B2D002DE22C /* Scheduler.swift */,
 				EF1F8CA0281CE9C3002DE22C /* MarvelConstants.swift */,
 				EFD06C1A2824387800C27284 /* MarvelExplorerShared.h */,
-				EF1F8CCE281D0E7C002DE22C /* Extentions */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -579,9 +579,9 @@
 		EF1F8CA9281CEE41002DE22C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EF1F8CB5281CF1AD002DE22C /* Series Scene */,
 				EFD06C1C2824877B00C27284 /* Extentions */,
 				EFD06C182824386400C27284 /* MarvelExplorerUI.h */,
-				EF1F8CB5281CF1AD002DE22C /* Series Scene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
