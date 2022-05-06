@@ -23,7 +23,8 @@ class MarvelPaginatorTests: XCTestCase {
     // Then
     XCTAssertTrue(sut.hasPages, "paginator should return more pages since offset + count < total")
   }
-
+  
+  /// Tests Paginator Next Page
   func test_paginator_nextOffset_whenHasPages() {
     // given/when
     let sut = MarvelPaginator<String>.init(limit: 100,
@@ -35,7 +36,8 @@ class MarvelPaginatorTests: XCTestCase {
     // Then
     XCTAssertEqual(sut.nextOffset, 40 + 100, "paginator should return next offset to be equal to offset+ limit, since it has more pages")
   }
-
+  
+  /// When a limit is reached of paginator is reached, same offset should be returned
   func test_paginator_nextOffset_whenLimitIsReached() {
     // given/when
     let sut = MarvelPaginator<String>.init(limit: 100,
