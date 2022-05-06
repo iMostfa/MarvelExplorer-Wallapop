@@ -692,8 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				EF1F8CC9281D05F7002DE22C /* DataMapping */,
-				EF1F8CC6281D05B9002DE22C /* Resource+MarvelSeries.swift */,
-				EF1F8CCF281D10FB002DE22C /* Resource+MarvelParameters.swift */,
+				EFD06C292824B3E700C27284 /* Resource+MarvelSeries */,
 				EF1F8CD3281D127D002DE22C /* Marvel */,
 			);
 			path = Network;
@@ -1037,6 +1036,15 @@
 				EFD06C242824975600C27284 /* TestsComposite.swift */,
 			);
 			path = SubComposite;
+			sourceTree = "<group>";
+		};
+		EFD06C292824B3E700C27284 /* Resource+MarvelSeries */ = {
+			isa = PBXGroup;
+			children = (
+				EF1F8CC6281D05B9002DE22C /* Resource+MarvelSeries.swift */,
+				EF1F8CCF281D10FB002DE22C /* Resource+MarvelParameters.swift */,
+			);
+			path = "Resource+MarvelSeries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
