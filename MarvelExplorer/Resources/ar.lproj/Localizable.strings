@@ -15,13 +15,13 @@
 //MARK: - Series Duration Strings
 "SEREIS_SINCE" = "منذ %@";
 "SEREIS_UNTIL" = "الى %@";
-"SEREIS_PRESENT" = "حتى الان";
+"SERIES_PRESENT" = "حتى الان";
 
 
 //MARK: - Series Description
-"SERIESDETAIL_DESCRIPTION" = "وصف المجلة";
-"SERIESDETAIL_DURATION" = "مدة اصدار المجلة";
-"SERIESDETAIL_WRITERS" = "كاتبي المجلة";
+"SERIESDETAIL_DESCRIPTION" = "وصف المسلسل";
+"SERIESDETAIL_DURATION" = "مدة اصدار المسلسل";
+"SERIESDETAIL_WRITERS" = "كاتبي المسلسل";
 
 "DEFAULT_ALERT_OK" = "حاضر";
 "DEFAULT_ALERT_ERROR_TITLE" = "حدث خطأ 😭";

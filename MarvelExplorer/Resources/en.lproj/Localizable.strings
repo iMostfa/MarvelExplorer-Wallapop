@@ -16,7 +16,7 @@
 //MARK: - Series Duration Strings
 "SEREIS_SINCE" = "Since %@";
 "SEREIS_UNTIL" = "Until %@";
-"SEREIS_PRESENT" = "Until Now";
+"SERIES_PRESENT" = "Until Now";
 
 
 //MARK: - Series Description
