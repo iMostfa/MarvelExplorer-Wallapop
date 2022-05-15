@@ -100,9 +100,9 @@ final public class SeriesListViewModel: SeriesListViewModelType {
     if query == "" { return .just(SeriesListState.success(viewModels(from: models))) }
 
     let filteredModels = models.filter { model in
-      if model.name.contains(query) { return  true }
-      if "\(model.endYear)".contains(query) { return  true }
-      if "\(model.startYear)".contains(query) { return  true }
+      if model.name.contains(query) ||
+        "\(model.endYear)".contains(query) ||
+       "\(model.startYear)".contains(query) { return true }
       return false
     }
 
