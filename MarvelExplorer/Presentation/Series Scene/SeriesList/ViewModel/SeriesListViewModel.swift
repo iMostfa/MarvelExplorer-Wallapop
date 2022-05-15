@@ -59,6 +59,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
       let selectedSeries = self.series[index]
       self.navigator?.showDetails(for: selectedSeries)
     }.store(in: &cancellableBag)
+    
     // MARK: - Handle page more Fetching
    let pageSeries = input.onPageRequest
       .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
@@ -82,7 +83,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
     // MARK: - Loading Handling
     let loadingActions = Publishers.Merge(input.onPageRequest, input.onAppear)
       .print("Should ShowLoading")
-      .map {_ in return SeriesListState.loading }
+      .map { _ in return SeriesListState.loading }
       .eraseToAnyPublisher()
 
     return Publishers
@@ -92,7 +93,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
   }
 
   /// Used to filter series based on a query.
-  /// IMPORTANT: we are filtering data from the repository, since filtering might be a complex thing and its logic isn't view specific.
+  /// IMPORTANT: we are filtering data from the viewModel, removed it from repository until it's implemented it using the API.
   /// - Parameter query: query of search
   /// - Returns: SeriesListState
   func filterSeries(in models: [Series], query: String) -> AnyPublisher<SeriesListState, Never> {

@@ -85,7 +85,6 @@ final public class SeriesListViewController: UIViewController {
       UIAlertController.show(message: error.localizedDescription,
                              title: "DEFAULT_ALERT_ERROR_TITLE".localized(),
                              on: self)
-      return
     }
   }
 

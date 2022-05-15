@@ -24,7 +24,7 @@ final public class ApplicationComponentsFactory {
   }
 }
 
-extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProvider {
+extension ApplicationComponentsFactory: DependencyProvider {
   func seriesListNavigationController(navigator: SeriesListNavigator) -> UINavigationController {
 
     let seriesListVC = SeriesListViewController(viewModel: SeriesListViewModel.init(fetchSeriesUseCase: useCase,

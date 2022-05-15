@@ -11,8 +11,8 @@ import MarvelExplorerDomain
 public class ServicesProvider {
   public let network: NetworkServiceType
   public let imageLoader: ImageLoaderServiceType
-  public  let seriesRepository: MarvelSeriesRepository
-  public  let imageLoaderRepository: MarvelSeriesCoverRepository
+  public let seriesRepository: MarvelSeriesRepository
+  public let imageLoaderRepository: MarvelSeriesCoverRepository
 
   static public var defaultProvider: ServicesProvider {
     let network = NetworkService()

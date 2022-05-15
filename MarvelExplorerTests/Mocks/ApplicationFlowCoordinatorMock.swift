@@ -11,7 +11,7 @@ import XCTest
 @testable import MarvelExplorerDomain
 @testable import MarvelExplorerUI
 
-class ApplicationFlowCoordinatorDependencyProviderMock: ApplicationFlowCoordinatorDependencyProvider {
+class ApplicationFlowCoordinatorDependencyProviderMock: DependencyProvider {
 
   var seriesListNavigationControllerReturnValue: UINavigationController?
   var seriesDetailsControllerReturnValue: UIViewController?
