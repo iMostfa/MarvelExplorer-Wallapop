@@ -59,7 +59,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
       let selectedSeries = self.series[index]
       self.navigator?.showDetails(for: selectedSeries)
     }.store(in: &cancellableBag)
-    
+
     // MARK: - Handle page more Fetching
    let pageSeries = input.onPageRequest
       .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }

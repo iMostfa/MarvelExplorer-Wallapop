@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   var appCoordinator: ApplicationFlowCoordinator!
   var composites = AppDelegateCompositeFactory.defaultComposites
-  
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     // MARK: - Composites

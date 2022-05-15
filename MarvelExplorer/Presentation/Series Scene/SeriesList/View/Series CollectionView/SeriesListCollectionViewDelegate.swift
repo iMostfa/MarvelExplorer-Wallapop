@@ -14,6 +14,8 @@ final class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate
   private var onItemSelected: PassthroughSubject<Int, Never>?
   var onScroll: (() -> Void)?
 
+  let fetchPostsThreshold = 3
+
   init(onPageRequest: PassthroughSubject<Void, Never>,
        onItemSelected: PassthroughSubject<Int, Never>) {
     self.onPageRequest = onPageRequest
@@ -34,7 +36,6 @@ final class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate
 
     if let dataSourceCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: 0) {
 
-      let fetchPostsThreshold = 3
 
       if indexPath.row == dataSourceCount - fetchPostsThreshold {
         print("should fetch more pages")
