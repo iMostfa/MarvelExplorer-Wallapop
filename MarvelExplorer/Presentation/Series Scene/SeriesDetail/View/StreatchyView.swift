@@ -38,7 +38,7 @@ final class StretchyHeaderView: UIView {
   private var imageViewBottom = NSLayoutConstraint()
   private var containerView = UIView()
   private var containerViewHeight = NSLayoutConstraint()
-  private var originalImageHeight: CGFloat?
+
   var heightBeforeDragging: CGFloat = .infinity
 
   override init(frame: CGRect) {
@@ -72,7 +72,7 @@ final class StretchyHeaderView: UIView {
 
     viewAnimator = UIViewPropertyAnimator.init(duration: 0.5, curve: .easeInOut)
 
-    viewAnimator?.addAnimations { [ weak self] in
+    viewAnimator?.addAnimations { [weak self] in
       self?.blurEffectView.alpha = 1
     }
   }
@@ -94,7 +94,7 @@ final class StretchyHeaderView: UIView {
       heightAnchor.constraint(equalTo: containerView.heightAnchor)
     ])
 
-    containerView.translatesAutoresizingMaskIntoConstraints=false
+    containerView.translatesAutoresizingMaskIntoConstraints = false
 
     containerView.widthAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
 
@@ -102,12 +102,12 @@ final class StretchyHeaderView: UIView {
 
     containerViewHeight.isActive = true
 
-    imageView.translatesAutoresizingMaskIntoConstraints=false
+    imageView.translatesAutoresizingMaskIntoConstraints = false
     imageViewBottom = imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
     imageViewBottom.isActive = true
-    imageViewHeight=imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
+    imageViewHeight = imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
     imageViewHeight.isActive = true
-    originalImageHeight = -imageViewBottom.constant
+
   }
 
   public func scrollViewDidEndDragging(scrollView: UIScrollView) {
@@ -123,6 +123,7 @@ final class StretchyHeaderView: UIView {
   }
   /// Notify view of scroll change from container
   public func scrollViewDidScroll(scrollView: UIScrollView) {
+    // in most cases scrollViewContentInset is zero, but it's taken in calculations.
     let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
     containerView.clipsToBounds = offsetY <= 0
     imageViewBottom.constant = offsetY >= 0 ? 0: -offsetY / 2
