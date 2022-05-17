@@ -69,7 +69,7 @@ a lot of the techniques and concepts used in this project was inspired from the 
     
 - [Flow](https://medium.com/@dkw5877/flow-coordinators-333ed64f3dd) [Coordinator](http://khanlou.com/)r & [Navigator Pattern](https://medium.com/@ghislain.deff.pro/the-navigator-pattern-for-ios-1e1a3baa0cba)
     
-    Which handles application and navigation between various Flows, using Coordinators along with Navigators result in 
+    Which handles application and navigation between various Flows, using Coordinators along with Navigators result in a decoupled navigation where controllers are not aware about the context of presentation.
     
 - Dependency Injection, without 3rd Party
 Dependency injection used to provide the app the app with dependencies needed for it to start working, this will become very important in the testing stage where everything is decoupled and we can control the dependencies
