@@ -29,7 +29,8 @@ final public class SeriesListViewModel: SeriesListViewModelType {
   public func transform(input: SeriesListViewModelInput) -> SeriesListViewModelOutput {
     cancellableBag.removeAll()
 
-    let series2 = input.onAppear
+    // MARK: - on View Appear
+    let series = input.onAppear
       .asyncMap { _ in
         try await self.fetchSeriesUseCase.fetchSeriesAsync()
       }.map { [weak self] series ->  SeriesListState in
@@ -40,23 +41,6 @@ final public class SeriesListViewModel: SeriesListViewModelType {
         let seriesViewModels = self.viewModels(from: self.series)
         return SeriesListState.success(seriesViewModels)
 
-      }.eraseToAnyPublisher()
-
-    // MARK: - on View Appear
-    let series = input.onAppear
-      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
-      .map { [weak self] result -> SeriesListState in
-        // for safety purposes, no use for unowned
-        guard let self = self else { return .success([]) }
-
-        switch result {
-        case .success(let items):
-          self.series += items
-          let seriesViewModels = self.viewModels(from: self.series)
-          return SeriesListState.success(seriesViewModels)
-        case .failure(let error):
-         return  SeriesListState.failure(error)
-        }
       }.eraseToAnyPublisher()
 
     // MARK: - Handle Searching
@@ -75,21 +59,18 @@ final public class SeriesListViewModel: SeriesListViewModelType {
 
     // MARK: - Handle page more Fetching
    let pageSeries = input.onPageRequest
-      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
-      .map { [weak self] result -> SeriesListState in
+      .asyncMap { _ in
+        try await self.fetchSeriesUseCase.fetchSeriesAsync()
+      }
+      .map { [weak self] items -> SeriesListState in
         // for safety purposes, no use for unowned
         guard let self = self else { return .success([]) }
 
-        switch result {
-        case .success(let items):
-          // newSeriesViewModels  Will contain already fetched Series
+           // newSeriesViewModels  Will contain already fetched Series
           self.series += items
           let newSeriesViewModels =  self.viewModels(from: self.series)
-
           return SeriesListState.success(newSeriesViewModels)
-        case .failure(let error):
-          return  SeriesListState.failure(error)
-        }
+
       }
       .eraseToAnyPublisher()
 
@@ -100,7 +81,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
       .eraseToAnyPublisher()
 
     return Publishers
-      .Merge4(loadingActions, pageSeries, series2, filteredSeries)
+      .Merge4(loadingActions, pageSeries, series, filteredSeries)
       .removeDuplicates()
       .eraseToAnyPublisher()
   }

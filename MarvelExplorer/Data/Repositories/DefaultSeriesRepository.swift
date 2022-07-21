@@ -40,24 +40,4 @@ extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
 
     return series
   }
-
-  public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
-    return networkService
-      .load(Resource<MarvelSeriesDTOResponse>.getSeries(offset: self.seriesPaginator?.nextOffset,
-                                                          limit: self.seriesPaginator?.limit))
-      .subscribe(on: Scheduler.backgroundWorkScheduler)
-      .receive(on: Scheduler.mainScheduler)
-      .handleEvents(receiveOutput: { paginator in
-        self.seriesPaginator = paginator.data
-      })
-      .map({ paginator -> Result<[Series], Error> in
-        let e = paginator.data.results.map { $0.toDomain() }
-        return .success(e)
-      })
-      .catch({ error -> AnyPublisher<Result<[Series], Error>, Never> in
-        return .just(.failure(error))
-      })
-      .eraseToAnyPublisher()
-  }
-
 }
