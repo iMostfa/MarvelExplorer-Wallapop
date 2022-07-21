@@ -27,25 +27,20 @@ class MarvelSeriesCoverRepositoryMockTests: XCTestCase {
   }
 
   /// Tests that an image is returned.
-  func test_loadsImageFromNetwork() {
+  func test_loadsImageFromNetwork() async throws {
     // Given
     let allSeries = MarvelSeriesDTOResponse.loadFromFile("SeriesResponse.json")
     let series = allSeries.data.results.first!
     var result: UIImage?
-    let expectation = self.expectation(description: "image Loader")
 
-    imageLoaderService.loadImageReturnValue = .just(UIImage())
+    imageLoaderService.loadImageReturnValue = UIImage()
 
     // When
-    repository
+   let image = try await repository
       .loadSeriesCover(with: series.thumbnail.path + series.thumbnail.thumbnailExtension)
-      .sink { value in
-        result = value
-        expectation.fulfill()
-      }.store(in: &cancellableBag)
 
+    result = image
     // Then
-    self.waitForExpectations(timeout: 1.0, handler: nil)
     XCTAssertNotNil(result)
   }
 

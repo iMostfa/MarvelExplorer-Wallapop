@@ -13,6 +13,17 @@ import Combine
 
 class NetworkServiceTypeMock: NetworkServiceType {
 
+  func load<Loadable>(_ resource: Resource<Loadable>) async throws -> Loadable where Loadable: Decodable, Loadable: Encodable {
+
+    if let response = responses[resource.url.path] as? Loadable {
+    return response
+    } else if let error = responses[resource.url.path] as? NetworkError {
+      throw error
+    } else {
+      throw NetworkError.invalidRequest
+    }
+  }
+
   var loadCallsCount = 0
   var loadCalled: Bool {
     return loadCallsCount > 0
