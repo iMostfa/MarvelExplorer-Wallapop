@@ -89,11 +89,13 @@ final public class SeriesListViewController: UIViewController {
   }
 
   func update(with series: [SeriesListItemViewModel], animate: Bool = true) {
-    DispatchQueue.main.async {
-      var snapshot = SeriesSnapshot.init()
-      snapshot.appendSections([.main])
-      snapshot.appendItems(series, toSection: .main)
-      self.seriesCollectionViewDataSource.apply(snapshot, animatingDifferences: animate)
+    Task {
+      await MainActor.run {
+        var snapshot = SeriesSnapshot.init()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(series, toSection: .main)
+        self.seriesCollectionViewDataSource.apply(snapshot, animatingDifferences: animate)
+      }
     }
   }
 

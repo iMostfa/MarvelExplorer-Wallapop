@@ -53,14 +53,16 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
   }
 
   private func showImage(image: UIImage?) {
-    DispatchQueue.main.async {
-      self.cancelImageLoading()
-      UIView.transition(with: self.seriesCellView.thumbnailView,
-                        duration: 0.3,
-                        options: [.curveEaseOut, .transitionCrossDissolve],
-                        animations: {
-        self.seriesCellView.thumbnailView.image = image
-      })
+    Task {
+      await MainActor.run {
+        self.cancelImageLoading()
+        UIView.transition(with: self.seriesCellView.thumbnailView,
+                          duration: 0.3,
+                          options: [.curveEaseOut, .transitionCrossDissolve],
+                          animations: {
+          self.seriesCellView.thumbnailView.image = image
+        })
+      }
     }
 
   }

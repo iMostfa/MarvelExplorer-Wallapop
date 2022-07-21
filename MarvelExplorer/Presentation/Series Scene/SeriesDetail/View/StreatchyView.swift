@@ -129,10 +129,11 @@ final class StretchyHeaderView: UIView {
     imageViewBottom.constant = offsetY >= 0 ? 0: -offsetY / 2
     imageViewHeight.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
 
-    DispatchQueue.main.async {
-      let value = (1 - (offsetY / (self.heightBeforeDragging)))
-      self.viewAnimator?.fractionComplete = -1 * value * self.blurFactor
-
+    Task {
+      await MainActor.run {
+        let value = (1 - (offsetY / (self.heightBeforeDragging)))
+        self.viewAnimator?.fractionComplete = -1 * value * self.blurFactor
+      }
     }
   }
 
