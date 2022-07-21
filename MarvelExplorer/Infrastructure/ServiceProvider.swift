@@ -11,7 +11,7 @@ import MarvelExplorerDomain
 public class ServicesProvider {
 
   public let network: NetworkServiceType
-  public let imageLoader: ImageLoaderServiceTypeAsync
+  public let imageLoader: ImageLoaderServiceType
   public let seriesRepository: MarvelSeriesRepository
   public let imageLoaderRepository: MarvelSeriesCoverRepository
 
@@ -29,7 +29,7 @@ public class ServicesProvider {
   }
 
   init(network: NetworkServiceType,
-       imageLoader: ImageLoaderServiceTypeAsync,
+       imageLoader: ImageLoaderServiceType,
        seriesRepository: MarvelSeriesRepository,
        imageLoaderRepository: MarvelSeriesCoverRepository) {
     self.network = network

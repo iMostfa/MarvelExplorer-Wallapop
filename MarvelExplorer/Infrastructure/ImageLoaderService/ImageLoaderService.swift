@@ -11,16 +11,11 @@ import Combine
 
 // MARK: - ImageLoaderServiceType
 public protocol ImageLoaderServiceType: AnyObject {
-  func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never>
-}
-
-// MARK: - ImageLoaderServiceType
-public protocol ImageLoaderServiceTypeAsync: AnyObject {
   func loadImage(from url: URL) async throws -> UIImage?
 }
 
 // MARK: - Implementation for ImageLoaderServiceType
-final public class ImageLoaderService: ImageLoaderServiceTypeAsync {
+final public class ImageLoaderService: ImageLoaderServiceType {
 
   private let cache: ImageCacheTypeAsync = ImageCacheActor()
 

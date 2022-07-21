@@ -13,9 +13,9 @@ import MarvelExplorerShared
 
 final class DefaultMarvelSeriesCoverRepository {
 
-  private let imageLoader: ImageLoaderServiceTypeAsync
+  private let imageLoader: ImageLoaderServiceType
 
-  init(imageLoader: ImageLoaderServiceTypeAsync) {
+  init(imageLoader: ImageLoaderServiceType) {
     self.imageLoader = imageLoader
   }
 
