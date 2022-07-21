@@ -16,7 +16,7 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
 
   var imageLoader: ImageLoaderServiceType?
   var imageURL: String?
-  var currentImageDownloader: AnyCancellable?
+  var currentImageDownloader: Task<(), Error>?
   var dateDownloader: AnyCancellable?
   var seriesCellView: SeriesCellViewComponents = .init()
 
@@ -45,7 +45,10 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
     seriesCellView.title.text = viewModel.title
     seriesCellView.startYear.text = viewModel.startYear
     seriesCellView.endYear.text = viewModel.endYear
-    currentImageDownloader = viewModel.cover.sink {image in self.showImage(image: image) }
+    currentImageDownloader = Task {
+      let image = try await viewModel.cover
+      showImage(image: image)
+    }
   }
 
   private func showImage(image: UIImage?) {

@@ -64,7 +64,9 @@ final public class SeriesDetailViewController: UIViewController {
 
       case .success(let viewModel):
         self.configureTableView(with: viewModel)
-        self.detailsView.tableHeaderView.bind(to: viewModel.cover)
+        self.detailsView.tableHeaderView.bind {
+          try await viewModel.cover
+        }
       }
     }.store(in: &cancellableBag)
   }

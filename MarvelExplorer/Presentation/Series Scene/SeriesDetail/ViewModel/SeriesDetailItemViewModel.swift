@@ -11,10 +11,41 @@ import UIKit
 import MarvelExplorerDomain
 
 public struct SeriesDetailItemViewModel: Equatable, Hashable, Identifiable {
-  public let id: Int
-  let title: String
+
+  private var series: Series
+
+  public var id: Int {
+     series.id
+  }
+
+  var title: String {
+    return series.name
+  }
   let seriesDetails: [SeriesDetail]
-  let cover: AnyPublisher<UIImage?, Never>
+
+  var cover: UIImage? {
+    get async throws {
+       try await imageLoader(series)
+    }
+  }
+
+  var imageLoader: ((Series) async throws -> UIImage?)
+
+  init(series: Series,
+       imageLoader: @escaping ((Series) async throws -> UIImage?) ) {
+    let creators = series.creators
+    self.series = series
+    self.imageLoader = imageLoader
+
+    let seriesDetails: [SeriesDetailItemViewModel.SeriesDetail] = [
+      .description(series.description ?? "No Description for \(series.name)"),
+      .endYear(series.endYear),
+      .startYear(series.startYear),
+      .creators(creators)
+    ]
+
+    self.seriesDetails = seriesDetails
+  }
 
   enum SeriesDetail {
     case creators([Creator])
@@ -31,24 +62,5 @@ extension SeriesDetailItemViewModel {
   }
   public func hash(into hasher: inout Hasher) {
     hasher.combine(id)
-  }
-}
-extension SeriesDetailItemViewModel {
-  init(series: Series,
-       imageLoader: (Series) -> AnyPublisher<UIImage?, Never>) {
-    let creators = series.creators
-
-    self.id = series.id
-    self.title = series.name
-    self.cover = imageLoader(series)
-
-    let seriesDetails: [SeriesDetailItemViewModel.SeriesDetail] = [
-      .description(series.description ?? "No Description for \(series.name)"),
-      .endYear(series.endYear),
-      .startYear(series.startYear),
-      .creators(creators)
-    ]
-
-    self.seriesDetails = seriesDetails
   }
 }

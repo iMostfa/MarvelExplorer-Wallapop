@@ -12,6 +12,7 @@ public protocol NetworkServiceType: AnyObject {
 
   @discardableResult
   func load<Loadable>(_ resource: Resource<Loadable>) -> AnyPublisher<Loadable, Error>
+  func load<Loadable>(_ resource: Resource<Loadable>) async throws -> Loadable
 }
 
 /// Network service errors.

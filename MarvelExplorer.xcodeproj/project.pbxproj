@@ -115,6 +115,8 @@
 		EFD5C1D8283167E100BC62BE /* Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60F6BC28201B22008AC909 /* Creator.swift */; };
 		EFD5C1D9283167E300BC62BE /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CB9281CF6E4002DE22C /* Thumbnail.swift */; };
 		EFD5C1DA28316A3900BC62BE /* DefaultMarvelSeriesCoverRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF2281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift */; };
+		EFDE838F28877A0E00536066 /* Publisher+ asyncMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE838E28877A0E00536066 /* Publisher+ asyncMap.swift */; };
+		EFDE839028877B8700536066 /* Publisher+ asyncMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE838E28877A0E00536066 /* Publisher+ asyncMap.swift */; };
 		EFF1106F28222D250075121B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1106E28222D250075121B /* main.swift */; };
 		EFF11097282252450075121B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFF11099282252450075121B /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -363,6 +365,7 @@
 		EFD06C242824975600C27284 /* TestsComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsComposite.swift; sourceTree = "<group>"; };
 		EFD06C262824989000C27284 /* DefaultComposites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposites.swift; sourceTree = "<group>"; };
 		EFD06C2A2824C06200C27284 /* MarvelExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarvelExplorer.entitlements; sourceTree = "<group>"; };
+		EFDE838E28877A0E00536066 /* Publisher+ asyncMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ asyncMap.swift"; sourceTree = "<group>"; };
 		EFF1106E28222D250075121B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EFF11098282252450075121B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EFF1109A282252560075121B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -775,6 +778,7 @@
 			children = (
 				EF1F8CE9281D1FF2002DE22C /* Publisher+flatMapLatest.swift */,
 				EF1F8C94281CE773002DE22C /* Publisher+ConvenienceMethods.swift */,
+				EFDE838E28877A0E00536066 /* Publisher+ asyncMap.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -1544,6 +1548,7 @@
 				EF1F8CA8281CED8F002DE22C /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
 				EFD06C222824967300C27284 /* AppDelegateComposite.swift in Sources */,
 				EF1F8CA6281CED73002DE22C /* AppFlowCoordinator.swift in Sources */,
+				EFDE838F28877A0E00536066 /* Publisher+ asyncMap.swift in Sources */,
 				EFD06BA12824134600C27284 /* Publisher+ConvenienceMethods.swift in Sources */,
 				EFD06C272824989000C27284 /* DefaultComposites.swift in Sources */,
 				EFD06BF728241C4600C27284 /* SeriesListFlowCoordinator.swift in Sources */,
@@ -1598,6 +1603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFD06B46282401ED00C27284 /* Scheduler.swift in Sources */,
+				EFDE839028877B8700536066 /* Publisher+ asyncMap.swift in Sources */,
 				EFD06BB92824164C00C27284 /* Array+RemoveDuplicates.swift in Sources */,
 				EFD06BBD2824164C00C27284 /* URL+HTTPS.swift in Sources */,
 				EFD06B48282401FB00C27284 /* Publisher+ConvenienceMethods.swift in Sources */,
@@ -1893,7 +1899,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1929,7 +1935,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2115,7 +2121,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2146,7 +2152,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2177,7 +2183,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2208,7 +2214,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2240,7 +2246,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2272,7 +2278,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2304,7 +2310,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2336,7 +2342,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

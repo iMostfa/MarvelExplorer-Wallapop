@@ -29,6 +29,19 @@ final public class SeriesListViewModel: SeriesListViewModelType {
   public func transform(input: SeriesListViewModelInput) -> SeriesListViewModelOutput {
     cancellableBag.removeAll()
 
+    let series2 = input.onAppear
+      .asyncMap { _ in
+        try await self.fetchSeriesUseCase.fetchSeriesAsync()
+      }.map { [weak self] series ->  SeriesListState in
+        // for safety purposes, no use for unowned
+        guard let self = self else { return .success([]) }
+        self.series += series
+
+        let seriesViewModels = self.viewModels(from: self.series)
+        return SeriesListState.success(seriesViewModels)
+
+      }.eraseToAnyPublisher()
+
     // MARK: - on View Appear
     let series = input.onAppear
       .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
@@ -87,7 +100,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
       .eraseToAnyPublisher()
 
     return Publishers
-      .Merge4(loadingActions, pageSeries, series, filteredSeries)
+      .Merge4(loadingActions, pageSeries, series2, filteredSeries)
       .removeDuplicates()
       .eraseToAnyPublisher()
   }
@@ -114,7 +127,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
 func viewModels(from items: [Series]) -> [SeriesListItemViewModel] {
     return items.map { SeriesListItemViewModel(series: $0,
                                                imageLoader: { series in
-      return self.coverLoaderUseCase.loadSeriesCover(for: series)
+      return try await self.coverLoaderUseCase.loadSeriesCover(for: series)
 
     })}
   }

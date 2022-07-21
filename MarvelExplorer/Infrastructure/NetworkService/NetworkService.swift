@@ -11,9 +11,28 @@ import Combine
 final class NetworkService: NetworkServiceType {
   private let session: URLSession
   private let jsonDecoder: JSONDecoder
+
   init(session: URLSession = URLSession(configuration: URLSessionConfiguration.ephemeral), jsonDecoder: JSONDecoder = JSONDecoder()) {
     self.session = session
     self.jsonDecoder = jsonDecoder
+  }
+
+  @discardableResult
+  func load<Loadable>(_ resource: Resource<Loadable>) async throws -> Loadable where Loadable: Decodable, Loadable: Encodable {
+    guard let request = resource.request else {
+      throw "Can't get the request"
+    }
+
+    let (data, response) = try await session.data(for: request)
+
+    guard let response = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
+
+    guard 200..<300 ~= response.statusCode else { throw NetworkError.dataLoadingError(statusCode: response.statusCode,
+                                                                                      data: data)
+    }
+
+    return try jsonDecoder.decode(Loadable.self, from: data)
+
   }
 
   @discardableResult
@@ -33,7 +52,7 @@ final class NetworkService: NetworkServiceType {
         }
         return .just(data)
       }
-      .decode(type: Loadable.self, decoder: JSONDecoder())
+      .decode(type: Loadable.self, decoder: jsonDecoder)
       .eraseToAnyPublisher()
   }
 

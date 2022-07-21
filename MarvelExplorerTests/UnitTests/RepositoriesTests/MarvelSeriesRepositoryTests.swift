@@ -17,6 +17,7 @@ import Combine
 class MarvelSeriesRepositoryTests: XCTestCase {
 
   private let networkService = NetworkServiceTypeMock()
+  // TODO: - Repository should be Interface, not concrete type.
   private var repository: DefaultMarvelSeriesRepository!
   private var cancellableBag: [AnyCancellable] = []
 

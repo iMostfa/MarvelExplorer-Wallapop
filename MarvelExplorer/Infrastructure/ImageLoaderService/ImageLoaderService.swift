@@ -14,24 +14,29 @@ public protocol ImageLoaderServiceType: AnyObject {
   func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never>
 }
 
+// MARK: - ImageLoaderServiceType
+public protocol ImageLoaderServiceTypeAsync: AnyObject {
+  func loadImage(from url: URL) async throws -> UIImage?
+}
+
 // MARK: - Implementation for ImageLoaderServiceType
-final public class ImageLoaderService: ImageLoaderServiceType {
+final public class ImageLoaderService: ImageLoaderServiceTypeAsync {
 
-  private let cache: ImageCacheType = ImageCache()
+  private let cache: ImageCacheTypeAsync = ImageCacheActor()
 
-  public func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never> {
-    if let image = cache.image(for: url) {
+  public func loadImage(from url: URL) async throws -> UIImage? {
+    if let image = await cache.image(for: url) {
       print("Fetched from cache")
-      return .just(image)
+      return image
     }
-    return URLSession.shared.dataTaskPublisher(for: url)
-      .map { (data, _) -> UIImage? in return UIImage(data: data) }
-      .catch { _ in return Just(nil) }
-      .handleEvents(receiveOutput: {[unowned self] image in
-        guard let image = image else { return }
-        self.cache.insertImage(image, for: url)
-      })
-      .print("Image loading \(url):")
-      .eraseToAnyPublisher()
+
+    let (data, _) = try await URLSession.shared.data(from: url)
+
+    guard let image = UIImage.init(data: data) else { return nil }
+
+    await cache.insertImage(image, for: url)
+    print("Image Loaded from web \(url)")
+
+    return image
   }
 }
