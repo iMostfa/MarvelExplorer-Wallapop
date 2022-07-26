@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-
+import RxCombine
 public protocol FetchMarvelSeriesUseCaseType: AnyObject {
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
 
@@ -24,7 +24,19 @@ final public class DefaultFetchMarvelSeriesUseCase: FetchMarvelSeriesUseCaseType
   }
 
   public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
-    return seriesRepository.fetchSeries()
+    let observable = seriesRepository
+      .fetchSeries()
+      .asObservable()
+      .map({ series in
+        return Result<[Series], Error>.init {
+          return series
+        }
+      })
+      .publisher
+      .assertNoFailure()
+      .eraseToAnyPublisher()
+
+    return observable
   }
 
 }

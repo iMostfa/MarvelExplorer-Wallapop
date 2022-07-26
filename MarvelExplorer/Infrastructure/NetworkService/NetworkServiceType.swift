@@ -7,11 +7,13 @@
 
 import Foundation
 import Combine
+import RxSwift
 
 public protocol NetworkServiceType: AnyObject {
 
   @discardableResult
   func load<Loadable>(_ resource: Resource<Loadable>) -> AnyPublisher<Loadable, Error>
+  func load<Loadable>(_ resource: Resource<Loadable>) -> Observable<Loadable>
 }
 
 /// Network service errors.

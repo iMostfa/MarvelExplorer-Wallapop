@@ -36,7 +36,6 @@ final class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate
 
     if let dataSourceCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: 0) {
 
-
       if indexPath.row == dataSourceCount - fetchPostsThreshold {
         print("should fetch more pages")
         onPageRequest?.send()

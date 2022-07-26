@@ -117,6 +117,7 @@
 		EFD5C1DA28316A3900BC62BE /* DefaultMarvelSeriesCoverRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8CF2281D38FD002DE22C /* DefaultMarvelSeriesCoverRepository.swift */; };
 		EFF1106F28222D250075121B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1106E28222D250075121B /* main.swift */; };
 		EFF11097282252450075121B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFF11099282252450075121B /* Localizable.strings */; };
+		F74A78F657FBF27D9A653A36 /* Pods_MarvelExplorerDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB29B9DF1563E1D6F248AC7E /* Pods_MarvelExplorerDomain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,11 +254,14 @@
 		58D8DF47F6349DFC71BEA60F /* Pods-MarvelExplorer-MarvelExplorerUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer-MarvelExplorerUI.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer-MarvelExplorerUI/Pods-MarvelExplorer-MarvelExplorerUI.debug.xcconfig"; sourceTree = "<group>"; };
 		5C7DA4B2293FABD7E947E09E /* Pods-MarvelExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer/Pods-MarvelExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 		703C6123D979A47CBA98025C /* Pods-MarvelExplorer-MarvelExplorerData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer-MarvelExplorerData.release.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer-MarvelExplorerData/Pods-MarvelExplorer-MarvelExplorerData.release.xcconfig"; sourceTree = "<group>"; };
+		7D3EE0331D3246CC691D946E /* Pods-MarvelExplorerDomain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerDomain.release.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerDomain/Pods-MarvelExplorerDomain.release.xcconfig"; sourceTree = "<group>"; };
 		A2D2B00E7A42946BB7378EFF /* Pods-MarvelExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4AAE2C4E76571F976E2C47 /* Pods-MarvelExplorerData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerData.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerData/Pods-MarvelExplorerData.debug.xcconfig"; sourceTree = "<group>"; };
 		B3DA53E6848DD67AFEF1BC62 /* Pods-MarvelExplorerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3AB44DA7F017B000D086038 /* Pods_MarvelExplorerData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelExplorerData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7C60816280622F2FCF1E13 /* Pods-MarvelExplorerDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerDomain.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerDomain/Pods-MarvelExplorerDomain.debug.xcconfig"; sourceTree = "<group>"; };
 		E92B7B6F00B33A64C650F398 /* Pods_MarvelExplorerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelExplorerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB29B9DF1563E1D6F248AC7E /* Pods_MarvelExplorerDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelExplorerDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE60C62226D6CC381046BD0A /* Pods-MarvelExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer.release.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer/Pods-MarvelExplorer.release.xcconfig"; sourceTree = "<group>"; };
 		EF1F8C56281CE525002DE22C /* MarvelExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1F8C59281CE525002DE22C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -409,6 +413,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74A78F657FBF27D9A653A36 /* Pods_MarvelExplorerDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +453,8 @@
 				0DD933FD4B0D8A03C90C1F5A /* Pods-MarvelExplorerUI.release.xcconfig */,
 				5C7DA4B2293FABD7E947E09E /* Pods-MarvelExplorer.debug.xcconfig */,
 				EE60C62226D6CC381046BD0A /* Pods-MarvelExplorer.release.xcconfig */,
+				DF7C60816280622F2FCF1E13 /* Pods-MarvelExplorerDomain.debug.xcconfig */,
+				7D3EE0331D3246CC691D946E /* Pods-MarvelExplorerDomain.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -459,6 +466,7 @@
 				2A5926668E40510CA156207B /* Pods_MarvelExplorerTests.framework */,
 				E92B7B6F00B33A64C650F398 /* Pods_MarvelExplorerUI.framework */,
 				535B61676B0DE2FCF39BBC8A /* Pods_MarvelExplorer.framework */,
+				EB29B9DF1563E1D6F248AC7E /* Pods_MarvelExplorerDomain.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1176,6 +1184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFD06B5928240F5500C27284 /* Build configuration list for PBXNativeTarget "MarvelExplorerDomain" */;
 			buildPhases = (
+				71EFEC4BE78195C8C8B48088 /* [CP] Check Pods Manifest.lock */,
 				EFD06B4A28240F5400C27284 /* Headers */,
 				EFD06B4B28240F5400C27284 /* Sources */,
 				EFD06B4C28240F5400C27284 /* Frameworks */,
@@ -1393,6 +1402,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71EFEC4BE78195C8C8B48088 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarvelExplorerDomain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80E609612E2198B653D5E94D /* [CP] Check Pods Manifest.lock */ = {
@@ -2166,6 +2197,7 @@
 		};
 		EFD06B5A28240F5500C27284 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF7C60816280622F2FCF1E13 /* Pods-MarvelExplorerDomain.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2197,6 +2229,7 @@
 		};
 		EFD06B5B28240F5500C27284 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D3EE0331D3246CC691D946E /* Pods-MarvelExplorerDomain.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

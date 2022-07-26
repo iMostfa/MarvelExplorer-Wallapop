@@ -9,6 +9,9 @@
 
 import Foundation
 import Combine
+import RxSwift
+import RxCocoa
+
 import MarvelExplorerDomain
 import MarvelExplorerShared
 
@@ -26,6 +29,28 @@ final public class DefaultMarvelSeriesRepository {
 }
 
 extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
+
+  public func fetchSeries() -> Observable<[Series]> {
+    return networkService
+      .load(Resource<MarvelSeriesDTOResponse>.getSeries(offset: self.seriesPaginator?.nextOffset,
+                                                        limit: self.seriesPaginator?.limit))
+      .subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+      .observe(on: MainScheduler.instance)
+      .do(onNext: { paginator in
+        self.seriesPaginator = paginator.data
+
+      })
+        .map { paginator -> [Series] in
+          let e = paginator.data.results.map { $0.toDomain() }
+          return e
+        }
+        .catch { error in
+          return Single<[Series]>
+            .error(error)
+            .asObservable()
+        }.asObservable()
+
+  }
 
   public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
     return networkService

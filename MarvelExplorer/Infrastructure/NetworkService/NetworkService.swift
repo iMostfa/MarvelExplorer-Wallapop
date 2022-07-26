@@ -7,6 +7,8 @@
 
 import Foundation
 import Combine
+import RxSwift
+import RxCocoa
 
 final class NetworkService: NetworkServiceType {
   private let session: URLSession
@@ -17,6 +19,23 @@ final class NetworkService: NetworkServiceType {
   }
 
   @discardableResult
+
+  func load<Loadable>(_ resource: Resource<Loadable>) -> Observable<Loadable> {
+
+    guard let request = resource.request else {
+      return .error(NetworkError.invalidRequest)
+    }
+
+    return session
+      .rx
+      .data(request: request)
+    // TODO: - Handle Errors here as in Combine
+      .catch { _ in throw NetworkError.invalidRequest }
+      .decode(type: Loadable.self, decoder: jsonDecoder)
+      .asObservable()
+
+  }
+
   func load<Loadable>(_ resource: Resource<Loadable>) -> AnyPublisher<Loadable, Error> {
     guard let request = resource.request else {
       return .fail(NetworkError.invalidRequest)

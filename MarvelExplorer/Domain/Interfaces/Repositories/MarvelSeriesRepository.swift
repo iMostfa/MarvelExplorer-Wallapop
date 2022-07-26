@@ -7,10 +7,11 @@
 
 import Foundation
 import Combine
+import RxSwift
 
 /// Represents any data provider which will supply Series of marvel
 public protocol MarvelSeriesRepository: AnyObject {
 
   func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
-
+  func fetchSeries() -> Observable<[Series]>
 }

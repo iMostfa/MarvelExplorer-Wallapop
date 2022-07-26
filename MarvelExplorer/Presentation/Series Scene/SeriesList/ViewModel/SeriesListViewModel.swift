@@ -8,6 +8,9 @@
 import Foundation
 import Combine
 import MarvelExplorerDomain
+import RxSwift
+import RxCocoa
+import RxCombine
 
 final public class SeriesListViewModel: SeriesListViewModelType {
 
@@ -31,7 +34,9 @@ final public class SeriesListViewModel: SeriesListViewModelType {
 
     // MARK: - on View Appear
     let series = input.onAppear
-      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
+      .asObservable()
+      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries().asObservable() }
+//      .flatMapLatest { self.fetchSeriesUseCase.fetchSeries() }
       .map { [weak self] result -> SeriesListState in
         // for safety purposes, no use for unowned
         guard let self = self else { return .success([]) }
@@ -44,7 +49,7 @@ final public class SeriesListViewModel: SeriesListViewModelType {
         case .failure(let error):
          return  SeriesListState.failure(error)
         }
-      }.eraseToAnyPublisher()
+      }
 
     // MARK: - Handle Searching
     let filteredSeries = input.onSearch
@@ -86,9 +91,14 @@ final public class SeriesListViewModel: SeriesListViewModelType {
       .map { _ in return SeriesListState.loading }
       .eraseToAnyPublisher()
 
-    return Publishers
-      .Merge4(loadingActions, pageSeries, series, filteredSeries)
-      .removeDuplicates()
+    return Observable
+      .merge(loadingActions.asObservable(),
+             pageSeries.asObservable(),
+             series,
+             filteredSeries.asObservable())
+      .distinctUntilChanged()
+      .asPublisher()
+      .assertNoFailure() // TODO: - We should remove this assertion
       .eraseToAnyPublisher()
   }
 

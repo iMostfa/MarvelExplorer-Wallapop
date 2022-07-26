@@ -1,15 +1,31 @@
 PODS:
   - Keys (1.0.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxCombine (2.0.1):
+    - RxRelay (~> 6)
+    - RxSwift (~> 6)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SnapKit (5.6.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
+  - RxCocoa
+  - RxCombine
+  - RxSwift
   - SnapKit
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - RxCocoa
+    - RxCombine
+    - RxRelay
+    - RxSwift
     - SnapKit
     - SVProgressHUD
 
@@ -19,9 +35,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxCombine: 74cd98f7bb1d908eff3758d13651917fc296adb3
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 5f697f89b07ad1dd8961776b78a5e55fb5d1cebf
+PODFILE CHECKSUM: 19f829b029ccb045148dd8a0b2fb5b6d0e5ed931
 
 COCOAPODS: 1.11.3
