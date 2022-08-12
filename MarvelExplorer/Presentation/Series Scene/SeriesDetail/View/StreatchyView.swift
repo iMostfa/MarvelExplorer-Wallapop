@@ -18,7 +18,7 @@ final class StretchyHeaderView: UIView {
     return effectView
   }()
 
-  private var cancellableBag: Set<AnyCancellable> = .init()
+  private var currentImageTask: Task<(), Error>?
 
   public let imageView: UIImageView = {
     let imageView = UIImageView.init()
@@ -77,13 +77,13 @@ final class StretchyHeaderView: UIView {
     }
   }
 
-  func bind(to imagePublisher: AnyPublisher<UIImage?, Never>) {
-    imagePublisher
-      .receive(on: RunLoop.main)
-      .sink { [weak self] image in
-      guard let self = self else { return }
+  func bind(to imageLoader: @escaping () async throws -> UIImage?) {
+
+    let currentImageTask = Task {
+      let image = try await imageLoader()
       self.imageView.image = image
-    }.store(in: &cancellableBag)
+    }
+    self.currentImageTask = currentImageTask
   }
 
   /// Sets up view constraints
@@ -129,10 +129,11 @@ final class StretchyHeaderView: UIView {
     imageViewBottom.constant = offsetY >= 0 ? 0: -offsetY / 2
     imageViewHeight.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
 
-    DispatchQueue.main.async {
-      let value = (1 - (offsetY / (self.heightBeforeDragging)))
-      self.viewAnimator?.fractionComplete = -1 * value * self.blurFactor
-
+    Task {
+      await MainActor.run {
+        let value = (1 - (offsetY / (self.heightBeforeDragging)))
+        self.viewAnimator?.fractionComplete = -1 * value * self.blurFactor
+      }
     }
   }
 

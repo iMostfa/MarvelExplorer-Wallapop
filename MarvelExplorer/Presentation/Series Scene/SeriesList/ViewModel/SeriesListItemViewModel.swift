@@ -11,11 +11,26 @@ import UIKit
 import MarvelExplorerDomain
 
 public struct SeriesListItemViewModel: Equatable, Hashable, Identifiable {
-  public let id: Int
-  let title: String
+
+  public var id: Int {
+    return series.id
+  }
+
+  private let series: Series
+
+  var title: String {
+    series.name
+  }
+
   let description: String?
   let endYear, startYear: String
-  let cover: AnyPublisher<UIImage?, Never>
+
+  var cover: UIImage? {
+    get async throws {
+      try await imageLoader(series)
+    }
+  }
+  var imageLoader: ((Series) async throws -> UIImage?)
 
 }
 
@@ -30,13 +45,12 @@ extension SeriesListItemViewModel {
 }
 extension SeriesListItemViewModel {
   init(series: Series,
-       imageLoader: (Series) -> AnyPublisher<UIImage?, Never>) {
-    self.id = series.id
-    self.title = series.name
+       imageLoader: @escaping ((Series) async throws -> UIImage?)) {
+    self.series = series
     self.description = series.description
     self.startYear =  "SEREIS_SINCE".localized(params: "\(series.startYear)")
     self.endYear = series.endYear != 2099 ? "SEREIS_UNTIL".localized(params: "\(series.endYear)"):
     "SERIES_PRESENT".localized()
-    self.cover = imageLoader(series)
+    self.imageLoader = imageLoader
   }
 }

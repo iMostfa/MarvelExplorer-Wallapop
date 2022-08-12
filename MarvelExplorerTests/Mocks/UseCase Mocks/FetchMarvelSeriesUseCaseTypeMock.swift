@@ -14,6 +14,13 @@ import Combine
 
 class FetchMarvelSeriesUseCaseTypeMock: FetchMarvelSeriesUseCaseType {
 
+  func fetchSeriesAsync() async throws -> [Series] {
+    fetchSeriesCallsCount += 1
+    fetchSeriesReceivedInvocations.append(())
+    return fetchSeriesWithClosure?() ?? fetchSeriesReturnValue
+
+  }
+
   // MARK: - fetchSeries
   var fetchSeriesCallsCount = 0
 
@@ -22,14 +29,8 @@ class FetchMarvelSeriesUseCaseTypeMock: FetchMarvelSeriesUseCaseType {
   }
 
   var fetchSeriesReceivedInvocations: [()] = []
-  var fetchSeriesReturnValue: AnyPublisher<Result<[Series], Error>, Never>!
-  var fetchSeriesWithClosure: (() -> AnyPublisher<Result<[Series], Error>, Never>)?
-
-  func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
-    fetchSeriesCallsCount += 1
-    fetchSeriesReceivedInvocations.append(())
-    return fetchSeriesWithClosure?() ?? fetchSeriesReturnValue
-  }
+  var fetchSeriesReturnValue: [Series]!
+  var fetchSeriesWithClosure: (() -> [Series])?
 
   // MARK: - fetchSeriesQuery
   var filterSeriesQueryCallsCount = 0

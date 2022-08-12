@@ -11,7 +11,7 @@ import MarvelExplorerShared
 import UIKit.UIImage
 
 public protocol LoadCoverUseCaseType: AnyObject {
-  func loadSeriesCover(for series: Series) -> AnyPublisher<UIImage?, Never>
+  func loadSeriesCover(for series: Series) async throws -> UIImage?
 }
 
 final public class LoadSeriesCoverUseCase: LoadCoverUseCaseType {
@@ -22,8 +22,8 @@ final public class LoadSeriesCoverUseCase: LoadCoverUseCaseType {
     self.coversRepository = coversRepository
   }
 
-  public func loadSeriesCover(for series: Series) -> AnyPublisher <UIImage?, Never> {
-    return coversRepository.loadSeriesCover(with: series.thumbnail.url.asSecureURL.absoluteString)
+  public func loadSeriesCover(for series: Series) async throws -> UIImage? {
+     try await coversRepository.loadSeriesCover(with: series.thumbnail.url.asSecureURL.absoluteString)
   }
 
 }

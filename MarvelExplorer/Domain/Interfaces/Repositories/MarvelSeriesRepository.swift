@@ -11,6 +11,12 @@ import Combine
 /// Represents any data provider which will supply Series of marvel
 public protocol MarvelSeriesRepository: AnyObject {
 
-  func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
+  func fetchSeries() async throws -> [Series]
 
+}
+
+extension MarvelSeriesRepository {
+  func fetchSeries() async throws -> [Series] {
+    fatalError("Make sure to override this, added for experiment only.")
+  }
 }

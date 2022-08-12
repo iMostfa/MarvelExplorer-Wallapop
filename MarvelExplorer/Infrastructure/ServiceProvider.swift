@@ -9,6 +9,7 @@ import Foundation
 import MarvelExplorerDomain
 
 public class ServicesProvider {
+
   public let network: NetworkServiceType
   public let imageLoader: ImageLoaderServiceType
   public let seriesRepository: MarvelSeriesRepository
@@ -19,6 +20,7 @@ public class ServicesProvider {
     let imageLoader = ImageLoaderService()
     let seriesRepository = DefaultMarvelSeriesRepository(networkService: network)
     let imageLoaderRepository = DefaultMarvelSeriesCoverRepository.init(imageLoader: imageLoader)
+
     return ServicesProvider(network: network,
                             imageLoader: imageLoader,
                             seriesRepository: seriesRepository,
@@ -36,3 +38,5 @@ public class ServicesProvider {
     self.imageLoaderRepository = imageLoaderRepository
   }
 }
+
+extension String: Error { }

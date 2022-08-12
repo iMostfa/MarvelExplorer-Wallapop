@@ -11,21 +11,21 @@ import Combine
 @testable import MarvelExplorerDomain
 
 class LoadSeriesCoverUseCaseMock: LoadCoverUseCaseType {
+  func loadSeriesCover(for series: Series) async throws -> UIImage? {
+    loadSeriesCoverForCallsCount += 1
+    loadSeriesCoverForUsingURL = series
+    loadSeriesCoverForInvocations.append(series)
+    return loadSeriesCoverForUsingClosure.map({ $0(series) }) ?? loadSeriesCoverForReturnValue
 
-  var loadSeriesCoverForUsingClosure: ((Series) -> AnyPublisher<UIImage?, Never>)?
+  }
+
+  var loadSeriesCoverForUsingClosure: ((Series) -> UIImage?)?
   var loadSeriesCoverForCallsCount = 0
   var loadSeriesCoverForNumberOfCalls: Bool {
     return loadSeriesCoverForCallsCount > 0
   }
   var loadSeriesCoverForUsingURL: Series?
   var loadSeriesCoverForInvocations: [Series] = []
-  var loadSeriesCoverForReturnValue: AnyPublisher<UIImage?, Never>!
-
-  func loadSeriesCover(for series: Series) -> AnyPublisher<UIImage?, Never> {
-    loadSeriesCoverForCallsCount += 1
-    loadSeriesCoverForUsingURL = series
-    loadSeriesCoverForInvocations.append(series)
-    return loadSeriesCoverForUsingClosure.map({ $0(series) }) ?? loadSeriesCoverForReturnValue
-  }
+  var loadSeriesCoverForReturnValue: UIImage!
 
 }

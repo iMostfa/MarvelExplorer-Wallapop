@@ -24,7 +24,7 @@ class SeriesListViewModelTests: XCTestCase {
     viewModel = .init(fetchSeriesUseCase: fetchSeriesUseCase,
                       coverLoaderUseCase: coverLoaderUseCase,
                       navigator: navigator)
-    coverLoaderUseCase.loadSeriesCoverForReturnValue = .just(.init())
+    coverLoaderUseCase.loadSeriesCoverForReturnValue = (.init())
   }
 
   override func tearDownWithError() throws {
@@ -45,7 +45,7 @@ class SeriesListViewModelTests: XCTestCase {
     let seriesDTO = MarvelSeriesDTOResponse.loadFromFile("SeriesResponse.json")
     let series = seriesDTO.data.results.map { $0.toDomain() }
 
-    fetchSeriesUseCase.fetchSeriesReturnValue = .just(.success(series))
+    fetchSeriesUseCase.fetchSeriesReturnValue = (series)
 
     let expectedViewModels = viewModel.viewModels(from: series)
 
@@ -78,7 +78,7 @@ class SeriesListViewModelTests: XCTestCase {
     var state: [SeriesListState] = []
 
     let expectation = self.expectation(description: "State is loading")
-    fetchSeriesUseCase.fetchSeriesReturnValue = .just(.success([]))
+    fetchSeriesUseCase.fetchSeriesReturnValue = ([])
 
     viewModel.transform(input: input)
       .sink(receiveCompletion: { _ in }, receiveValue: { modifiedState in
@@ -110,7 +110,7 @@ class SeriesListViewModelTests: XCTestCase {
     var state: [SeriesListState] = []
 
     let expectation = self.expectation(description: "State is loading")
-    fetchSeriesUseCase.fetchSeriesReturnValue = .just(.success([]))
+    fetchSeriesUseCase.fetchSeriesReturnValue =  []
 
     viewModel.transform(input: input)
       .sink(receiveCompletion: { _ in }, receiveValue: { modifiedState in
@@ -212,7 +212,7 @@ class SeriesListViewModelTests: XCTestCase {
       // Given
       let seriesDTO = MarvelSeriesDTOResponse.loadFromFile("FilteredSeries.json")
       let series = seriesDTO.data.results.map { $0.toDomain() }
-      fetchSeriesUseCase.fetchSeriesReturnValue = .just(.success(series))
+      fetchSeriesUseCase.fetchSeriesReturnValue = (series)
 
       let onPageRequest = PassthroughSubject<(), Never>()
       let expectation = self.expectation(description: "Series pagination after two calls")
@@ -249,7 +249,7 @@ class SeriesListViewModelTests: XCTestCase {
     // Given
     let seriesDTO = MarvelSeriesDTOResponse.loadFromFile("FilteredSeries.json")
     let series = seriesDTO.data.results.map { $0.toDomain() }
-    fetchSeriesUseCase.fetchSeriesReturnValue = .just(.success(series))
+    fetchSeriesUseCase.fetchSeriesReturnValue = (series)
 
     let onPageRequest = PassthroughSubject<(), Never>()
     let expectation = self.expectation(description: "Series pagination after two calls")
@@ -270,7 +270,7 @@ class SeriesListViewModelTests: XCTestCase {
       }.store(in: &cancellableBag)
 
     onPageRequest.send()
-    fetchSeriesUseCase.fetchSeriesReturnValue = .just(.success(series.reversed()))
+    fetchSeriesUseCase.fetchSeriesReturnValue = series.reversed()
     onPageRequest.send()
     onPageRequest.send(completion: .finished)
 

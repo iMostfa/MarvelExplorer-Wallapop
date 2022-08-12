@@ -16,7 +16,7 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
 
   var imageLoader: ImageLoaderServiceType?
   var imageURL: String?
-  var currentImageDownloader: AnyCancellable?
+  var imageDownloaderTask: Task<(), Error>?
   var dateDownloader: AnyCancellable?
   var seriesCellView: SeriesCellViewComponents = .init()
 
@@ -37,6 +37,7 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
   }
 
   override func prepareForReuse() {
+    print("Prepare for Reuse")
     cancelImageLoading()
   }
 
@@ -45,25 +46,31 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
     seriesCellView.title.text = viewModel.title
     seriesCellView.startYear.text = viewModel.startYear
     seriesCellView.endYear.text = viewModel.endYear
-    currentImageDownloader = viewModel.cover.sink {image in self.showImage(image: image) }
+    imageDownloaderTask = Task {
+      let image = try await viewModel.cover
+      showImage(image: image)
+    }
   }
 
   private func showImage(image: UIImage?) {
-    DispatchQueue.main.async {
-      self.cancelImageLoading()
-      UIView.transition(with: self.seriesCellView.thumbnailView,
-                        duration: 0.3,
-                        options: [.curveEaseOut, .transitionCrossDissolve],
-                        animations: {
-        self.seriesCellView.thumbnailView.image = image
-      })
+    Task {
+      await MainActor.run {
+        self.cancelImageLoading()
+        UIView.transition(with: self.seriesCellView.thumbnailView,
+                          duration: 0.3,
+                          options: [.curveEaseOut, .transitionCrossDissolve],
+                          animations: {
+          self.seriesCellView.thumbnailView.image = image
+        })
+      }
     }
 
   }
 
   func cancelImageLoading() {
     seriesCellView.thumbnailView.image = nil
-    currentImageDownloader = nil
+    imageDownloaderTask?.cancel()
+    print("Cancelling Task")
   }
 
 }

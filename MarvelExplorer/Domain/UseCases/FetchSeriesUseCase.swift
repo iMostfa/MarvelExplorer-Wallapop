@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 public protocol FetchMarvelSeriesUseCaseType: AnyObject {
-  func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never>
+  func fetchSeriesAsync() async throws -> [Series]
 
   // If we filtering using Repository(API) we would have this:
   //  func filterSeries(query: String) -> AnyPublisher<Result<[Series], Error>, Never> /* Le
@@ -23,8 +23,7 @@ final public class DefaultFetchMarvelSeriesUseCase: FetchMarvelSeriesUseCaseType
     self.seriesRepository = seriesRepository
   }
 
-  public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
-    return seriesRepository.fetchSeries()
+  public func fetchSeriesAsync() async throws -> [Series] {
+    return try await seriesRepository.fetchSeries()
   }
-
 }

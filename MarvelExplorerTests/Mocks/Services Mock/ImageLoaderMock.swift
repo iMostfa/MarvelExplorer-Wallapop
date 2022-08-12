@@ -8,27 +8,28 @@
 import Foundation
 import XCTest
 import Combine
+
 @testable import MarvelExplorer
 @testable import MarvelExplorerData
 
 class ImageLoaderServiceTypeMock: ImageLoaderServiceType {
 
+  func loadImage(from url: URL) async throws -> UIImage? {
+    loadImageCallsCount += 1
+    loadImageUsingURL = url
+    loadImageInvocations.append(url)
+    return loadImageUsingClosure.map({ $0(url) }) ?? loadImageReturnValue
+
+  }
   // MARK: - Load Image Mock
 
-  var loadImageUsingClosure: ((URL) -> AnyPublisher<UIImage?, Never>)?
+  var loadImageUsingClosure: ((URL) -> UIImage? )?
   var loadImageCallsCount = 0
   var loadImageNumberOfCalls: Bool {
     return loadImageCallsCount > 0
   }
   var loadImageUsingURL: URL?
   var loadImageInvocations: [URL] = []
-  var loadImageReturnValue: AnyPublisher<UIImage?, Never>!
-
-  func loadImage(from url: URL) -> AnyPublisher<UIImage?, Never> {
-    loadImageCallsCount += 1
-    loadImageUsingURL = url
-    loadImageInvocations.append(url)
-    return loadImageUsingClosure.map({ $0(url) }) ?? loadImageReturnValue
-  }
+  var loadImageReturnValue: UIImage!
 
 }

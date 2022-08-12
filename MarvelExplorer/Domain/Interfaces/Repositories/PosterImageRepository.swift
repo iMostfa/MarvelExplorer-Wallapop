@@ -11,6 +11,6 @@ import UIKit.UIImage
 
 /// Used to provide a cover data for a series
 public protocol MarvelSeriesCoverRepository: AnyObject {
-  func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?, Never>
+  func loadSeriesCover(with path: String) async throws -> UIImage?
 
 }

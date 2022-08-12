@@ -27,23 +27,17 @@ final public class DefaultMarvelSeriesRepository {
 
 extension DefaultMarvelSeriesRepository: MarvelSeriesRepository {
 
-  public func fetchSeries() -> AnyPublisher<Result<[Series], Error>, Never> {
-    return networkService
+  @MainActor
+  public func fetchSeries() async throws -> [Series] {
+    let seriesDTO =  try await networkService
       .load(Resource<MarvelSeriesDTOResponse>.getSeries(offset: self.seriesPaginator?.nextOffset,
-                                                          limit: self.seriesPaginator?.limit))
-      .subscribe(on: Scheduler.backgroundWorkScheduler)
-      .receive(on: Scheduler.mainScheduler)
-      .handleEvents(receiveOutput: { paginator in
-        self.seriesPaginator = paginator.data
-      })
-      .map({ paginator -> Result<[Series], Error> in
-        let e = paginator.data.results.map { $0.toDomain() }
-        return .success(e)
-      })
-      .catch({ error -> AnyPublisher<Result<[Series], Error>, Never> in
-        return .just(.failure(error))
-      })
-      .eraseToAnyPublisher()
-  }
+                                                                                             limit: self.seriesPaginator?.limit))
 
+    // Update current paginator
+    self.seriesPaginator = seriesDTO.data
+
+    let series = seriesDTO.data.results.map { $0.toDomain() }
+
+    return series
+  }
 }

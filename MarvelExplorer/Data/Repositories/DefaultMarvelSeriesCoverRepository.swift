@@ -23,13 +23,12 @@ final class DefaultMarvelSeriesCoverRepository {
 
 extension DefaultMarvelSeriesCoverRepository: MarvelSeriesCoverRepository {
 
-  func loadSeriesCover(with path: String) -> AnyPublisher<UIImage?, Never> {
+  func loadSeriesCover(with path: String) async throws -> UIImage? {
     // TODO: Better handling for the errors.
-    guard let url = URL.init(string: path) else { return .just(nil) }
+    guard let url = URL.init(string: path) else { return nil }
 
-    return imageLoader
+    return try await imageLoader
       .loadImage(from: url)
-      .eraseToAnyPublisher()
 
   }
 
