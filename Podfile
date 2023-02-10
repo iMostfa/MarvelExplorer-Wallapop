@@ -1,6 +1,5 @@
 use_frameworks!
 
-
 ##PODS##
 def svProgressHUD;  pod 'SVProgressHUD'; end
 def snapKit;        pod 'SnapKit'; end
