@@ -30,7 +30,15 @@ class SeriesListFlowCoordinator: FlowCoordinator {
 
 extension SeriesListFlowCoordinator: SeriesListNavigator {
   func showDetails(for series: Series) {
-    let vc = dependencyProvider.seriesDetailsController(series)
+    let vc = dependencyProvider.seriesDetailsController(series,
+                                                        delegate: self)
     seriesNavigationController?.pushViewController(vc, animated: true)
+  }
+}
+
+extension SeriesListFlowCoordinator: SeriesDetailViewControllerDelegate {
+  public func showSeries(image: UIImage) {
+    let vc = dependencyProvider.seriesCoverPreview(image: image)
+    seriesNavigationController?.present(vc, animated: true)
   }
 }

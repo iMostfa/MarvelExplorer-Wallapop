@@ -38,10 +38,14 @@ extension ApplicationComponentsFactory: DependencyProvider {
     return navigationController
   }
 
-  func seriesDetailsController(_ series: Series) -> UIViewController {
+  func seriesDetailsController(_ series: Series, delegate: SeriesDetailViewControllerDelegate) -> UIViewController {
     let viewModel = SeriesDetailViewModel.init(series: series, coverLoaderUseCase: coverLoaderUseCase)
-    let detailsVC = SeriesDetailViewController.init(viewModel: viewModel)
+    let detailsVC = SeriesDetailViewController.init(viewModel: viewModel, delegate: delegate)
     return detailsVC
   }
 
+  func seriesCoverPreview(image: UIImage) -> UIViewController {
+    let vc = ImagePreviewerController(image: image)
+    return vc
+  }
 }

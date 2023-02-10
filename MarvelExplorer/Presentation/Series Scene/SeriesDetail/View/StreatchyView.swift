@@ -20,7 +20,7 @@ final class StretchyHeaderView: UIView {
 
   private var cancellableBag: Set<AnyCancellable> = .init()
 
-  public let imageView: UIImageView = {
+  private let imageView: UIImageView = {
     let imageView = UIImageView.init()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
@@ -40,6 +40,10 @@ final class StretchyHeaderView: UIView {
   private var containerViewHeight = NSLayoutConstraint()
 
   var heightBeforeDragging: CGFloat = .infinity
+
+  public var image: UIImage? {
+    return imageView.image
+  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)

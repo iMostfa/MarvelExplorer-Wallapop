@@ -11,9 +11,14 @@ import UIKit
 import SVProgressHUD
 import SnapKit
 
+public protocol SeriesDetailViewControllerDelegate: AnyObject {
+  func showSeries(image: UIImage)
+}
+
 /// Series List View controller is used to show a list of series.
 final public class SeriesDetailViewController: UIViewController {
 
+  weak var delegate: SeriesDetailViewControllerDelegate?
   private let viewModel: SeriesDetailViewModelType
   private var cancellableBag = Set<AnyCancellable>()
   private var onAppearPublisher = PassthroughSubject<Void, Never>()
@@ -26,8 +31,9 @@ final public class SeriesDetailViewController: UIViewController {
   lazy var tableDataSource: SeriesDetailsDataSource = makeDataSource()
   var tableViewDelegate = SeriesDetailsTableViewDelegate()
 
-  public init(viewModel: SeriesDetailViewModelType) {
+  public init(viewModel: SeriesDetailViewModelType, delegate: SeriesDetailViewControllerDelegate) {
     self.viewModel = viewModel
+    self.delegate = delegate
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -118,7 +124,8 @@ final public class SeriesDetailViewController: UIViewController {
 }
 
 extension SeriesDetailViewController: SeriesDetailsViewDelegate {
-  func onHeaderTapped() {
+  func onHeaderTapped(image: UIImage) {
     print("Header was tapped")
+    delegate?.showSeries(image: image)
   }
 }

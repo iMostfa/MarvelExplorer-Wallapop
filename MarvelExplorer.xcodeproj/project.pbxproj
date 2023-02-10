@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B9F407B8E0C37A1DD407584 /* Pods_MarvelExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535B61676B0DE2FCF39BBC8A /* Pods_MarvelExplorer.framework */; };
 		0EE4236AD5D848580378DEEE /* Pods_MarvelExplorerUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B7B6F00B33A64C650F398 /* Pods_MarvelExplorerUI.framework */; };
+		708F128D2997077D00FB758D /* ImagePreviewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F128C2997077D00FB758D /* ImagePreviewerController.swift */; };
 		A131E5D2AF57220935F8B464 /* Pods_MarvelExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5926668E40510CA156207B /* Pods_MarvelExplorerTests.framework */; };
 		AD18A824CDFBB9BCCDB77F9D /* Pods_MarvelExplorerData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AB44DA7F017B000D086038 /* Pods_MarvelExplorerData.framework */; };
 		EF1F8C5A281CE525002DE22C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F8C59281CE525002DE22C /* AppDelegate.swift */; };
@@ -253,6 +254,7 @@
 		58D8DF47F6349DFC71BEA60F /* Pods-MarvelExplorer-MarvelExplorerUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer-MarvelExplorerUI.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer-MarvelExplorerUI/Pods-MarvelExplorer-MarvelExplorerUI.debug.xcconfig"; sourceTree = "<group>"; };
 		5C7DA4B2293FABD7E947E09E /* Pods-MarvelExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer/Pods-MarvelExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 		703C6123D979A47CBA98025C /* Pods-MarvelExplorer-MarvelExplorerData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorer-MarvelExplorerData.release.xcconfig"; path = "Target Support Files/Pods-MarvelExplorer-MarvelExplorerData/Pods-MarvelExplorer-MarvelExplorerData.release.xcconfig"; sourceTree = "<group>"; };
+		708F128C2997077D00FB758D /* ImagePreviewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewerController.swift; sourceTree = "<group>"; };
 		A2D2B00E7A42946BB7378EFF /* Pods-MarvelExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4AAE2C4E76571F976E2C47 /* Pods-MarvelExplorerData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerData.debug.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerData/Pods-MarvelExplorerData.debug.xcconfig"; sourceTree = "<group>"; };
 		B3DA53E6848DD67AFEF1BC62 /* Pods-MarvelExplorerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelExplorerTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelExplorerTests/Pods-MarvelExplorerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 				EF1F8CB5281CF1AD002DE22C /* Series Scene */,
 				EFD06C1C2824877B00C27284 /* Extentions */,
 				EFD06C182824386400C27284 /* MarvelExplorerUI.h */,
+				708F128C2997077D00FB758D /* ImagePreviewerController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1540,6 +1543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1F8CA4281CEB54002DE22C /* FlowCoordinator.swift in Sources */,
+				708F128D2997077D00FB758D /* ImagePreviewerController.swift in Sources */,
 				EF1F8C5A281CE525002DE22C /* AppDelegate.swift in Sources */,
 				EF1F8CA8281CED8F002DE22C /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
 				EFD06C222824967300C27284 /* AppDelegateComposite.swift in Sources */,
