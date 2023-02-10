@@ -15,6 +15,6 @@ enum SeriesDataSourceSection {
   case main
 }
 
-/// SeriesDataSource is a subclass of UICollectionViewDiffableDataSource<SeriesDataSourceSection, SeriesListItemViewModel>, incase some Data sources functions needed to be implemented.
+/// SeriesDataSource is a subclass of UICollectionViewDiffableDataSource<SeriesDataSourceSection, SeriesListItemViewModel>, in case some Data sources functions needed to be implemented.
 /// and as a type-alias around the generic.
 final class SeriesListCollectionViewDataSource: UICollectionViewDiffableDataSource<SeriesDataSourceSection, SeriesListItemViewModel> { }

@@ -17,7 +17,11 @@ final public class SeriesDetailViewController: UIViewController {
   private let viewModel: SeriesDetailViewModelType
   private var cancellableBag = Set<AnyCancellable>()
   private var onAppearPublisher = PassthroughSubject<Void, Never>()
-  private var detailsView: SeriesDetailsView = .init()
+  private lazy var detailsView: SeriesDetailsView = {
+    let view = SeriesDetailsView()
+    view.delegate = self
+    return view
+  }()
 
   lazy var tableDataSource: SeriesDetailsDataSource = makeDataSource()
   var tableViewDelegate = SeriesDetailsTableViewDelegate()
@@ -110,5 +114,11 @@ final public class SeriesDetailViewController: UIViewController {
       return cell
     }
     return datasource
+  }
+}
+
+extension SeriesDetailViewController: SeriesDetailsViewDelegate {
+  func onHeaderTapped() {
+    print("Header was tapped")
   }
 }

@@ -10,7 +10,7 @@ import UIKit
 final class SeriesDetailsTableViewDelegate: NSObject, UITableViewDelegate {
 
   deinit {
-    print("Table View Delegate was removed.")
+    debugPrint("Table View Delegate was removed.")
   }
 
   weak var headerView: StretchyHeaderView?

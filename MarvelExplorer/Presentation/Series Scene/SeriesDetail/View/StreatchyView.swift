@@ -132,7 +132,6 @@ final class StretchyHeaderView: UIView {
     DispatchQueue.main.async {
       let value = (1 - (offsetY / (self.heightBeforeDragging)))
       self.viewAnimator?.fractionComplete = -1 * value * self.blurFactor
-
     }
   }
 
