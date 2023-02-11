@@ -12,7 +12,7 @@ import SVProgressHUD
 import SnapKit
 
 public protocol SeriesDetailViewControllerDelegate: AnyObject {
-  func showSeries(image: UIImage)
+  func showSeries(image: UIImage, frame: CGRect)
 }
 
 /// Series List View controller is used to show a list of series.
@@ -124,8 +124,8 @@ final public class SeriesDetailViewController: UIViewController {
 }
 
 extension SeriesDetailViewController: SeriesDetailsViewDelegate {
-  func onHeaderTapped(image: UIImage) {
+  func onHeaderTapped(image: UIImage, frame: CGRect) {
     print("Header was tapped")
-    delegate?.showSeries(image: image)
+    delegate?.showSeries(image: image, frame: frame)
   }
 }

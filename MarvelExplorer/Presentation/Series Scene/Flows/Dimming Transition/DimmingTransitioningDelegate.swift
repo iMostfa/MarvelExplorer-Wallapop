@@ -23,8 +23,14 @@ class DimmingPresentationController: UIPresentationController {
     return view
   }()
 
+  @objc func onTap() {
+    presentedViewController.dismiss(animated: true)
+  }
   override func presentationTransitionWillBegin() {
     containerView?.addSubview(dimmingView)
+    containerView?.isUserInteractionEnabled = true
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
+    containerView?.addGestureRecognizer(tapGesture)
     dimmingView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
@@ -32,6 +38,13 @@ class DimmingPresentationController: UIPresentationController {
     let transitionCoordinator = presentingViewController.transitionCoordinator
     transitionCoordinator?.animate(alongsideTransition: { _ in
       self.dimmingView.alpha = 0.5
+    })
+  }
+
+  override func dismissalTransitionWillBegin() {
+    let transitionCoordinator = presentingViewController.transitionCoordinator
+    transitionCoordinator?.animate(alongsideTransition: { _ in
+      self.dimmingView.alpha = 0.0
     })
   }
 }

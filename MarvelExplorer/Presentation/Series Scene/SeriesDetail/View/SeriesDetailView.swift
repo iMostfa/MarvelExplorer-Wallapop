@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol SeriesDetailsViewDelegate: AnyObject {
-  func onHeaderTapped(image: UIImage)
+  func onHeaderTapped(image: UIImage, frame: CGRect)
 }
 
 final class SeriesDetailsView: UIView {
@@ -56,6 +56,10 @@ final class SeriesDetailsView: UIView {
 
   @objc private func onHeaderTapped() {
     guard let image = tableHeaderView.image else { return }
-    delegate?.onHeaderTapped(image: image)
+    guard let tableViewHeader = tableView.headerView(forSection: 0) else { return }
+    var tableViewHeaderFrame = tableViewHeader.frame
+    tableViewHeaderFrame = tableViewHeader.convert(tableViewHeaderFrame,
+                                                   from: tableViewHeader.coordinateSpace)
+    delegate?.onHeaderTapped(image: image, frame: tableViewHeaderFrame)
   }
 }
