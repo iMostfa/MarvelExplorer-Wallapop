@@ -15,7 +15,7 @@ class SeriesListFlowCoordinator: FlowCoordinator {
   fileprivate let window: UIWindow
   fileprivate var seriesNavigationController: UINavigationController?
   fileprivate let dependencyProvider: MarvelExplorerFlowCoordinatorDependencyProvider
-
+  private let dimmingTransationDelegate = DimmingTransitioningDelegate()
   init(window: UIWindow, dependencyProvider: MarvelExplorerFlowCoordinatorDependencyProvider) {
     self.window = window
     self.dependencyProvider = dependencyProvider
@@ -39,6 +39,8 @@ extension SeriesListFlowCoordinator: SeriesListNavigator {
 extension SeriesListFlowCoordinator: SeriesDetailViewControllerDelegate {
   public func showSeries(image: UIImage) {
     let vc = dependencyProvider.seriesCoverPreview(image: image)
+    vc.modalPresentationStyle = .custom
+    vc.transitioningDelegate = dimmingTransationDelegate
     seriesNavigationController?.present(vc, animated: true)
   }
 }

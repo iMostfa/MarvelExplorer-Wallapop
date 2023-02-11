@@ -24,7 +24,7 @@ class ImagePreviewerController: UIViewController {
   }
   func setupView() {
     view.addSubview(imageView)
-    view.backgroundColor = .systemPurple.withAlphaComponent(0.3)
+//    view.backgroundColor = .systemPurple.withAlphaComponent(0.3)
     imageView.snp.makeConstraints { make in
       make.horizontalEdges.equalToSuperview()
       make.center.equalToSuperview()
