@@ -58,7 +58,7 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
       goingToView.clipsToBounds = true
     }
 
-    goingToView.layer.cornerRadius = presenting ? 20.0 : 0.0
+    goingToView.layer.cornerRadius = !presenting ? 20.0 : 0.0
     goingToView.layer.masksToBounds = true
 
     if toView != nil {
@@ -72,9 +72,12 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
       usingSpringWithDamping: 0.9,
       initialSpringVelocity: 1,
       animations: {
-        goingToView.transform = self.presenting ? .identity : scaleTransform
+        if !self.presenting {
+          goingToView.alpha = 0
+        }
         goingToView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-        goingToView.layer.cornerRadius = !self.presenting ? 20.0 : 0.0
+        goingToView.transform = self.presenting ? .identity : scaleTransform
+        goingToView.layer.cornerRadius = self.presenting ? 20.0 : 0.0
       }, completion: { _ in
         transitionContext.completeTransition(true)
     })

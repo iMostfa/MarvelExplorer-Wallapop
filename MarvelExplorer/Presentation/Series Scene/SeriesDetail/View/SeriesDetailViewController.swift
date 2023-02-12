@@ -54,7 +54,7 @@ final public class SeriesDetailViewController: UIViewController {
   }
 
   public override func viewWillDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
+    super.viewWillDisappear(animated)
     self.detailsView.tableHeaderView.viewWillDisAppear()
   }
 
