@@ -12,6 +12,14 @@ import XCTest
 @testable import MarvelExplorerUI
 
 class ApplicationFlowCoordinatorDependencyProviderMock: DependencyProvider {
+  func seriesDetailsController(_ series: MarvelExplorerDomain.Series, delegate: MarvelExplorerUI.SeriesDetailViewControllerDelegate) -> UIViewController {
+    return UIViewController(nibName: nil, bundle: nil)
+  }
+
+  func seriesCoverPreview(image: UIImage) -> UIViewController {
+    return UIViewController(nibName: nil, bundle: nil)
+
+  }
 
   var seriesListNavigationControllerReturnValue: UINavigationController?
   var seriesDetailsControllerReturnValue: UIViewController?

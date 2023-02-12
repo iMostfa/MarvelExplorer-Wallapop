@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 public protocol SeriesListViewModelType: AnyObject {
   func transform(input: SeriesListViewModelInput) -> SeriesListViewModelOutput
@@ -34,6 +35,6 @@ extension SeriesListState: Equatable {
 public struct SeriesListViewModelInput {
   let onAppear: AnyPublisher<Void, Never>
   let onSearch: AnyPublisher<String, Never>
-  let onSeriesSelection: AnyPublisher<Int, Never>
+  let onSeriesSelection: AnyPublisher<(UICollectionViewCell, Int), Never>
   let onPageRequest: AnyPublisher<Void, Never>
 }

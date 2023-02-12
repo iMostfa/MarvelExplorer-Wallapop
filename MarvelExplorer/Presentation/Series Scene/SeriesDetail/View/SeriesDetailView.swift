@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol SeriesDetailsViewDelegate: AnyObject {
+  func onHeaderTapped(image: UIImage, frame: CGRect)
+}
+
 final class SeriesDetailsView: UIView {
+
+  weak var delegate: SeriesDetailsViewDelegate?
 
   let tableView: UITableView = {
     let tableView = UITableView.init(frame: .zero, style: UITableView.Style.insetGrouped)
@@ -18,8 +24,10 @@ final class SeriesDetailsView: UIView {
 
   lazy var tableHeaderView: StretchyHeaderView = {
     let header = StretchyHeaderView(frame: CGRect(x: 0, y: 0,
-                                                   width: self.frame.size.width,
-                                                   height: 250))
+                                                  width: self.frame.size.width,
+                                                  height: 250))
+    let onTap = UITapGestureRecognizer(target: self, action: #selector(onHeaderTapped))
+    header.addGestureRecognizer(onTap)
     return header
   }()
 
@@ -46,4 +54,12 @@ final class SeriesDetailsView: UIView {
     }
   }
 
+  @objc private func onHeaderTapped() {
+    guard let image = tableHeaderView.image else { return }
+    guard let tableViewHeader = tableView.headerView(forSection: 0) else { return }
+    var tableViewHeaderFrame = tableViewHeader.frame
+    tableViewHeaderFrame = tableViewHeader.convert(tableViewHeaderFrame,
+                                                   from: tableViewHeader.coordinateSpace)
+    delegate?.onHeaderTapped(image: image, frame: tableViewHeaderFrame)
+  }
 }

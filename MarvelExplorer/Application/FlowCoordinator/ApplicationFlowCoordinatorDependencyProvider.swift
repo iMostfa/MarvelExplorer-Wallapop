@@ -18,5 +18,8 @@ protocol MarvelExplorerFlowCoordinatorDependencyProvider: AnyObject {
   func seriesListNavigationController(navigator: SeriesListNavigator) -> UINavigationController
 
   // Creates UIViewController to show the details of a series.
-  func seriesDetailsController(_ series: Series) -> UIViewController
+  func seriesDetailsController(_ series: Series, delegate: SeriesDetailViewControllerDelegate) -> UIViewController
+
+  // Creates UIViewController to show the details of a series.
+  func seriesCoverPreview(image: UIImage) -> UIViewController
 }

@@ -10,5 +10,5 @@ import MarvelExplorerDomain
 
 public protocol SeriesListNavigator: AnyObject {
   /// Presented a Series details view..
-  func showDetails(for series: Series)
+  func showDetails(for series: Series, fromFrame: CGRect)
 }

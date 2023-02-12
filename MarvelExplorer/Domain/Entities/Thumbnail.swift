@@ -9,7 +9,7 @@ import Foundation
 
 public struct Thumbnail: Equatable {
   public let path: String
-  public let `extension`:String
+  public let `extension`: String
 
   /// URL of Thumbnail
   public var url: URL {

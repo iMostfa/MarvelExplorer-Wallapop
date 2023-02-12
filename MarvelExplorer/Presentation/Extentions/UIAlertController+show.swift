@@ -14,7 +14,7 @@ public extension UIAlertController {
             title: String,
             action: UIAlertAction = .init(title: "DEFAULT_ALERT_OK".localized(), style: .default),
                    on viewController: UIViewController) {
-    let controller = UIAlertController.init(title: title ,
+    let controller = UIAlertController.init(title: title,
                                             message: message,
                                             preferredStyle: .alert)
     controller.addAction(action)
