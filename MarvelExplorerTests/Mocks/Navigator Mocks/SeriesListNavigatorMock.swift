@@ -25,7 +25,7 @@ class SeriesListNavigatorMock: SeriesListNavigator {
   var showDetailsForReceivedSeriesId: Series?
   var showDetailsForReceivedInvocations: [Series] = []
 
-  func showDetails(for series: Series) {
+  func showDetails(for series: Series, fromFrame: CGRect) {
     showDetailsForSeriesCallsCount += 1
     showDetailsForReceivedSeriesId = series
     showDetailsForReceivedInvocations.append(series)

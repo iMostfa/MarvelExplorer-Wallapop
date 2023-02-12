@@ -52,12 +52,15 @@ final public class SeriesListViewModel: SeriesListViewModelType {
       .eraseToAnyPublisher()
 
     // MARK: - On Item Selection Handling
-    input.onSeriesSelection.sink { [weak self] index in
+    input.onSeriesSelection.sink { [weak self] (cell, index) in
       guard let self = self else { return }
       guard  index <= self.series.count else { return assertionFailure("Wrong index was tapped, would happen only if viewModels array were cleared.")}
 
       let selectedSeries = self.series[index]
-      self.navigator?.showDetails(for: selectedSeries)
+      guard let cellSuperView = cell.superview else { return }
+      let rect = cellSuperView.convert(cell.frame, to: nil)
+
+      self.navigator?.showDetails(for: selectedSeries, fromFrame: rect)
     }.store(in: &cancellableBag)
 
     // MARK: - Handle page more Fetching

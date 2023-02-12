@@ -18,7 +18,14 @@ class DimmingPresentationController: UIPresentationController {
 
   let dimmingView: UIView = {
     let view = UIView()
-    view.backgroundColor = .purple
+    view.backgroundColor = .systemPurple
+    view.alpha = 0
+    return view
+  }()
+
+  let blurView: UIView = {
+    let blurEffect = UIBlurEffect(style: .dark)
+    let view = UIVisualEffectView(effect: blurEffect)
     view.alpha = 0
     return view
   }()
@@ -28,9 +35,14 @@ class DimmingPresentationController: UIPresentationController {
   }
   override func presentationTransitionWillBegin() {
     containerView?.addSubview(dimmingView)
+    containerView?.addSubview(blurView)
+
     containerView?.isUserInteractionEnabled = true
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
     containerView?.addGestureRecognizer(tapGesture)
+    blurView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
     dimmingView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
@@ -38,6 +50,16 @@ class DimmingPresentationController: UIPresentationController {
     let transitionCoordinator = presentingViewController.transitionCoordinator
     transitionCoordinator?.animate(alongsideTransition: { _ in
       self.dimmingView.alpha = 0.5
+      self.dimmingView.backgroundColor = .systemPurple
+
+    })
+  }
+
+  override func presentationTransitionDidEnd(_ completed: Bool) {
+    UIView.animate(withDuration: 0.3, animations: {
+      self.blurView.alpha = 0.8
+      self.dimmingView.backgroundColor = .systemPurple
+      self.dimmingView.alpha = 0.3
     })
   }
 
@@ -45,6 +67,7 @@ class DimmingPresentationController: UIPresentationController {
     let transitionCoordinator = presentingViewController.transitionCoordinator
     transitionCoordinator?.animate(alongsideTransition: { _ in
       self.dimmingView.alpha = 0.0
+      self.blurView.alpha = 0.0
     })
   }
 }

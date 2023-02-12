@@ -17,7 +17,7 @@ final public class SeriesListViewController: UIViewController {
   private var cancellableBag = Set<AnyCancellable>()
 
   private var onAppearPublisher = PassthroughSubject<Void, Never>()
-  private var onItemSelectedPublisher = PassthroughSubject<Int, Never>()
+  private var onItemSelectedPublisher = PassthroughSubject<(UICollectionViewCell, Int), Never>()
   private var onPageRequestPublisher = PassthroughSubject<(), Never>()
   private var onSearchPublisher = PassthroughSubject<String, Never>()
 

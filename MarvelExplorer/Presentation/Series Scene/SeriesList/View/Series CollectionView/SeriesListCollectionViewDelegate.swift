@@ -11,13 +11,13 @@ import Combine
 final class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate {
 
   private var onPageRequest: PassthroughSubject<Void, Never>?
-  private var onItemSelected: PassthroughSubject<Int, Never>?
+  private var onItemSelected: PassthroughSubject<(UICollectionViewCell, Int), Never>?
   var onScroll: (() -> Void)?
 
   let fetchPostsThreshold = 3
 
   init(onPageRequest: PassthroughSubject<Void, Never>,
-       onItemSelected: PassthroughSubject<Int, Never>) {
+       onItemSelected: PassthroughSubject<(UICollectionViewCell, Int), Never>) {
     self.onPageRequest = onPageRequest
     self.onItemSelected = onItemSelected
   }
@@ -25,7 +25,8 @@ final class SeriesListCollectionViewDelegate: NSObject, UICollectionViewDelegate
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     Haptics.play(.light)
-    self.onItemSelected?.send(indexPath.row)
+    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    self.onItemSelected?.send((cell, indexPath.row))
   }
 
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

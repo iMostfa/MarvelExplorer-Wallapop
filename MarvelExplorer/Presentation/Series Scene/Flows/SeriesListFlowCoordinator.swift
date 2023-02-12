@@ -17,6 +17,7 @@ class SeriesListFlowCoordinator: FlowCoordinator {
   fileprivate let dependencyProvider: MarvelExplorerFlowCoordinatorDependencyProvider
   private let dimmingTransationDelegate = DimmingTransitioningDelegate()
   private let popTransitionDelegate = PopTransitioningDelegate()
+  private let dimmerDelegate = DimmingTransitioningDelegate()
 
   init(window: UIWindow, dependencyProvider: MarvelExplorerFlowCoordinatorDependencyProvider) {
     self.window = window
@@ -31,10 +32,13 @@ class SeriesListFlowCoordinator: FlowCoordinator {
 }
 
 extension SeriesListFlowCoordinator: SeriesListNavigator {
-  func showDetails(for series: Series) {
+  func showDetails(for series: Series, fromFrame: CGRect) {
     let vc = dependencyProvider.seriesDetailsController(series,
                                                         delegate: self)
-    seriesNavigationController?.pushViewController(vc, animated: true)
+//    vc.modalPresentationStyle = .custom <- This line will cause the the transition to fail, will investigate why
+    popTransitionDelegate.transition.originFrame = fromFrame
+    vc.transitioningDelegate = popTransitionDelegate
+    seriesNavigationController?.present(vc, animated: true)
   }
 }
 
@@ -43,7 +47,7 @@ extension SeriesListFlowCoordinator: SeriesDetailViewControllerDelegate {
     let vc = dependencyProvider.seriesCoverPreview(image: image)
     vc.modalPresentationStyle = .custom
     popTransitionDelegate.transition.originFrame = frame
-    vc.transitioningDelegate = popTransitionDelegate
-    seriesNavigationController?.present(vc, animated: true)
+    vc.transitioningDelegate = dimmingTransationDelegate
+    seriesNavigationController?.presentedViewController?.present(vc, animated: true)
   }
 }

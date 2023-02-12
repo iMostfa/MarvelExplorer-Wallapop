@@ -12,29 +12,19 @@ class PopTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate 
   let transition = PopAnimator()
 
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    transition.originFrame = CGRect(
-      x: transition.originFrame.origin.x + 20,
-      y: transition.originFrame.origin.y + 20,
-      width: transition.originFrame.size.width,
-      height: transition.originFrame.size.height
-    )
 
     transition.presenting = true
 
     return transition
   }
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    nil
-  }
-  func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-    return DimmingPresentationController(presentedViewController: presented,
-                                           presenting: presenting)
+    transition.presenting = false
+    return transition
   }
 }
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-
-  let duration = 0.8
+  let duration = 0.350
   var presenting = true
   var originFrame = CGRect.zero
 
@@ -44,11 +34,11 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let containerView = transitionContext.containerView
-    let toView = transitionContext.view(forKey: .to)!
-    let recipeView = presenting ? toView : transitionContext.view(forKey: .from)!
+    let toView = transitionContext.view(forKey: .to)
+    let goingToView = presenting ? toView! : transitionContext.view(forKey: .from)!
 
-    let initialFrame = presenting ? originFrame : recipeView.frame
-    let finalFrame = presenting ? recipeView.frame : originFrame
+    let initialFrame = presenting ? originFrame : goingToView.frame
+    let finalFrame = presenting ? goingToView.frame : originFrame
 
     let xScaleFactor = presenting ?
       initialFrame.width / finalFrame.width :
@@ -61,28 +51,30 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
 
     if presenting {
-      recipeView.transform = scaleTransform
-      recipeView.center = CGPoint(
+      goingToView.transform = scaleTransform
+      goingToView.center = CGPoint(
         x: initialFrame.midX,
         y: initialFrame.midY)
-      recipeView.clipsToBounds = true
+      goingToView.clipsToBounds = true
     }
 
-    recipeView.layer.cornerRadius = presenting ? 20.0 : 0.0
-    recipeView.layer.masksToBounds = true
+    goingToView.layer.cornerRadius = presenting ? 20.0 : 0.0
+    goingToView.layer.masksToBounds = true
 
-    containerView.addSubview(toView)
-    containerView.bringSubviewToFront(recipeView)
+    if toView != nil {
+      containerView.addSubview(toView!)
+    }
+    containerView.bringSubviewToFront(goingToView)
 
     UIView.animate(
       withDuration: duration,
       delay: 0.0,
-      usingSpringWithDamping: 0.5,
-      initialSpringVelocity: 0.2,
+      usingSpringWithDamping: 0.9,
+      initialSpringVelocity: 1,
       animations: {
-        recipeView.transform = self.presenting ? .identity : scaleTransform
-        recipeView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-        recipeView.layer.cornerRadius = !self.presenting ? 20.0 : 0.0
+        goingToView.transform = self.presenting ? .identity : scaleTransform
+        goingToView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
+        goingToView.layer.cornerRadius = !self.presenting ? 20.0 : 0.0
       }, completion: { _ in
         transitionContext.completeTransition(true)
     })
